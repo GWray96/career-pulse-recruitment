@@ -6,6 +6,23 @@ import Image from 'next/image'
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('employers');
+  const [activeProcess, setActiveProcess] = useState('employer');
+
+  const employerProcess = [
+    { title: 'Initial Consultation', description: 'We meet to understand your hiring needs and company culture.' },
+    { title: 'Talent Search', description: 'Our recruiters search for the best candidates matching your criteria.' },
+    { title: 'Candidate Screening', description: 'Thorough interviews and assessments to ensure perfect matches.' },
+    { title: 'Interview Coordination', description: 'We handle all interview scheduling and provide detailed feedback.' },
+    { title: 'Offer & Onboarding', description: 'We assist with offer negotiations and ensure a smooth transition.' }
+  ];
+
+  const candidateProcess = [
+    { title: 'Profile Creation', description: 'Create your professional profile and specify your career goals.' },
+    { title: 'Career Consultation', description: 'Meet with our career advisors to discuss your goals.' },
+    { title: 'Job Matching', description: 'We match you with suitable opportunities based on your profile.' },
+    { title: 'Interview Preparation', description: 'Receive guidance and coaching to excel in your interviews.' },
+    { title: 'Offer Support', description: 'We help you evaluate offers and negotiate the best terms.' }
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-primary-50">
@@ -365,206 +382,110 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Our Recruitment Process Section */}
-      <section className="py-16 sm:py-20 bg-white relative overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-deep-charcoal">
-              Our <span className="text-primary">Recruitment Process</span>
+      {/* Recruitment Process Section */}
+      <section className="py-16 sm:py-24 bg-gradient-to-b from-white to-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-deep-charcoal mb-4">
+              Our Recruitment Process
             </h2>
-            <p className="text-base sm:text-lg text-deep-charcoal/70">
-              A streamlined approach that works for both employers and candidates
+            <p className="text-lg text-deep-charcoal/70 max-w-3xl mx-auto">
+              A streamlined approach that combines technology with human expertise
             </p>
           </div>
 
           {/* Process Tabs */}
-          <div className="max-w-6xl mx-auto">
-            <div className="flex flex-col sm:flex-row justify-center mb-8 sm:mb-12 space-y-4 sm:space-y-0 sm:space-x-4">
-              <button 
-                onClick={() => setActiveTab('employers')}
-                className={`px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 ${
-                  activeTab === 'employers' 
-                    ? 'bg-primary text-white' 
-                    : 'bg-white text-deep-charcoal border border-gray-200'
+          <div className="mb-12 sm:mb-16 flex justify-center space-x-4">
+            <button
+              onClick={() => setActiveProcess('employer')}
+              className={`px-6 py-3 rounded-full text-lg font-medium transition-all duration-300 ${
+                activeProcess === 'employer'
+                  ? 'bg-primary text-white shadow-lg shadow-primary/20'
+                  : 'bg-white text-deep-charcoal/70 hover:bg-slate-50'
+              }`}
+            >
+              For Employers
+            </button>
+            <button
+              onClick={() => setActiveProcess('candidate')}
+              className={`px-6 py-3 rounded-full text-lg font-medium transition-all duration-300 ${
+                activeProcess === 'candidate'
+                  ? 'bg-primary text-white shadow-lg shadow-primary/20'
+                  : 'bg-white text-deep-charcoal/70 hover:bg-slate-50'
+              }`}
+            >
+              For Candidates
+            </button>
+          </div>
+
+          {/* Process Steps */}
+          <div className="relative">
+            {/* Connecting Line - Desktop Only */}
+            <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-primary/20 via-primary to-primary/20 -translate-y-1/2" />
+
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 relative">
+              {/* Employer Process Steps */}
+              <div
+                className={`space-y-6 sm:space-y-8 transition-all duration-500 ${
+                  activeProcess === 'employer'
+                    ? 'opacity-100 translate-y-0'
+                    : 'opacity-0 translate-y-4 pointer-events-none absolute'
                 }`}
               >
-                For Employers
-              </button>
-              <button 
-                onClick={() => setActiveTab('candidates')}
-                className={`px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 ${
-                  activeTab === 'candidates' 
-                    ? 'bg-primary text-white' 
-                    : 'bg-white text-deep-charcoal border border-gray-200'
-                }`}
-              >
-                For Candidates
-              </button>
-            </div>
-
-            {/* Process Steps Container */}
-            <div className="relative">
-              {/* Connecting Lines */}
-              <div className="absolute top-1/2 left-0 w-full h-1 bg-gray-200 -translate-y-1/2 hidden md:block"></div>
-              
-              {/* Employer Process */}
-              <div className={`grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-2 transition-all duration-500 ${
-                activeTab === 'employers' ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 absolute top-0 left-0 w-full'
-              }`}>
-                {/* Step 1 */}
-                <div className="relative h-full">
-                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-primary/20 transition-all duration-300 transform hover:scale-105 h-[200px] flex flex-col">
-                    <div className="absolute -top-4 left-0 right-0 flex justify-center">
-                      <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-md">1</div>
-                    </div>
-                    <div className="flex flex-col h-full justify-between">
-                      <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4 text-center">Initial Consultation</h3>
-                      <p className="text-deep-charcoal/70 text-sm text-center">
-                        We meet to understand your hiring needs and company culture.
-                      </p>
+                {employerProcess.map((step, index) => (
+                  <div key={index} className="relative group">
+                    <div className="relative h-full">
+                      <div className="h-[200px] bg-white rounded-xl shadow-soft p-6 transition-all duration-300 group-hover:shadow-lg group-hover:scale-105 group-hover:bg-gradient-to-br group-hover:from-white group-hover:to-primary/5">
+                        <div className="flex flex-col h-full justify-between">
+                          <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform duration-300">
+                            {index + 1}
+                          </div>
+                          <div className="text-center">
+                            <h3 className="text-xl font-semibold text-deep-charcoal mb-2 mt-4 group-hover:text-primary transition-colors duration-300">{step.title}</h3>
+                            <p className="text-deep-charcoal/70 group-hover:text-deep-charcoal/90 transition-colors duration-300">{step.description}</p>
+                          </div>
+                          <div className="mt-4 text-center">
+                            <span className="inline-block px-4 py-2 text-sm font-medium text-primary bg-primary/5 rounded-full group-hover:bg-primary/10 transition-colors duration-300">
+                              Learn more
+                            </span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-
-                {/* Step 2 */}
-                <div className="relative h-full">
-                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-primary/20 transition-all duration-300 transform hover:scale-105 h-[200px] flex flex-col">
-                    <div className="absolute -top-4 left-0 right-0 flex justify-center">
-                      <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-md">2</div>
-                    </div>
-                    <div className="flex flex-col h-full justify-between">
-                      <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4 text-center">Talent Search</h3>
-                      <p className="text-deep-charcoal/70 text-sm text-center">
-                        Our recruiters search for the best candidates matching your criteria.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Step 3 */}
-                <div className="relative h-full">
-                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-primary/20 transition-all duration-300 transform hover:scale-105 h-[200px] flex flex-col">
-                    <div className="absolute -top-4 left-0 right-0 flex justify-center">
-                      <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-md">3</div>
-                    </div>
-                    <div className="flex flex-col h-full justify-between">
-                      <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4 text-center">Candidate Screening</h3>
-                      <p className="text-deep-charcoal/70 text-sm text-center">
-                        Thorough interviews and assessments to ensure perfect matches.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Step 4 */}
-                <div className="relative h-full">
-                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-primary/20 transition-all duration-300 transform hover:scale-105 h-[200px] flex flex-col">
-                    <div className="absolute -top-4 left-0 right-0 flex justify-center">
-                      <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-md">4</div>
-                    </div>
-                    <div className="flex flex-col h-full justify-between">
-                      <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4 text-center">Interview Coordination</h3>
-                      <p className="text-deep-charcoal/70 text-sm text-center">
-                        We handle all interview scheduling and provide detailed feedback.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Step 5 */}
-                <div className="relative h-full">
-                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-primary/20 transition-all duration-300 transform hover:scale-105 h-[200px] flex flex-col">
-                    <div className="absolute -top-4 left-0 right-0 flex justify-center">
-                      <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-md">5</div>
-                    </div>
-                    <div className="flex flex-col h-full justify-between">
-                      <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4 text-center">Offer & Onboarding</h3>
-                      <p className="text-deep-charcoal/70 text-sm text-center">
-                        We assist with offer negotiations and ensure a smooth transition.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
 
-              {/* Candidate Process */}
-              <div className={`grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-2 transition-all duration-500 ${
-                activeTab === 'candidates' ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 absolute top-0 left-0 w-full'
-              }`}>
-                {/* Step 1 */}
-                <div className="relative h-full">
-                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-accent/20 transition-all duration-300 transform hover:scale-105 h-[200px] flex flex-col">
-                    <div className="absolute -top-4 left-0 right-0 flex justify-center">
-                      <div className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold shadow-md">1</div>
-                    </div>
-                    <div className="flex flex-col h-full justify-between">
-                      <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4 text-center">Profile Creation</h3>
-                      <p className="text-deep-charcoal/70 text-sm text-center">
-                        Create your professional profile and specify your career goals.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Step 2 */}
-                <div className="relative h-full">
-                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-accent/20 transition-all duration-300 transform hover:scale-105 h-[200px] flex flex-col">
-                    <div className="absolute -top-4 left-0 right-0 flex justify-center">
-                      <div className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold shadow-md">2</div>
-                    </div>
-                    <div className="flex flex-col h-full justify-between">
-                      <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4 text-center">Career Consultation</h3>
-                      <p className="text-deep-charcoal/70 text-sm text-center">
-                        Meet with our career advisors to discuss your goals.
-                      </p>
+              {/* Candidate Process Steps */}
+              <div
+                className={`space-y-6 sm:space-y-8 transition-all duration-500 ${
+                  activeProcess === 'candidate'
+                    ? 'opacity-100 translate-y-0'
+                    : 'opacity-0 translate-y-4 pointer-events-none absolute'
+                }`}
+              >
+                {candidateProcess.map((step, index) => (
+                  <div key={index} className="relative group">
+                    <div className="relative h-full">
+                      <div className="h-[200px] bg-white rounded-xl shadow-soft p-6 transition-all duration-300 group-hover:shadow-lg group-hover:scale-105 group-hover:bg-gradient-to-br group-hover:from-white group-hover:to-primary/5">
+                        <div className="flex flex-col h-full justify-between">
+                          <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform duration-300">
+                            {index + 1}
+                          </div>
+                          <div className="text-center">
+                            <h3 className="text-xl font-semibold text-deep-charcoal mb-2 mt-4 group-hover:text-primary transition-colors duration-300">{step.title}</h3>
+                            <p className="text-deep-charcoal/70 group-hover:text-deep-charcoal/90 transition-colors duration-300">{step.description}</p>
+                          </div>
+                          <div className="mt-4 text-center">
+                            <span className="inline-block px-4 py-2 text-sm font-medium text-primary bg-primary/5 rounded-full group-hover:bg-primary/10 transition-colors duration-300">
+                              Learn more
+                            </span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-
-                {/* Step 3 */}
-                <div className="relative h-full">
-                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-accent/20 transition-all duration-300 transform hover:scale-105 h-[200px] flex flex-col">
-                    <div className="absolute -top-4 left-0 right-0 flex justify-center">
-                      <div className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold shadow-md">3</div>
-                    </div>
-                    <div className="flex flex-col h-full justify-between">
-                      <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4 text-center">Job Matching</h3>
-                      <p className="text-deep-charcoal/70 text-sm text-center">
-                        We match you with suitable opportunities based on your profile.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Step 4 */}
-                <div className="relative h-full">
-                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-accent/20 transition-all duration-300 transform hover:scale-105 h-[200px] flex flex-col">
-                    <div className="absolute -top-4 left-0 right-0 flex justify-center">
-                      <div className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold shadow-md">4</div>
-                    </div>
-                    <div className="flex flex-col h-full justify-between">
-                      <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4 text-center">Interview Preparation</h3>
-                      <p className="text-deep-charcoal/70 text-sm text-center">
-                        Receive guidance and coaching to excel in your interviews.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Step 5 */}
-                <div className="relative h-full">
-                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-accent/20 transition-all duration-300 transform hover:scale-105 h-[200px] flex flex-col">
-                    <div className="absolute -top-4 left-0 right-0 flex justify-center">
-                      <div className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold shadow-md">5</div>
-                    </div>
-                    <div className="flex flex-col h-full justify-between">
-                      <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4 text-center">Offer Support</h3>
-                      <p className="text-deep-charcoal/70 text-sm text-center">
-                        We help you evaluate offers and negotiate the best terms.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
