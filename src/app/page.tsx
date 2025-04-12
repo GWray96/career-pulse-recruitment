@@ -417,10 +417,12 @@ export default function Home() {
                     <div className="absolute -top-4 left-0 right-0 flex justify-center">
                       <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-md">1</div>
                     </div>
-                    <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4">Initial Consultation</h3>
-                    <p className="text-deep-charcoal/70 text-sm flex-grow">
-                      We meet to understand your hiring needs and company culture.
-                    </p>
+                    <div className="flex flex-col h-full justify-between">
+                      <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4 text-center">Initial Consultation</h3>
+                      <p className="text-deep-charcoal/70 text-sm text-center">
+                        We meet to understand your hiring needs and company culture.
+                      </p>
+                    </div>
                   </div>
                 </div>
 
@@ -430,10 +432,12 @@ export default function Home() {
                     <div className="absolute -top-4 left-0 right-0 flex justify-center">
                       <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-md">2</div>
                     </div>
-                    <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4">Talent Search</h3>
-                    <p className="text-deep-charcoal/70 text-sm flex-grow">
-                      Our recruiters search for the best candidates matching your criteria.
-                    </p>
+                    <div className="flex flex-col h-full justify-between">
+                      <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4 text-center">Talent Search</h3>
+                      <p className="text-deep-charcoal/70 text-sm text-center">
+                        Our recruiters search for the best candidates matching your criteria.
+                      </p>
+                    </div>
                   </div>
                 </div>
 
@@ -443,10 +447,12 @@ export default function Home() {
                     <div className="absolute -top-4 left-0 right-0 flex justify-center">
                       <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-md">3</div>
                     </div>
-                    <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4">Candidate Screening</h3>
-                    <p className="text-deep-charcoal/70 text-sm flex-grow">
-                      Thorough interviews and assessments to ensure perfect matches.
-                    </p>
+                    <div className="flex flex-col h-full justify-between">
+                      <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4 text-center">Candidate Screening</h3>
+                      <p className="text-deep-charcoal/70 text-sm text-center">
+                        Thorough interviews and assessments to ensure perfect matches.
+                      </p>
+                    </div>
                   </div>
                 </div>
 
@@ -456,10 +462,12 @@ export default function Home() {
                     <div className="absolute -top-4 left-0 right-0 flex justify-center">
                       <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-md">4</div>
                     </div>
-                    <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4">Interview Coordination</h3>
-                    <p className="text-deep-charcoal/70 text-sm flex-grow">
-                      We handle all interview scheduling and provide detailed feedback.
-                    </p>
+                    <div className="flex flex-col h-full justify-between">
+                      <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4 text-center">Interview Coordination</h3>
+                      <p className="text-deep-charcoal/70 text-sm text-center">
+                        We handle all interview scheduling and provide detailed feedback.
+                      </p>
+                    </div>
                   </div>
                 </div>
 
@@ -469,10 +477,12 @@ export default function Home() {
                     <div className="absolute -top-4 left-0 right-0 flex justify-center">
                       <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-md">5</div>
                     </div>
-                    <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4">Offer & Onboarding</h3>
-                    <p className="text-deep-charcoal/70 text-sm flex-grow">
-                      We assist with offer negotiations and ensure a smooth transition.
-                    </p>
+                    <div className="flex flex-col h-full justify-between">
+                      <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4 text-center">Offer & Onboarding</h3>
+                      <p className="text-deep-charcoal/70 text-sm text-center">
+                        We assist with offer negotiations and ensure a smooth transition.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -487,10 +497,12 @@ export default function Home() {
                     <div className="absolute -top-4 left-0 right-0 flex justify-center">
                       <div className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold shadow-md">1</div>
                     </div>
-                    <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4">Profile Creation</h3>
-                    <p className="text-deep-charcoal/70 text-sm flex-grow">
-                      Create your professional profile and specify your career goals.
-                    </p>
+                    <div className="flex flex-col h-full justify-between">
+                      <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4 text-center">Profile Creation</h3>
+                      <p className="text-deep-charcoal/70 text-sm text-center">
+                        Create your professional profile and specify your career goals.
+                      </p>
+                    </div>
                   </div>
                 </div>
 
@@ -500,10 +512,12 @@ export default function Home() {
                     <div className="absolute -top-4 left-0 right-0 flex justify-center">
                       <div className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold shadow-md">2</div>
                     </div>
-                    <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4">Career Consultation</h3>
-                    <p className="text-deep-charcoal/70 text-sm flex-grow">
-                      Meet with our career advisors to discuss your goals.
-                    </p>
+                    <div className="flex flex-col h-full justify-between">
+                      <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4 text-center">Career Consultation</h3>
+                      <p className="text-deep-charcoal/70 text-sm text-center">
+                        Meet with our career advisors to discuss your goals.
+                      </p>
+                    </div>
                   </div>
                 </div>
 
@@ -513,10 +527,12 @@ export default function Home() {
                     <div className="absolute -top-4 left-0 right-0 flex justify-center">
                       <div className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold shadow-md">3</div>
                     </div>
-                    <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4">Job Matching</h3>
-                    <p className="text-deep-charcoal/70 text-sm flex-grow">
-                      We match you with suitable opportunities based on your profile.
-                    </p>
+                    <div className="flex flex-col h-full justify-between">
+                      <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4 text-center">Job Matching</h3>
+                      <p className="text-deep-charcoal/70 text-sm text-center">
+                        We match you with suitable opportunities based on your profile.
+                      </p>
+                    </div>
                   </div>
                 </div>
 
@@ -526,10 +542,12 @@ export default function Home() {
                     <div className="absolute -top-4 left-0 right-0 flex justify-center">
                       <div className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold shadow-md">4</div>
                     </div>
-                    <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4">Interview Preparation</h3>
-                    <p className="text-deep-charcoal/70 text-sm flex-grow">
-                      Receive guidance and coaching to excel in your interviews.
-                    </p>
+                    <div className="flex flex-col h-full justify-between">
+                      <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4 text-center">Interview Preparation</h3>
+                      <p className="text-deep-charcoal/70 text-sm text-center">
+                        Receive guidance and coaching to excel in your interviews.
+                      </p>
+                    </div>
                   </div>
                 </div>
 
@@ -539,10 +557,12 @@ export default function Home() {
                     <div className="absolute -top-4 left-0 right-0 flex justify-center">
                       <div className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold shadow-md">5</div>
                     </div>
-                    <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4">Offer Support</h3>
-                    <p className="text-deep-charcoal/70 text-sm flex-grow">
-                      We help you evaluate offers and negotiate the best terms.
-                    </p>
+                    <div className="flex flex-col h-full justify-between">
+                      <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4 text-center">Offer Support</h3>
+                      <p className="text-deep-charcoal/70 text-sm text-center">
+                        We help you evaluate offers and negotiate the best terms.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
