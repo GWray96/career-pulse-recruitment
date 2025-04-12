@@ -1,58 +1,58 @@
 # Career Pulse Recruitment Website
 
-A modern recruitment platform that connects employers with job seekers, offering a flat-fee recruitment service.
+A modern recruitment website built with Next.js, TypeScript, and Tailwind CSS.
 
 ## Features
 
-- Flat-fee recruitment (10% for skilled roles, £999 for unskilled hires)
-- Simple job posting process
-- Pre-vetted talent pool
-- Zero payment until successful hire
-- Responsive design for all devices
+- 🏠 Home page with hero section and call-to-action buttons
+- 🔍 Job search functionality with filters
+- 📝 Employer form for job postings
+- 🎨 Modern UI with Tailwind CSS
+- ✅ Form validation with Zod
+- 📱 Responsive design
 
 ## Tech Stack
 
-- Next.js 15
-- React
+- Next.js 14
 - TypeScript
 - Tailwind CSS
-- Vercel (Deployment)
+- React Hook Form
+- Zod
+- DaisyUI
 
 ## Getting Started
 
-### Prerequisites
+1. Clone the repository:
+```bash
+git clone https://github.com/GWray96/career-pulse-recruitment.git
+```
 
-- Node.js 18.x or later
-- npm or yarn
+2. Install dependencies:
+```bash
+npm install
+```
 
-### Installation
+3. Run the development server:
+```bash
+npm run dev
+```
 
-1. Clone the repository
-   ```bash
-   git clone https://github.com/yourusername/career-pulse.git
-   cd career-pulse
-   ```
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-2. Install dependencies
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
+## Project Structure
 
-3. Run the development server
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
+- `/src/app` - Next.js app router pages
+- `/src/styles` - Global styles and Tailwind configuration
+- `/src/components` - Reusable React components
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+## Contributing
 
-## Deployment
-
-This project is configured for easy deployment on Vercel. Simply connect your GitHub repository to Vercel for automatic deployments.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+This project is licensed under the MIT License. 
