@@ -58,7 +58,8 @@ export default function EmployerForm() {
     handleSubmit,
     formState: { errors },
     watch,
-  } = useForm<FormData>({
+    reset,
+  } = useForm<Partial<FormData>>({
     defaultValues: formData,
     resolver: zodResolver(
       step === 1
@@ -69,12 +70,15 @@ export default function EmployerForm() {
     ),
   })
 
-  const onSubmit = async (data: FormData) => {
+  const onSubmit = async (data: Partial<FormData>) => {
     if (step < 3) {
-      setFormData({ ...formData, ...data })
+      setFormData((prev) => ({ ...prev, ...data }))
       setStep(step + 1)
+      reset(data) // Reset form with current data
       return
     }
+
+    const completeFormData = { ...formData, ...data } as FormData
 
     setIsSubmitting(true)
     try {
@@ -83,7 +87,7 @@ export default function EmployerForm() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(completeFormData),
       })
 
       if (!response.ok) {
