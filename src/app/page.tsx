@@ -412,65 +412,65 @@ export default function Home() {
                 activeTab === 'employers' ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 absolute top-0 left-0 w-full'
               }`}>
                 {/* Step 1 */}
-                <div className="relative">
-                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-primary/20 transition-all duration-300 transform hover:scale-105">
+                <div className="relative h-full">
+                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-primary/20 transition-all duration-300 transform hover:scale-105 h-[200px] flex flex-col">
                     <div className="absolute -top-4 left-0 right-0 flex justify-center">
                       <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-md">1</div>
                     </div>
                     <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4">Initial Consultation</h3>
-                    <p className="text-deep-charcoal/70 text-sm">
+                    <p className="text-deep-charcoal/70 text-sm flex-grow">
                       We meet to understand your hiring needs and company culture.
                     </p>
                   </div>
                 </div>
 
                 {/* Step 2 */}
-                <div className="relative">
-                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-primary/20 transition-all duration-300 transform hover:scale-105">
+                <div className="relative h-full">
+                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-primary/20 transition-all duration-300 transform hover:scale-105 h-[200px] flex flex-col">
                     <div className="absolute -top-4 left-0 right-0 flex justify-center">
                       <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-md">2</div>
                     </div>
                     <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4">Talent Search</h3>
-                    <p className="text-deep-charcoal/70 text-sm">
+                    <p className="text-deep-charcoal/70 text-sm flex-grow">
                       Our recruiters search for the best candidates matching your criteria.
                     </p>
                   </div>
                 </div>
 
                 {/* Step 3 */}
-                <div className="relative">
-                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-primary/20 transition-all duration-300 transform hover:scale-105">
+                <div className="relative h-full">
+                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-primary/20 transition-all duration-300 transform hover:scale-105 h-[200px] flex flex-col">
                     <div className="absolute -top-4 left-0 right-0 flex justify-center">
                       <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-md">3</div>
                     </div>
                     <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4">Candidate Screening</h3>
-                    <p className="text-deep-charcoal/70 text-sm">
+                    <p className="text-deep-charcoal/70 text-sm flex-grow">
                       Thorough interviews and assessments to ensure perfect matches.
                     </p>
                   </div>
                 </div>
 
                 {/* Step 4 */}
-                <div className="relative">
-                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-primary/20 transition-all duration-300 transform hover:scale-105">
+                <div className="relative h-full">
+                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-primary/20 transition-all duration-300 transform hover:scale-105 h-[200px] flex flex-col">
                     <div className="absolute -top-4 left-0 right-0 flex justify-center">
                       <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-md">4</div>
                     </div>
                     <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4">Interview Coordination</h3>
-                    <p className="text-deep-charcoal/70 text-sm">
+                    <p className="text-deep-charcoal/70 text-sm flex-grow">
                       We handle all interview scheduling and provide detailed feedback.
                     </p>
                   </div>
                 </div>
 
                 {/* Step 5 */}
-                <div className="relative">
-                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-primary/20 transition-all duration-300 transform hover:scale-105">
+                <div className="relative h-full">
+                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-primary/20 transition-all duration-300 transform hover:scale-105 h-[200px] flex flex-col">
                     <div className="absolute -top-4 left-0 right-0 flex justify-center">
                       <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-md">5</div>
                     </div>
                     <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4">Offer & Onboarding</h3>
-                    <p className="text-deep-charcoal/70 text-sm">
+                    <p className="text-deep-charcoal/70 text-sm flex-grow">
                       We assist with offer negotiations and ensure a smooth transition.
                     </p>
                   </div>
@@ -482,65 +482,65 @@ export default function Home() {
                 activeTab === 'candidates' ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 absolute top-0 left-0 w-full'
               }`}>
                 {/* Step 1 */}
-                <div className="relative">
-                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-accent/20 transition-all duration-300 transform hover:scale-105">
+                <div className="relative h-full">
+                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-accent/20 transition-all duration-300 transform hover:scale-105 h-[200px] flex flex-col">
                     <div className="absolute -top-4 left-0 right-0 flex justify-center">
                       <div className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold shadow-md">1</div>
                     </div>
                     <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4">Profile Creation</h3>
-                    <p className="text-deep-charcoal/70 text-sm">
+                    <p className="text-deep-charcoal/70 text-sm flex-grow">
                       Create your professional profile and specify your career goals.
                     </p>
                   </div>
                 </div>
 
                 {/* Step 2 */}
-                <div className="relative">
-                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-accent/20 transition-all duration-300 transform hover:scale-105">
+                <div className="relative h-full">
+                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-accent/20 transition-all duration-300 transform hover:scale-105 h-[200px] flex flex-col">
                     <div className="absolute -top-4 left-0 right-0 flex justify-center">
                       <div className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold shadow-md">2</div>
                     </div>
                     <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4">Career Consultation</h3>
-                    <p className="text-deep-charcoal/70 text-sm">
+                    <p className="text-deep-charcoal/70 text-sm flex-grow">
                       Meet with our career advisors to discuss your goals.
                     </p>
                   </div>
                 </div>
 
                 {/* Step 3 */}
-                <div className="relative">
-                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-accent/20 transition-all duration-300 transform hover:scale-105">
+                <div className="relative h-full">
+                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-accent/20 transition-all duration-300 transform hover:scale-105 h-[200px] flex flex-col">
                     <div className="absolute -top-4 left-0 right-0 flex justify-center">
                       <div className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold shadow-md">3</div>
                     </div>
                     <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4">Job Matching</h3>
-                    <p className="text-deep-charcoal/70 text-sm">
+                    <p className="text-deep-charcoal/70 text-sm flex-grow">
                       We match you with suitable opportunities based on your profile.
                     </p>
                   </div>
                 </div>
 
                 {/* Step 4 */}
-                <div className="relative">
-                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-accent/20 transition-all duration-300 transform hover:scale-105">
+                <div className="relative h-full">
+                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-accent/20 transition-all duration-300 transform hover:scale-105 h-[200px] flex flex-col">
                     <div className="absolute -top-4 left-0 right-0 flex justify-center">
                       <div className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold shadow-md">4</div>
                     </div>
                     <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4">Interview Preparation</h3>
-                    <p className="text-deep-charcoal/70 text-sm">
+                    <p className="text-deep-charcoal/70 text-sm flex-grow">
                       Receive guidance and coaching to excel in your interviews.
                     </p>
                   </div>
                 </div>
 
                 {/* Step 5 */}
-                <div className="relative">
-                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-accent/20 transition-all duration-300 transform hover:scale-105">
+                <div className="relative h-full">
+                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-accent/20 transition-all duration-300 transform hover:scale-105 h-[200px] flex flex-col">
                     <div className="absolute -top-4 left-0 right-0 flex justify-center">
                       <div className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold shadow-md">5</div>
                     </div>
                     <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4">Offer Support</h3>
-                    <p className="text-deep-charcoal/70 text-sm">
+                    <p className="text-deep-charcoal/70 text-sm flex-grow">
                       We help you evaluate offers and negotiate the best terms.
                     </p>
                   </div>
