@@ -1,28 +1,25 @@
-import type { Metadata, Viewport } from 'next'
+import type { Metadata } from 'next'
 import { Montserrat, Open_Sans } from 'next/font/google'
-import '@/styles/globals.css'
+import './globals.css'
+import Navbar from '@/components/Navbar'
 
 const montserrat = Montserrat({ 
   subsets: ['latin'],
   variable: '--font-montserrat',
+  display: 'swap',
 })
 
 const openSans = Open_Sans({ 
   subsets: ['latin'],
-  variable: '--font-open-sans',
+  variable: '--font-opensans',
+  display: 'swap',
 })
-
-export const viewport: Viewport = {
-  width: 'device-width',
-  initialScale: 1,
-}
 
 export const metadata: Metadata = {
   title: 'Career Pulse | Feel the Beat of Your Next Opportunity',
-  description: 'Career Pulse connects top talent with forward-thinking employers, making recruitment feel human, personal, and fast-paced.',
-  keywords: ['recruitment', 'jobs', 'career', 'employment', 'hiring', 'talent', 'opportunities'],
-  authors: [{ name: 'Career Pulse' }],
-  robots: 'index, follow',
+  description: 'Career Pulse connects talented professionals with innovative employers. Find your rhythm in the job market with our modern recruitment platform.',
+  keywords: 'job search, recruitment, career, employment, hiring, job board, modern recruitment',
+  authors: [{ name: 'Career Pulse Team' }],
 }
 
 export default function RootLayout({
@@ -32,8 +29,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${montserrat.variable} ${openSans.variable}`}>
-      <body className="font-open-sans" suppressHydrationWarning>
-        <main className="min-h-screen bg-background">
+      <body className="font-opensans antialiased">
+        <Navbar />
+        <main className="pt-16">
           {children}
         </main>
       </body>
