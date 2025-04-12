@@ -154,52 +154,56 @@ export default function Home() {
       </section>
 
       {/* Pain Points Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-16">Common Challenges in Today's Job Market</h2>
-            <div className="grid md:grid-cols-2 gap-12">
+            <h2 className="text-4xl font-bold text-center mb-4">Common Challenges in Today's Job Market</h2>
+            <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">Discover how we address the key pain points faced by both employers and candidates in the modern recruitment landscape</p>
+            <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
               {/* Employers Pain Points */}
-              <div className="bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-transform duration-300">
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="group bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl border border-gray-100">
+                <div className="flex items-center mb-8">
+                  <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mr-4 group-hover:rotate-12 transition-transform duration-300">
+                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-800">Employer Challenges</h3>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">Employer Challenges</h3>
+                    <p className="text-gray-600 mt-1">Key obstacles in modern recruitment</p>
+                  </div>
                 </div>
                 <div className="space-y-6">
-                  <div className="flex items-start">
-                    <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                  <div className="group/item flex items-start p-4 rounded-lg hover:bg-blue-50 transition-colors duration-300">
+                    <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1 group-hover/item:bg-red-200 transition-colors duration-300">
                       <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800 mb-2">Time-Consuming Hiring Process</h4>
+                      <h4 className="font-semibold text-gray-800 mb-2 group-hover/item:text-blue-600 transition-colors duration-300">Time-Consuming Hiring Process</h4>
                       <p className="text-gray-600">Spending countless hours sifting through unqualified candidates and conducting interviews</p>
                     </div>
                   </div>
-                  <div className="flex items-start">
-                    <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                  <div className="group/item flex items-start p-4 rounded-lg hover:bg-blue-50 transition-colors duration-300">
+                    <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1 group-hover/item:bg-red-200 transition-colors duration-300">
                       <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800 mb-2">Skill Gap</h4>
+                      <h4 className="font-semibold text-gray-800 mb-2 group-hover/item:text-blue-600 transition-colors duration-300">Skill Gap</h4>
                       <p className="text-gray-600">Difficulty finding candidates with the right technical skills and experience</p>
                     </div>
                   </div>
-                  <div className="flex items-start">
-                    <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                  <div className="group/item flex items-start p-4 rounded-lg hover:bg-blue-50 transition-colors duration-300">
+                    <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1 group-hover/item:bg-red-200 transition-colors duration-300">
                       <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800 mb-2">High Turnover Rates</h4>
+                      <h4 className="font-semibold text-gray-800 mb-2 group-hover/item:text-blue-600 transition-colors duration-300">High Turnover Rates</h4>
                       <p className="text-gray-600">Struggling with employee retention and finding candidates who fit company culture</p>
                     </div>
                   </div>
@@ -207,46 +211,49 @@ export default function Home() {
               </div>
 
               {/* Candidates Pain Points */}
-              <div className="bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-transform duration-300">
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
-                    <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="group bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl border border-gray-100">
+                <div className="flex items-center mb-8">
+                  <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mr-4 group-hover:rotate-12 transition-transform duration-300">
+                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-800">Candidate Challenges</h3>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-800 group-hover:text-purple-600 transition-colors duration-300">Candidate Challenges</h3>
+                    <p className="text-gray-600 mt-1">Common hurdles in job seeking</p>
+                  </div>
                 </div>
                 <div className="space-y-6">
-                  <div className="flex items-start">
-                    <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                  <div className="group/item flex items-start p-4 rounded-lg hover:bg-purple-50 transition-colors duration-300">
+                    <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1 group-hover/item:bg-red-200 transition-colors duration-300">
                       <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800 mb-2">Job Search Overwhelm</h4>
+                      <h4 className="font-semibold text-gray-800 mb-2 group-hover/item:text-purple-600 transition-colors duration-300">Job Search Overwhelm</h4>
                       <p className="text-gray-600">Navigating through countless job postings and lengthy application processes</p>
                     </div>
                   </div>
-                  <div className="flex items-start">
-                    <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                  <div className="group/item flex items-start p-4 rounded-lg hover:bg-purple-50 transition-colors duration-300">
+                    <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1 group-hover/item:bg-red-200 transition-colors duration-300">
                       <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800 mb-2">Limited Feedback</h4>
+                      <h4 className="font-semibold text-gray-800 mb-2 group-hover/item:text-purple-600 transition-colors duration-300">Limited Feedback</h4>
                       <p className="text-gray-600">Receiving little to no feedback on applications and interviews</p>
                     </div>
                   </div>
-                  <div className="flex items-start">
-                    <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                  <div className="group/item flex items-start p-4 rounded-lg hover:bg-purple-50 transition-colors duration-300">
+                    <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1 group-hover/item:bg-red-200 transition-colors duration-300">
                       <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800 mb-2">Career Growth</h4>
+                      <h4 className="font-semibold text-gray-800 mb-2 group-hover/item:text-purple-600 transition-colors duration-300">Career Growth</h4>
                       <p className="text-gray-600">Finding opportunities that match both skills and career aspirations</p>
                     </div>
                   </div>
