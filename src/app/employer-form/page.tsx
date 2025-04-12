@@ -12,6 +12,7 @@ import Button from '@/components/ui/Button'
 import Input from '@/components/ui/Input'
 import Select from '@/components/ui/Select'
 
+// Define the schemas for each step
 const companyDetailsSchema = z.object({
   companyName: z.string().min(1, 'Company name is required'),
   contactName: z.string().min(1, 'Contact name is required'),
@@ -19,7 +20,7 @@ const companyDetailsSchema = z.object({
   email: z.string().email('Invalid email address'),
   website: z.string().url('Invalid website URL').optional().or(z.literal('')),
   companySize: z.string().min(1, 'Company size is required'),
-})
+}).partial()
 
 const jobDetailsSchema = z.object({
   jobTitle: z.string().min(1, 'Job title is required'),
@@ -31,7 +32,7 @@ const jobDetailsSchema = z.object({
   salaryMax: z.string().min(1, 'Maximum salary is required'),
   requiredSkills: z.string().min(1, 'Required skills are required'),
   applicationDeadline: z.string().min(1, 'Application deadline is required'),
-})
+}).partial()
 
 const additionalInfoSchema = z.object({
   referralSource: z.string().min(1, 'Please select how you heard about us'),
@@ -39,19 +40,27 @@ const additionalInfoSchema = z.object({
   termsAccepted: z.literal(true, {
     errorMap: () => ({ message: 'You must accept the terms and conditions' }),
   }),
-})
+}).partial()
 
+// Define the types for each step
 type CompanyDetails = z.infer<typeof companyDetailsSchema>
 type JobDetails = z.infer<typeof jobDetailsSchema>
 type AdditionalInfo = z.infer<typeof additionalInfoSchema>
 
+// Complete form data type
 type FormData = CompanyDetails & JobDetails & AdditionalInfo
 
 export default function EmployerForm() {
   const router = useRouter()
   const [step, setStep] = useState(1)
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [formData, setFormData] = useState<Partial<FormData>>({})
+  const [formData, setFormData] = useState<FormData>({})
+
+  const currentSchema = step === 1
+    ? companyDetailsSchema
+    : step === 2
+    ? jobDetailsSchema
+    : additionalInfoSchema
 
   const {
     register,
@@ -59,26 +68,19 @@ export default function EmployerForm() {
     formState: { errors },
     watch,
     reset,
-  } = useForm<Partial<FormData>>({
+  } = useForm<FormData>({
     defaultValues: formData,
-    resolver: zodResolver(
-      step === 1
-        ? companyDetailsSchema
-        : step === 2
-        ? jobDetailsSchema
-        : additionalInfoSchema
-    ),
+    resolver: zodResolver(currentSchema),
   })
 
-  const onSubmit = async (data: Partial<FormData>) => {
+  const onSubmit = async (data: FormData) => {
     if (step < 3) {
       setFormData((prev) => ({ ...prev, ...data }))
       setStep(step + 1)
-      reset(data) // Reset form with current data
       return
     }
 
-    const completeFormData = { ...formData, ...data } as FormData
+    const completeFormData = { ...formData, ...data }
 
     setIsSubmitting(true)
     try {
