@@ -9,9 +9,13 @@ module.exports = {
     extend: {
       colors: {
         primary: '#1A73E8',
+        'primary-dark': '#0D47A1',
+        'primary-50': '#E8F0FE',
         secondary: '#FF6B6B',
+        accent: '#FF6B6B',
         dark: '#2C3E50',
         light: '#F8F9FA',
+        'deep-charcoal': '#333333',
       },
       fontFamily: {
         montserrat: ['var(--font-montserrat)'],
