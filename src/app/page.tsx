@@ -384,7 +384,7 @@ export default function Home() {
 
       {/* Recruitment Process Section */}
       <section className="py-16 sm:py-24 bg-gradient-to-b from-white to-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1400px]">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-deep-charcoal mb-4">
               Our Recruitment Process
@@ -423,10 +423,10 @@ export default function Home() {
             {/* Connecting Line - Desktop Only */}
             <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-primary/20 via-primary to-primary/20 -translate-y-1/2" />
 
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 relative">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-10 relative">
               {/* Employer Process Steps */}
               <div
-                className={`grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 transition-all duration-500 ${
+                className={`grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-10 transition-all duration-500 ${
                   activeProcess === 'employer'
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-4 pointer-events-none absolute'
@@ -435,16 +435,16 @@ export default function Home() {
                 {employerProcess.map((step, index) => (
                   <div key={index} className="relative group">
                     <div className="relative h-full">
-                      <div className="h-[200px] bg-white rounded-xl shadow-soft p-6 transition-all duration-300 group-hover:shadow-lg group-hover:scale-105 group-hover:bg-gradient-to-br group-hover:from-white group-hover:to-primary/5">
+                      <div className="h-[220px] bg-white rounded-xl shadow-soft p-8 transition-all duration-300 group-hover:shadow-lg group-hover:scale-105 group-hover:bg-gradient-to-br group-hover:from-white group-hover:to-primary/5">
                         <div className="flex flex-col h-full justify-between">
                           <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform duration-300">
                             {index + 1}
                           </div>
                           <div className="text-center">
-                            <h3 className="text-xl font-semibold text-deep-charcoal mb-2 mt-4 group-hover:text-primary transition-colors duration-300">{step.title}</h3>
+                            <h3 className="text-xl font-semibold text-deep-charcoal mb-3 mt-4 group-hover:text-primary transition-colors duration-300">{step.title}</h3>
                             <p className="text-deep-charcoal/70 group-hover:text-deep-charcoal/90 transition-colors duration-300">{step.description}</p>
                           </div>
-                          <div className="mt-4 text-center">
+                          <div className="mt-6 text-center">
                             <span className="inline-block px-4 py-2 text-sm font-medium text-primary bg-primary/5 rounded-full group-hover:bg-primary/10 transition-colors duration-300">
                               Learn more
                             </span>
@@ -458,7 +458,7 @@ export default function Home() {
 
               {/* Candidate Process Steps */}
               <div
-                className={`grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 transition-all duration-500 ${
+                className={`grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-10 transition-all duration-500 ${
                   activeProcess === 'candidate'
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-4 pointer-events-none absolute'
@@ -467,16 +467,16 @@ export default function Home() {
                 {candidateProcess.map((step, index) => (
                   <div key={index} className="relative group">
                     <div className="relative h-full">
-                      <div className="h-[200px] bg-white rounded-xl shadow-soft p-6 transition-all duration-300 group-hover:shadow-lg group-hover:scale-105 group-hover:bg-gradient-to-br group-hover:from-white group-hover:to-primary/5">
+                      <div className="h-[220px] bg-white rounded-xl shadow-soft p-8 transition-all duration-300 group-hover:shadow-lg group-hover:scale-105 group-hover:bg-gradient-to-br group-hover:from-white group-hover:to-primary/5">
                         <div className="flex flex-col h-full justify-between">
                           <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform duration-300">
                             {index + 1}
                           </div>
                           <div className="text-center">
-                            <h3 className="text-xl font-semibold text-deep-charcoal mb-2 mt-4 group-hover:text-primary transition-colors duration-300">{step.title}</h3>
+                            <h3 className="text-xl font-semibold text-deep-charcoal mb-3 mt-4 group-hover:text-primary transition-colors duration-300">{step.title}</h3>
                             <p className="text-deep-charcoal/70 group-hover:text-deep-charcoal/90 transition-colors duration-300">{step.description}</p>
                           </div>
-                          <div className="mt-4 text-center">
+                          <div className="mt-6 text-center">
                             <span className="inline-block px-4 py-2 text-sm font-medium text-primary bg-primary/5 rounded-full group-hover:bg-primary/10 transition-colors duration-300">
                               Learn more
                             </span>
