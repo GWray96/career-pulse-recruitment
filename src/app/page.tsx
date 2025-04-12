@@ -38,10 +38,7 @@ export default function Home() {
                 <div className="mb-4">
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-montserrat font-bold leading-tight">
                     <span className="block drop-shadow-lg animate-fade-in">Find Your Perfect</span>
-                    <span className="block text-accent drop-shadow-lg animate-fade-in-delayed flex items-center">
-                      Career Match
-                      <span className="ml-2 text-accent animate-pulse-heartbeat">Pulse</span>
-                    </span>
+                    <span className="block text-accent drop-shadow-lg animate-fade-in-delayed animate-pulse-heartbeat">Career Match</span>
                   </h1>
                 </div>
                 <p className="text-lg md:text-xl mb-8 text-white font-medium drop-shadow-md">
