@@ -41,14 +41,17 @@ const additionalInfoSchema = z.object({
   }),
 })
 
-type FormData = z.infer<typeof companyDetailsSchema> &
-  z.infer<typeof jobDetailsSchema> &
-  z.infer<typeof additionalInfoSchema>
+type CompanyDetails = z.infer<typeof companyDetailsSchema>
+type JobDetails = z.infer<typeof jobDetailsSchema>
+type AdditionalInfo = z.infer<typeof additionalInfoSchema>
+
+type FormData = CompanyDetails & JobDetails & AdditionalInfo
 
 export default function EmployerForm() {
   const router = useRouter()
   const [step, setStep] = useState(1)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [formData, setFormData] = useState<Partial<FormData>>({})
 
   const {
     register,
@@ -56,6 +59,7 @@ export default function EmployerForm() {
     formState: { errors },
     watch,
   } = useForm<FormData>({
+    defaultValues: formData,
     resolver: zodResolver(
       step === 1
         ? companyDetailsSchema
@@ -67,6 +71,7 @@ export default function EmployerForm() {
 
   const onSubmit = async (data: FormData) => {
     if (step < 3) {
+      setFormData({ ...formData, ...data })
       setStep(step + 1)
       return
     }
