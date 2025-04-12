@@ -482,6 +482,69 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Employer CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-6">Ready to Find Your Perfect Candidate?</h2>
+            <p className="text-xl text-blue-100 mb-8">Schedule a free consultation with our recruitment experts to discuss your hiring needs</p>
+          </div>
+          <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-2xl p-8">
+            <div className="aspect-w-16 aspect-h-9">
+              <iframe
+                src="https://calendly.com/your-calendly-link"
+                width="100%"
+                height="600"
+                frameBorder="0"
+                className="rounded-lg"
+                title="Booking Calendar"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Candidate CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-purple-600 to-purple-800">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-6">Ready to Find Your Dream Job?</h2>
+            <p className="text-xl text-purple-100 mb-8">Upload your CV or connect with LinkedIn to get started</p>
+          </div>
+          <div className="max-w-3xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* CV Upload Card */}
+              <div className="bg-white rounded-xl shadow-2xl p-8 text-center transform hover:scale-105 transition-transform duration-300">
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800 mb-4">Upload Your CV</h3>
+                <p className="text-gray-600 mb-6">Share your CV with us and let our AI match you with the perfect opportunities</p>
+                <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300">
+                  Upload CV
+                </button>
+              </div>
+
+              {/* LinkedIn Connect Card */}
+              <div className="bg-white rounded-xl shadow-2xl p-8 text-center transform hover:scale-105 transition-transform duration-300">
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800 mb-4">Connect with LinkedIn</h3>
+                <p className="text-gray-600 mb-6">Quick and easy connection with your LinkedIn profile</p>
+                <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300">
+                  Connect LinkedIn
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Getting Started Section */}
       <section className="py-16 sm:py-20 bg-gradient-to-b from-primary-50 to-white relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
