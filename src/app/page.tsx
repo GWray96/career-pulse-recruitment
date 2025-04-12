@@ -429,7 +429,7 @@ export default function Home() {
                 className={`grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-10 transition-all duration-500 ${
                   activeProcess === 'employer'
                     ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-4 pointer-events-none absolute'
+                    : 'opacity-0 translate-y-4 pointer-events-none absolute inset-0'
                 }`}
               >
                 {employerProcess.map((step, index) => (
@@ -444,11 +444,6 @@ export default function Home() {
                             <h3 className="text-xl font-semibold text-deep-charcoal mb-3 mt-4 group-hover:text-primary transition-colors duration-300">{step.title}</h3>
                             <p className="text-deep-charcoal/70 group-hover:text-deep-charcoal/90 transition-colors duration-300">{step.description}</p>
                           </div>
-                          <div className="mt-6 text-center">
-                            <span className="inline-block px-4 py-2 text-sm font-medium text-primary bg-primary/5 rounded-full group-hover:bg-primary/10 transition-colors duration-300">
-                              Learn more
-                            </span>
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -461,7 +456,7 @@ export default function Home() {
                 className={`grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-10 transition-all duration-500 ${
                   activeProcess === 'candidate'
                     ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-4 pointer-events-none absolute'
+                    : 'opacity-0 translate-y-4 pointer-events-none absolute inset-0'
                 }`}
               >
                 {candidateProcess.map((step, index) => (
@@ -475,11 +470,6 @@ export default function Home() {
                           <div className="text-center">
                             <h3 className="text-xl font-semibold text-deep-charcoal mb-3 mt-4 group-hover:text-primary transition-colors duration-300">{step.title}</h3>
                             <p className="text-deep-charcoal/70 group-hover:text-deep-charcoal/90 transition-colors duration-300">{step.description}</p>
-                          </div>
-                          <div className="mt-6 text-center">
-                            <span className="inline-block px-4 py-2 text-sm font-medium text-primary bg-primary/5 rounded-full group-hover:bg-primary/10 transition-colors duration-300">
-                              Learn more
-                            </span>
                           </div>
                         </div>
                       </div>
