@@ -49,107 +49,19 @@ const Navbar = () => {
                 className="group flex items-center"
                 aria-label="Career Pulse Home"
               >
-                <div className="relative w-10 h-10 mr-2">
-                  <Image
-                    src="/images/icons/career-pulse-logo-large.png"
-                    alt="Career Pulse Logo"
-                    fill
-                    sizes="40px"
-                    className="object-contain"
-                    priority
-                  />
-                </div>
                 <span className="text-xl sm:text-2xl font-montserrat font-bold text-primary transition-colors duration-200 group-hover:text-primary-dark">
                   Career Pulse
                 </span>
               </Link>
             </div>
             {/* Desktop Navigation */}
-            <div className="hidden sm:ml-12 sm:flex sm:space-x-8">
-              <Link 
-                href="/" 
-                className={`nav-link relative ${
-                  activeItem === 'home' ? 'text-primary' : 'text-gray-500'
-                }`}
-                onClick={() => setActiveItem('home')}
-                aria-current={activeItem === 'home' ? 'page' : undefined}
-              >
-                Home
-                {activeItem === 'home' && (
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform origin-left transition-transform duration-200" />
-                )}
-              </Link>
-              <div className="relative group">
-                <button 
-                  className="nav-link text-gray-500 hover:text-primary transition-colors duration-200"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  For Candidates
-                </button>
-                <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                  <div className="py-1" role="menu">
-                    <Link href="/talent-pulse" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
-                      Talent Pulse
-                    </Link>
-                    <Link href="/job-search" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
-                      Browse All Jobs
-                    </Link>
-                    <Link href="/featured-jobs" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
-                      Featured Jobs
-                    </Link>
-                    <Link href="/remote-jobs" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
-                      Remote Jobs
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <div className="relative group">
-                <button 
-                  className="nav-link text-gray-500 hover:text-primary transition-colors duration-200"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  For Employers
-                </button>
-                <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                  <div className="py-1" role="menu">
-                    <Link href="/employer-pulse" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
-                      Employer Pulse
-                    </Link>
-                    <Link href="/employer-form" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
-                      Post a Job
-                    </Link>
-                    <Link href="/employer-dashboard" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
-                      Employer Dashboard
-                    </Link>
-                    <Link href="/pricing" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
-                      Pricing Plans
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <div className="relative group">
-                <button 
-                  className="nav-link text-gray-500 hover:text-primary transition-colors duration-200"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Extra Pulse
-                </button>
-                <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                  <div className="py-1" role="menu">
-                    <Link href="/blog" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
-                      Blog
-                    </Link>
-                    <Link href="/resources" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
-                      Resources
-                    </Link>
-                    <Link href="/faq" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
-                      FAQ
-                    </Link>
-                  </div>
-                </div>
+            <div className="hidden lg:flex items-center justify-between w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="flex items-center">
+                <Link href="/" className="flex items-center">
+                  <span className="text-xl font-montserrat font-bold text-primary">
+                    Career Pulse
+                  </span>
+                </Link>
               </div>
             </div>
           </div>
@@ -162,44 +74,24 @@ const Navbar = () => {
             >
               Book a Call
             </Link>
-            <button
-              onClick={toggleMenu}
-              className="sm:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary transition-colors duration-200"
-              aria-expanded={isMenuOpen}
-              aria-label="Toggle navigation menu"
-            >
-              <span className="sr-only">Open main menu</span>
-              {/* Icon when menu is closed */}
-              <svg
-                className={`${isMenuOpen ? 'hidden' : 'block'} h-6 w-6`}
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+            <div className="flex items-center lg:hidden">
+              <button
+                onClick={toggleMenu}
+                className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none"
+                aria-expanded="false"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-              {/* Icon when menu is open */}
-              <svg
-                className={`${isMenuOpen ? 'block' : 'hidden'} h-6 w-6`}
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
+                <span className="sr-only">Open main menu</span>
+                {!isMenuOpen ? (
+                  <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                ) : (
+                  <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </div>
