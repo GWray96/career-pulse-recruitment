@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,6 +13,22 @@
   body {
     @apply bg-background text-foreground antialiased;
   }
+
+  html {
+    @apply font-open-sans text-body text-deep-charcoal;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-montserrat font-bold text-deep-charcoal;
+  }
+
+  h1 {
+    @apply text-h1;
+  }
+
+  h2 {
+    @apply text-h2;
+  }
 }
 
 @layer components {
@@ -23,14 +41,42 @@
   }
 
   .btn-primary {
-    @apply bg-primary-600 text-white hover:bg-primary-700 focus-visible:ring-primary-500;
+    @apply bg-pulse-blue text-white px-6 py-3 rounded-lg font-montserrat font-semibold 
+           hover:bg-primary-600 transition-colors duration-200;
   }
 
   .btn-secondary {
-    @apply bg-white text-gray-900 border border-gray-300 hover:bg-gray-50 focus-visible:ring-primary-500;
+    @apply bg-bright-coral text-white px-6 py-3 rounded-lg font-montserrat font-semibold 
+           hover:bg-secondary-600 transition-colors duration-200;
   }
 
   .input {
     @apply flex h-10 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent disabled:cursor-not-allowed disabled:opacity-50;
   }
+
+  .input-field {
+    @apply w-full px-4 py-2 border border-cool-gray rounded-lg focus:border-pulse-blue 
+           focus:ring-2 focus:ring-primary-100 outline-none transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-200;
+  }
+}
+
+/* Pulse animation for brand elements */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-pulse-brand {
+  animation: pulse 2s infinite;
 } 

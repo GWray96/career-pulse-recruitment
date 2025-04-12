@@ -1,8 +1,16 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
+import { Montserrat, Open_Sans } from 'next/font/google'
 import '@/styles/globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const montserrat = Montserrat({ 
+  subsets: ['latin'],
+  variable: '--font-montserrat',
+})
+
+const openSans = Open_Sans({ 
+  subsets: ['latin'],
+  variable: '--font-open-sans',
+})
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -10,9 +18,9 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'Career Pulse Recruitment',
-  description: 'Find your next career opportunity with Career Pulse Recruitment',
-  keywords: ['recruitment', 'jobs', 'career', 'employment', 'hiring'],
+  title: 'Career Pulse | Feel the Beat of Your Next Opportunity',
+  description: 'Career Pulse connects top talent with forward-thinking employers, making recruitment feel human, personal, and fast-paced.',
+  keywords: ['recruitment', 'jobs', 'career', 'employment', 'hiring', 'talent', 'opportunities'],
   authors: [{ name: 'Career Pulse' }],
   robots: 'index, follow',
 }
@@ -23,8 +31,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className} suppressHydrationWarning>
+    <html lang="en" className={`${montserrat.variable} ${openSans.variable}`}>
+      <body className="font-open-sans" suppressHydrationWarning>
         <main className="min-h-screen bg-background">
           {children}
         </main>
