@@ -322,6 +322,384 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
+      {/* Why Choose Us Comparison Section */}
+      <section className="py-16 sm:py-20 bg-white relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-primary/5 animate-pulse-slow"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-accent/5 animate-pulse-slower"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-deep-charcoal">
+              Why Choose <span className="text-primary">Career Pulse</span>?
+            </h2>
+            <p className="text-base sm:text-lg text-deep-charcoal/70">
+              See how our approach differs from traditional recruitment agencies
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
+            {/* Traditional Recruitment */}
+            <div className="bg-gray-50 rounded-2xl p-6 sm:p-8 border border-gray-200">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 rounded-xl bg-gray-200 flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-deep-charcoal">Traditional Recruitment</h3>
+              </div>
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-red-500 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                  <span className="text-deep-charcoal/80">Generic job postings with minimal targeting</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-red-500 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                  <span className="text-deep-charcoal/80">Limited candidate screening and matching</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-red-500 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                  <span className="text-deep-charcoal/80">Slow response times and communication</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-red-500 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                  <span className="text-deep-charcoal/80">High fees with limited value</span>
+                </li>
+              </ul>
+            </div>
+            
+            {/* Career Pulse Approach */}
+            <div className="bg-primary-50 rounded-2xl p-6 sm:p-8 border border-primary/20 shadow-soft">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-deep-charcoal">Career Pulse Approach</h3>
+              </div>
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-deep-charcoal/80">Personalized job matching based on skills and culture fit</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-deep-charcoal/80">Thorough candidate screening and skill verification</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-deep-charcoal/80">24/7 communication and support throughout the process</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-deep-charcoal/80">Transparent pricing with guaranteed results</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How We Work Process Section */}
+      <section className="py-16 sm:py-20 bg-gradient-to-b from-white to-primary-50 relative overflow-hidden">
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-deep-charcoal">
+              Our <span className="text-primary">Recruitment Process</span>
+            </h2>
+            <p className="text-base sm:text-lg text-deep-charcoal/70">
+              A streamlined approach to finding your perfect match
+            </p>
+          </div>
+          
+          <div className="relative">
+            {/* Process Timeline */}
+            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-primary/20 -translate-y-1/2"></div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 sm:gap-10">
+              {/* Step 1 */}
+              <div className="relative">
+                <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-soft hover:shadow-lg transition-all duration-300 hover:scale-105 transform relative z-10">
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold shadow-lg hidden md:block">
+                    1
+                  </div>
+                  <div className="text-center">
+                    <div className="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                      <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-bold text-deep-charcoal mb-2">Discovery</h3>
+                    <p className="text-deep-charcoal/70">We learn about your needs, goals, and preferences to understand your unique requirements.</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Step 2 */}
+              <div className="relative">
+                <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-soft hover:shadow-lg transition-all duration-300 hover:scale-105 transform relative z-10">
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold shadow-lg hidden md:block">
+                    2
+                  </div>
+                  <div className="text-center">
+                    <div className="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                      <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-bold text-deep-charcoal mb-2">Search</h3>
+                    <p className="text-deep-charcoal/70">Our recruiters search our extensive network to find candidates that match your criteria.</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Step 3 */}
+              <div className="relative">
+                <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-soft hover:shadow-lg transition-all duration-300 hover:scale-105 transform relative z-10">
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold shadow-lg hidden md:block">
+                    3
+                  </div>
+                  <div className="text-center">
+                    <div className="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                      <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-bold text-deep-charcoal mb-2">Screen</h3>
+                    <p className="text-deep-charcoal/70">We thoroughly screen candidates to ensure they meet your requirements and company culture.</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Step 4 */}
+              <div className="relative">
+                <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-soft hover:shadow-lg transition-all duration-300 hover:scale-105 transform relative z-10">
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold shadow-lg hidden md:block">
+                    4
+                  </div>
+                  <div className="text-center">
+                    <div className="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                      <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-bold text-deep-charcoal mb-2">Place</h3>
+                    <p className="text-deep-charcoal/70">We facilitate interviews and help you make the final decision to place the perfect candidate.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Promise Section */}
+      <section className="py-16 sm:py-20 bg-white relative overflow-hidden">
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-deep-charcoal">
+              Our <span className="text-primary">Promise</span> to You
+            </h2>
+            <p className="text-base sm:text-lg text-deep-charcoal/70">
+              We're committed to delivering exceptional recruitment services
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10">
+            {/* Promise 1 */}
+            <div className="bg-primary-50 rounded-2xl p-6 sm:p-8 border border-primary/20 shadow-soft hover:shadow-lg transition-all duration-300 hover:scale-105 transform group">
+              <div className="w-16 h-16 mx-auto bg-white rounded-full flex items-center justify-center mb-6 shadow-md group-hover:shadow-lg transition-all duration-300">
+                <svg className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-deep-charcoal mb-3 text-center">24/7 Response</h3>
+              <p className="text-deep-charcoal/70 text-center">We promise to respond to all inquiries within 24 hours, ensuring you never have to wait for answers.</p>
+            </div>
+            
+            {/* Promise 2 */}
+            <div className="bg-primary-50 rounded-2xl p-6 sm:p-8 border border-primary/20 shadow-soft hover:shadow-lg transition-all duration-300 hover:scale-105 transform group">
+              <div className="w-16 h-16 mx-auto bg-white rounded-full flex items-center justify-center mb-6 shadow-md group-hover:shadow-lg transition-all duration-300">
+                <svg className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-deep-charcoal mb-3 text-center">Quality Guarantee</h3>
+              <p className="text-deep-charcoal/70 text-center">We guarantee that all candidates we present have been thoroughly screened and verified.</p>
+            </div>
+            
+            {/* Promise 3 */}
+            <div className="bg-primary-50 rounded-2xl p-6 sm:p-8 border border-primary/20 shadow-soft hover:shadow-lg transition-all duration-300 hover:scale-105 transform group">
+              <div className="w-16 h-16 mx-auto bg-white rounded-full flex items-center justify-center mb-6 shadow-md group-hover:shadow-lg transition-all duration-300">
+                <svg className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-deep-charcoal mb-3 text-center">Ongoing Support</h3>
+              <p className="text-deep-charcoal/70 text-center">We provide continuous support throughout the recruitment process and beyond placement.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Getting Started Section */}
+      <section className="py-16 sm:py-20 bg-gradient-to-b from-primary-50 to-white relative overflow-hidden">
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-deep-charcoal">
+              Getting <span className="text-primary">Started</span> is Easy
+            </h2>
+            <p className="text-base sm:text-lg text-deep-charcoal/70">
+              Follow these simple steps to begin your recruitment journey with us
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 items-center">
+            <div className="order-2 md:order-1">
+              <div className="space-y-6">
+                {/* Step 1 */}
+                <div className="flex items-start">
+                  <div className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
+                    1
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-deep-charcoal mb-2">Contact Us</h3>
+                    <p className="text-deep-charcoal/70">Reach out through our website, email, or phone to schedule a free consultation.</p>
+                  </div>
+                </div>
+                
+                {/* Step 2 */}
+                <div className="flex items-start">
+                  <div className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
+                    2
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-deep-charcoal mb-2">Free Consultation</h3>
+                    <p className="text-deep-charcoal/70">Meet with our recruitment experts to discuss your needs and how we can help.</p>
+                  </div>
+                </div>
+                
+                {/* Step 3 */}
+                <div className="flex items-start">
+                  <div className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
+                    3
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-deep-charcoal mb-2">Customized Strategy</h3>
+                    <p className="text-deep-charcoal/70">We develop a tailored recruitment strategy based on your specific requirements.</p>
+                  </div>
+                </div>
+                
+                {/* Step 4 */}
+                <div className="flex items-start">
+                  <div className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
+                    4
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-deep-charcoal mb-2">Begin Your Journey</h3>
+                    <p className="text-deep-charcoal/70">We start the recruitment process and keep you updated every step of the way.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="mt-8">
+                <Link 
+                  href="/contact" 
+                  className="btn-primary inline-flex items-center justify-center py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+                >
+                  <span>Contact Us Today</span>
+                  <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+            
+            <div className="order-1 md:order-2 relative h-64 sm:h-80 md:h-96 rounded-xl overflow-hidden shadow-lg">
+              <Image
+                src="/images/backgrounds/austin-distel-VvAcrVa56fc-unsplash.jpg"
+                alt="Career Pulse recruitment team"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex flex-col justify-end p-6">
+                <div className="bg-white/90 backdrop-blur-sm rounded-lg p-4 shadow-lg transform hover:scale-105 transition-transform duration-300">
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mr-4">
+                      <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="font-bold text-deep-charcoal">Free Consultation</p>
+                      <p className="text-sm text-deep-charcoal/70">Schedule yours today</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="py-16 sm:py-20 bg-primary relative overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-white/10 animate-pulse-slow"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-white/10 animate-pulse-slower"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10 text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-white">
+            Ready to Transform Your <span className="text-accent">Recruitment</span>?
+          </h2>
+          <p className="text-lg sm:text-xl text-white/90 mb-8 sm:mb-10 max-w-2xl mx-auto">
+            Join the growing number of companies and professionals who trust Career Pulse for their recruitment needs.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link 
+              href="/job-search" 
+              className="btn-secondary bg-white text-primary hover:bg-white/90 text-center py-3 sm:py-4 px-6 sm:px-8 rounded-lg font-medium text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 group"
+            >
+              <svg className="w-5 h-5 group-hover:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              Find Opportunities
+            </Link>
+            <Link 
+              href="/contact" 
+              className="btn-primary bg-accent text-white hover:bg-accent/90 text-center py-3 sm:py-4 px-6 sm:px-8 rounded-lg font-medium text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 group"
+            >
+              <svg className="w-5 h-5 group-hover:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              Contact Us
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   )
 } 
