@@ -34,15 +34,15 @@
   }
 
   .btn-primary {
-    @apply bg-primary text-white hover:bg-primary/90 shadow-sm hover:shadow-md;
+    @apply bg-primary text-white hover:bg-primary-dark transition-colors duration-200;
   }
 
   .btn-secondary {
-    @apply bg-secondary text-white hover:bg-secondary/90 shadow-sm hover:shadow-md;
+    @apply bg-accent text-white hover:bg-accent/90 transition-colors duration-200;
   }
 
   .card {
-    @apply bg-white rounded-xl shadow-soft hover:shadow-lg transition-shadow duration-200 p-6;
+    @apply bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200;
   }
 
   .input {
@@ -59,18 +59,57 @@
 }
 
 /* Custom animations */
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.animate-pulse {
-  animation: pulse 2s infinite;
+@keyframes fadeInDelayed {
+  0% { opacity: 0; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes pulseSlow {
+  0% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.1); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 0.3; }
+}
+
+@keyframes pulseSlower {
+  0% { transform: scale(1); opacity: 0.2; }
+  50% { transform: scale(1.15); opacity: 0.4; }
+  100% { transform: scale(1); opacity: 0.2; }
+}
+
+@keyframes pulseMedium {
+  0% { transform: scale(1); opacity: 0.25; }
+  50% { transform: scale(1.08); opacity: 0.45; }
+  100% { transform: scale(1); opacity: 0.25; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-fade-in-delayed {
+  animation: fadeInDelayed 1.5s ease-out forwards;
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 4s ease-in-out infinite;
+}
+
+.animate-pulse-slower {
+  animation: pulseSlower 6s ease-in-out infinite;
+}
+
+.animate-pulse-medium {
+  animation: pulseMedium 5s ease-in-out infinite;
 } 
