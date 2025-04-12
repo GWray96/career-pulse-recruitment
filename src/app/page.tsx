@@ -717,17 +717,17 @@ export default function Home() {
               </div>
 
               {/* Right Column - Calendar */}
-              <div className="bg-white rounded-xl shadow-2xl p-8">
-                <div className="grid grid-cols-7 gap-2 mb-4">
-                  <div className="text-center font-semibold text-deep-charcoal/70">Sun</div>
-                  <div className="text-center font-semibold text-deep-charcoal/70">Mon</div>
-                  <div className="text-center font-semibold text-deep-charcoal/70">Tue</div>
-                  <div className="text-center font-semibold text-deep-charcoal/70">Wed</div>
-                  <div className="text-center font-semibold text-deep-charcoal/70">Thu</div>
-                  <div className="text-center font-semibold text-deep-charcoal/70">Fri</div>
-                  <div className="text-center font-semibold text-deep-charcoal/70">Sat</div>
+              <div className="bg-white rounded-xl shadow-2xl p-4 sm:p-6">
+                <div className="grid grid-cols-7 gap-1 mb-2">
+                  <div className="text-center font-semibold text-deep-charcoal/70 text-sm">Sun</div>
+                  <div className="text-center font-semibold text-deep-charcoal/70 text-sm">Mon</div>
+                  <div className="text-center font-semibold text-deep-charcoal/70 text-sm">Tue</div>
+                  <div className="text-center font-semibold text-deep-charcoal/70 text-sm">Wed</div>
+                  <div className="text-center font-semibold text-deep-charcoal/70 text-sm">Thu</div>
+                  <div className="text-center font-semibold text-deep-charcoal/70 text-sm">Fri</div>
+                  <div className="text-center font-semibold text-deep-charcoal/70 text-sm">Sat</div>
                 </div>
-                <div className="grid grid-cols-7 gap-2">
+                <div className="grid grid-cols-7 gap-1">
                   {[...Array(35)].map((_, i) => {
                     const day = i + 1;
                     const isToday = day === 15; // Mock today's date
@@ -737,7 +737,7 @@ export default function Home() {
                       <div
                         key={i}
                         className={`
-                          aspect-square flex items-center justify-center rounded-lg text-sm
+                          aspect-square flex items-center justify-center rounded-lg text-xs
                           ${isToday ? 'bg-primary/20 text-primary font-semibold' : ''}
                           ${isAvailable ? 'hover:bg-primary/10 cursor-pointer text-deep-charcoal' : 'text-gray-300'}
                           ${!isAvailable && !isToday ? 'bg-gray-50' : ''}
@@ -748,21 +748,21 @@ export default function Home() {
                     );
                   })}
                 </div>
-                <div className="mt-8 border-t pt-6">
-                  <h3 className="text-lg font-semibold text-deep-charcoal mb-4">Available Time Slots</h3>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                <div className="mt-4 border-t pt-4">
+                  <h3 className="text-base font-semibold text-deep-charcoal mb-2">Available Time Slots</h3>
+                  <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
                     {['9:00 AM', '10:30 AM', '2:00 PM', '3:30 PM', '4:45 PM'].map((time) => (
                       <button
                         key={time}
-                        className="px-4 py-2 text-sm bg-primary/10 text-primary rounded-lg hover:bg-primary/20 transition-colors duration-200"
+                        className="px-3 py-1.5 text-xs bg-primary/10 text-primary rounded-lg hover:bg-primary/20 transition-colors duration-200"
                       >
                         {time}
                       </button>
                     ))}
                   </div>
                 </div>
-                <div className="mt-8 text-center">
-                  <button className="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors duration-300">
+                <div className="mt-4 text-center">
+                  <button className="bg-primary text-white px-6 py-2 rounded-lg text-sm font-semibold hover:bg-primary-dark transition-colors duration-300">
                     Schedule Consultation
                   </button>
                 </div>
