@@ -157,8 +157,8 @@ export default function Home() {
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-4">Common Challenges in Today's Job Market</h2>
-            <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">Discover how we address the key pain points faced by both employers and candidates in the modern recruitment landscape</p>
+            <h2 className="text-4xl font-bold text-center mb-4 text-gray-900">Common Challenges in Today's Job Market</h2>
+            <p className="text-xl text-gray-800 text-center mb-16 max-w-3xl mx-auto">Discover how we address the key pain points faced by both employers and candidates in the modern recruitment landscape</p>
             <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
               {/* Employers Pain Points */}
               <div className="group bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl border border-gray-100">
@@ -169,8 +169,8 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">Employer Challenges</h3>
-                    <p className="text-gray-600 mt-1">Key obstacles in modern recruitment</p>
+                    <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">Employer Challenges</h3>
+                    <p className="text-gray-800 mt-1">Key obstacles in modern recruitment</p>
                   </div>
                 </div>
                 <div className="space-y-6">
@@ -181,8 +181,8 @@ export default function Home() {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800 mb-2 group-hover/item:text-blue-600 transition-colors duration-300">Time-Consuming Hiring Process</h4>
-                      <p className="text-gray-600">Spending countless hours sifting through unqualified candidates and conducting interviews</p>
+                      <h4 className="font-semibold text-gray-900 mb-2 group-hover/item:text-blue-600 transition-colors duration-300">Time-Consuming Hiring Process</h4>
+                      <p className="text-gray-800">Spending countless hours sifting through unqualified candidates and conducting interviews</p>
                     </div>
                   </div>
                   <div className="group/item flex items-start p-4 rounded-lg hover:bg-blue-50 transition-colors duration-300">
@@ -192,8 +192,8 @@ export default function Home() {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800 mb-2 group-hover/item:text-blue-600 transition-colors duration-300">Skill Gap</h4>
-                      <p className="text-gray-600">Difficulty finding candidates with the right technical skills and experience</p>
+                      <h4 className="font-semibold text-gray-900 mb-2 group-hover/item:text-blue-600 transition-colors duration-300">Skill Gap</h4>
+                      <p className="text-gray-800">Difficulty finding candidates with the right technical skills and experience</p>
                     </div>
                   </div>
                   <div className="group/item flex items-start p-4 rounded-lg hover:bg-blue-50 transition-colors duration-300">
@@ -203,8 +203,8 @@ export default function Home() {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800 mb-2 group-hover/item:text-blue-600 transition-colors duration-300">High Turnover Rates</h4>
-                      <p className="text-gray-600">Struggling with employee retention and finding candidates who fit company culture</p>
+                      <h4 className="font-semibold text-gray-900 mb-2 group-hover/item:text-blue-600 transition-colors duration-300">High Turnover Rates</h4>
+                      <p className="text-gray-800">Struggling with employee retention and finding candidates who fit company culture</p>
                     </div>
                   </div>
                 </div>
@@ -219,8 +219,8 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-800 group-hover:text-purple-600 transition-colors duration-300">Candidate Challenges</h3>
-                    <p className="text-gray-600 mt-1">Common hurdles in job seeking</p>
+                    <h3 className="text-2xl font-bold text-gray-900 group-hover:text-purple-600 transition-colors duration-300">Candidate Challenges</h3>
+                    <p className="text-gray-800 mt-1">Common hurdles in job seeking</p>
                   </div>
                 </div>
                 <div className="space-y-6">
@@ -231,8 +231,8 @@ export default function Home() {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800 mb-2 group-hover/item:text-purple-600 transition-colors duration-300">Job Search Overwhelm</h4>
-                      <p className="text-gray-600">Navigating through countless job postings and lengthy application processes</p>
+                      <h4 className="font-semibold text-gray-900 mb-2 group-hover/item:text-purple-600 transition-colors duration-300">Job Search Overwhelm</h4>
+                      <p className="text-gray-800">Navigating through countless job postings and lengthy application processes</p>
                     </div>
                   </div>
                   <div className="group/item flex items-start p-4 rounded-lg hover:bg-purple-50 transition-colors duration-300">
@@ -242,8 +242,8 @@ export default function Home() {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800 mb-2 group-hover/item:text-purple-600 transition-colors duration-300">Limited Feedback</h4>
-                      <p className="text-gray-600">Receiving little to no feedback on applications and interviews</p>
+                      <h4 className="font-semibold text-gray-900 mb-2 group-hover/item:text-purple-600 transition-colors duration-300">Limited Feedback</h4>
+                      <p className="text-gray-800">Receiving little to no feedback on applications and interviews</p>
                     </div>
                   </div>
                   <div className="group/item flex items-start p-4 rounded-lg hover:bg-purple-50 transition-colors duration-300">
@@ -253,8 +253,8 @@ export default function Home() {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800 mb-2 group-hover/item:text-purple-600 transition-colors duration-300">Career Growth</h4>
-                      <p className="text-gray-600">Finding opportunities that match both skills and career aspirations</p>
+                      <h4 className="font-semibold text-gray-900 mb-2 group-hover/item:text-purple-600 transition-colors duration-300">Career Growth</h4>
+                      <p className="text-gray-800">Finding opportunities that match both skills and career aspirations</p>
                     </div>
                   </div>
                 </div>
