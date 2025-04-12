@@ -19,12 +19,12 @@ const Navbar = () => {
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
               <Link href="/" className="flex items-center space-x-3 group">
-                <div className="relative w-12 h-12">
+                <div className="relative w-14 h-14">
                   <Image
-                    src="/images/icons/career-pulse-logo.png"
+                    src="/images/icons/logo increased size-Photoroom.png"
                     alt="Career Pulse Logo"
                     fill
-                    sizes="(max-width: 768px) 48px, 48px"
+                    sizes="(max-width: 768px) 56px, 56px"
                     className="object-contain transition-transform duration-200 group-hover:scale-105"
                     priority
                     quality={100}
