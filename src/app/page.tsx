@@ -546,11 +546,11 @@ export default function Home() {
                 {employerProcess.map((step, index) => (
                   <div key={index} className="relative group">
                     <div className="relative h-full">
-                      <div className="bg-white/90 backdrop-blur-sm rounded-lg p-6 h-[200px] flex flex-col shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                      <div className="bg-white rounded-lg p-6 h-[200px] flex flex-col shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200">
                         <div className="flex flex-col h-full justify-between">
                           <div className="text-center">
-                            <h3 className="text-xl font-bold mb-2 mt-4 text-gray-800 bg-white/50 px-4 py-1 rounded-full inline-block">{step.title}</h3>
-                            <p className="text-gray-600 text-center">{step.description}</p>
+                            <h3 className="text-xl font-bold mb-2 mt-4 text-gray-900">{step.title}</h3>
+                            <p className="text-gray-800">{step.description}</p>
                           </div>
                         </div>
                       </div>
@@ -570,11 +570,11 @@ export default function Home() {
                 {candidateProcess.map((step, index) => (
                   <div key={index} className="relative group">
                     <div className="relative h-full">
-                      <div className="bg-white/90 backdrop-blur-sm rounded-lg p-6 h-[200px] flex flex-col shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                      <div className="bg-white rounded-lg p-6 h-[200px] flex flex-col shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200">
                         <div className="flex flex-col h-full justify-between">
                           <div className="text-center">
-                            <h3 className="text-xl font-bold mb-2 mt-4 text-gray-800 bg-white/50 px-4 py-1 rounded-full inline-block">{step.title}</h3>
-                            <p className="text-gray-600 text-center">{step.description}</p>
+                            <h3 className="text-xl font-bold mb-2 mt-4 text-gray-900">{step.title}</h3>
+                            <p className="text-gray-800">{step.description}</p>
                           </div>
                         </div>
                       </div>
