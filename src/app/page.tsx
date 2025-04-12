@@ -378,7 +378,7 @@ export default function Home() {
           </div>
 
           {/* Process Tabs */}
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <div className="flex flex-col sm:flex-row justify-center mb-8 sm:mb-12 space-y-4 sm:space-y-0 sm:space-x-4">
               <button 
                 onClick={() => setActiveTab('employers')}
@@ -402,146 +402,146 @@ export default function Home() {
               </button>
             </div>
 
-            {/* Employer Process */}
-            <div className={`space-y-8 ${activeTab === 'employers' ? 'block' : 'hidden'}`}>
-              <div className="bg-white rounded-xl shadow-soft p-6 sm:p-8 border border-gray-100 hover:border-primary/20 transition-all duration-300 transform hover:scale-[1.02]">
-                <div className="flex items-start">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
-                    <span className="text-2xl font-bold text-primary">1</span>
+            {/* Process Steps Container */}
+            <div className="relative">
+              {/* Connecting Lines */}
+              <div className="absolute top-1/2 left-0 w-full h-1 bg-gray-200 -translate-y-1/2 hidden md:block"></div>
+              
+              {/* Employer Process */}
+              <div className={`grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-2 transition-all duration-500 ${
+                activeTab === 'employers' ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 absolute top-0 left-0 w-full'
+              }`}>
+                {/* Step 1 */}
+                <div className="relative">
+                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-primary/20 transition-all duration-300 transform hover:scale-105">
+                    <div className="absolute -top-4 left-0 right-0 flex justify-center">
+                      <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-md">1</div>
+                    </div>
+                    <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4">Initial Consultation</h3>
+                    <p className="text-deep-charcoal/70 text-sm">
+                      We meet to understand your hiring needs and company culture.
+                    </p>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-deep-charcoal mb-2">Initial Consultation</h3>
-                    <p className="text-deep-charcoal/70">
-                      We meet to understand your hiring needs, company culture, and specific requirements for the role.
+                </div>
+
+                {/* Step 2 */}
+                <div className="relative">
+                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-primary/20 transition-all duration-300 transform hover:scale-105">
+                    <div className="absolute -top-4 left-0 right-0 flex justify-center">
+                      <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-md">2</div>
+                    </div>
+                    <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4">Talent Search</h3>
+                    <p className="text-deep-charcoal/70 text-sm">
+                      Our recruiters search for the best candidates matching your criteria.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Step 3 */}
+                <div className="relative">
+                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-primary/20 transition-all duration-300 transform hover:scale-105">
+                    <div className="absolute -top-4 left-0 right-0 flex justify-center">
+                      <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-md">3</div>
+                    </div>
+                    <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4">Candidate Screening</h3>
+                    <p className="text-deep-charcoal/70 text-sm">
+                      Thorough interviews and assessments to ensure perfect matches.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Step 4 */}
+                <div className="relative">
+                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-primary/20 transition-all duration-300 transform hover:scale-105">
+                    <div className="absolute -top-4 left-0 right-0 flex justify-center">
+                      <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-md">4</div>
+                    </div>
+                    <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4">Interview Coordination</h3>
+                    <p className="text-deep-charcoal/70 text-sm">
+                      We handle all interview scheduling and provide detailed feedback.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Step 5 */}
+                <div className="relative">
+                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-primary/20 transition-all duration-300 transform hover:scale-105">
+                    <div className="absolute -top-4 left-0 right-0 flex justify-center">
+                      <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-md">5</div>
+                    </div>
+                    <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4">Offer & Onboarding</h3>
+                    <p className="text-deep-charcoal/70 text-sm">
+                      We assist with offer negotiations and ensure a smooth transition.
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl shadow-soft p-6 sm:p-8 border border-gray-100 hover:border-primary/20 transition-all duration-300 transform hover:scale-[1.02]">
-                <div className="flex items-start">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
-                    <span className="text-2xl font-bold text-primary">2</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-deep-charcoal mb-2">Talent Search</h3>
-                    <p className="text-deep-charcoal/70">
-                      Our recruiters search our extensive network and databases to find the best candidates matching your criteria.
+              {/* Candidate Process */}
+              <div className={`grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-2 transition-all duration-500 ${
+                activeTab === 'candidates' ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 absolute top-0 left-0 w-full'
+              }`}>
+                {/* Step 1 */}
+                <div className="relative">
+                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-accent/20 transition-all duration-300 transform hover:scale-105">
+                    <div className="absolute -top-4 left-0 right-0 flex justify-center">
+                      <div className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold shadow-md">1</div>
+                    </div>
+                    <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4">Profile Creation</h3>
+                    <p className="text-deep-charcoal/70 text-sm">
+                      Create your professional profile and specify your career goals.
                     </p>
                   </div>
                 </div>
-              </div>
 
-              <div className="bg-white rounded-xl shadow-soft p-6 sm:p-8 border border-gray-100 hover:border-primary/20 transition-all duration-300 transform hover:scale-[1.02]">
-                <div className="flex items-start">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
-                    <span className="text-2xl font-bold text-primary">3</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-deep-charcoal mb-2">Candidate Screening</h3>
-                    <p className="text-deep-charcoal/70">
-                      We conduct thorough interviews and assessments to ensure candidates meet your requirements.
+                {/* Step 2 */}
+                <div className="relative">
+                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-accent/20 transition-all duration-300 transform hover:scale-105">
+                    <div className="absolute -top-4 left-0 right-0 flex justify-center">
+                      <div className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold shadow-md">2</div>
+                    </div>
+                    <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4">Career Consultation</h3>
+                    <p className="text-deep-charcoal/70 text-sm">
+                      Meet with our career advisors to discuss your goals.
                     </p>
                   </div>
                 </div>
-              </div>
 
-              <div className="bg-white rounded-xl shadow-soft p-6 sm:p-8 border border-gray-100 hover:border-primary/20 transition-all duration-300 transform hover:scale-[1.02]">
-                <div className="flex items-start">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
-                    <span className="text-2xl font-bold text-primary">4</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-deep-charcoal mb-2">Interview Coordination</h3>
-                    <p className="text-deep-charcoal/70">
-                      We handle all interview scheduling and provide detailed feedback from both parties.
+                {/* Step 3 */}
+                <div className="relative">
+                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-accent/20 transition-all duration-300 transform hover:scale-105">
+                    <div className="absolute -top-4 left-0 right-0 flex justify-center">
+                      <div className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold shadow-md">3</div>
+                    </div>
+                    <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4">Job Matching</h3>
+                    <p className="text-deep-charcoal/70 text-sm">
+                      We match you with suitable opportunities based on your profile.
                     </p>
                   </div>
                 </div>
-              </div>
 
-              <div className="bg-white rounded-xl shadow-soft p-6 sm:p-8 border border-gray-100 hover:border-primary/20 transition-all duration-300 transform hover:scale-[1.02]">
-                <div className="flex items-start">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
-                    <span className="text-2xl font-bold text-primary">5</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-deep-charcoal mb-2">Offer & Onboarding</h3>
-                    <p className="text-deep-charcoal/70">
-                      We assist with offer negotiations and ensure a smooth transition for the new hire.
+                {/* Step 4 */}
+                <div className="relative">
+                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-accent/20 transition-all duration-300 transform hover:scale-105">
+                    <div className="absolute -top-4 left-0 right-0 flex justify-center">
+                      <div className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold shadow-md">4</div>
+                    </div>
+                    <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4">Interview Preparation</h3>
+                    <p className="text-deep-charcoal/70 text-sm">
+                      Receive guidance and coaching to excel in your interviews.
                     </p>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            {/* Candidate Process */}
-            <div className={`space-y-8 ${activeTab === 'candidates' ? 'block' : 'hidden'}`}>
-              <div className="bg-white rounded-xl shadow-soft p-6 sm:p-8 border border-gray-100 hover:border-accent/20 transition-all duration-300 transform hover:scale-[1.02]">
-                <div className="flex items-start">
-                  <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mr-4 flex-shrink-0">
-                    <span className="text-2xl font-bold text-accent">1</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-deep-charcoal mb-2">Profile Creation</h3>
-                    <p className="text-deep-charcoal/70">
-                      Create your professional profile and specify your career goals and preferences.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-xl shadow-soft p-6 sm:p-8 border border-gray-100 hover:border-accent/20 transition-all duration-300 transform hover:scale-[1.02]">
-                <div className="flex items-start">
-                  <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mr-4 flex-shrink-0">
-                    <span className="text-2xl font-bold text-accent">2</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-deep-charcoal mb-2">Career Consultation</h3>
-                    <p className="text-deep-charcoal/70">
-                      Meet with our career advisors to discuss your goals and potential opportunities.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-xl shadow-soft p-6 sm:p-8 border border-gray-100 hover:border-accent/20 transition-all duration-300 transform hover:scale-[1.02]">
-                <div className="flex items-start">
-                  <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mr-4 flex-shrink-0">
-                    <span className="text-2xl font-bold text-accent">3</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-deep-charcoal mb-2">Job Matching</h3>
-                    <p className="text-deep-charcoal/70">
-                      We match you with suitable opportunities based on your skills and preferences.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-xl shadow-soft p-6 sm:p-8 border border-gray-100 hover:border-accent/20 transition-all duration-300 transform hover:scale-[1.02]">
-                <div className="flex items-start">
-                  <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mr-4 flex-shrink-0">
-                    <span className="text-2xl font-bold text-accent">4</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-deep-charcoal mb-2">Interview Preparation</h3>
-                    <p className="text-deep-charcoal/70">
-                      Receive guidance and coaching to help you excel in your interviews.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-xl shadow-soft p-6 sm:p-8 border border-gray-100 hover:border-accent/20 transition-all duration-300 transform hover:scale-[1.02]">
-                <div className="flex items-start">
-                  <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mr-4 flex-shrink-0">
-                    <span className="text-2xl font-bold text-accent">5</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-deep-charcoal mb-2">Offer Support</h3>
-                    <p className="text-deep-charcoal/70">
-                      We help you evaluate offers and negotiate the best terms for your career.
+                {/* Step 5 */}
+                <div className="relative">
+                  <div className="bg-white rounded-xl shadow-soft p-6 border border-gray-100 hover:border-accent/20 transition-all duration-300 transform hover:scale-105">
+                    <div className="absolute -top-4 left-0 right-0 flex justify-center">
+                      <div className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold shadow-md">5</div>
+                    </div>
+                    <h3 className="text-xl font-bold text-deep-charcoal mb-2 mt-4">Offer Support</h3>
+                    <p className="text-deep-charcoal/70 text-sm">
+                      We help you evaluate offers and negotiate the best terms.
                     </p>
                   </div>
                 </div>
