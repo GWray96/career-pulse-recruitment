@@ -426,7 +426,7 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 relative">
               {/* Employer Process Steps */}
               <div
-                className={`space-y-6 sm:space-y-8 transition-all duration-500 ${
+                className={`grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 transition-all duration-500 ${
                   activeProcess === 'employer'
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-4 pointer-events-none absolute'
@@ -458,7 +458,7 @@ export default function Home() {
 
               {/* Candidate Process Steps */}
               <div
-                className={`space-y-6 sm:space-y-8 transition-all duration-500 ${
+                className={`grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 transition-all duration-500 ${
                   activeProcess === 'candidate'
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-4 pointer-events-none absolute'
