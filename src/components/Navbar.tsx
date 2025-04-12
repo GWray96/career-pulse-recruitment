@@ -14,25 +14,26 @@ const Navbar = () => {
   return (
     <nav className="bg-white shadow-md fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+        <div className="flex justify-between h-20">
           {/* Logo and primary nav */}
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
-              <Link href="/" className="flex items-center">
+              <Link href="/" className="flex items-center space-x-3">
                 <Image
                   src="/images/icons/career-pulse-logo.png"
                   alt="Career Pulse Logo"
-                  width={40}
-                  height={40}
-                  className="h-8 w-auto"
+                  width={48}
+                  height={48}
+                  className="h-12 w-auto"
+                  priority
                 />
-                <span className="ml-2 text-xl font-montserrat font-bold text-primary">
+                <span className="text-xl font-montserrat font-bold text-primary">
                   Career Pulse
                 </span>
               </Link>
             </div>
             {/* Desktop Navigation */}
-            <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+            <div className="hidden sm:ml-10 sm:flex sm:space-x-8">
               <Link
                 href="/"
                 className="text-gray-900 hover:text-primary inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-primary transition-colors duration-200"
