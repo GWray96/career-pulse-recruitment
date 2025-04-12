@@ -55,14 +55,20 @@ const Navbar = () => {
               </Link>
             </div>
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center justify-between w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="flex items-center">
-                <Link href="/" className="flex items-center">
-                  <span className="text-xl font-montserrat font-bold text-primary">
-                    Career Pulse
-                  </span>
-                </Link>
-              </div>
+            <div className="hidden lg:flex items-center space-x-8 ml-10">
+              <Link 
+                href="/" 
+                className={`nav-link relative ${
+                  activeItem === 'home' ? 'text-primary' : 'text-gray-500'
+                }`}
+                onClick={() => setActiveItem('home')}
+                aria-current={activeItem === 'home' ? 'page' : undefined}
+              >
+                Home
+                {activeItem === 'home' && (
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform origin-left transition-transform duration-200" />
+                )}
+              </Link>
             </div>
           </div>
 
