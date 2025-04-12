@@ -485,20 +485,99 @@ export default function Home() {
       {/* Employer CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-4xl font-bold text-white mb-6">Ready to Find Your Perfect Candidate?</h2>
-            <p className="text-xl text-blue-100 mb-8">Schedule a free consultation with our recruitment experts to discuss your hiring needs</p>
-          </div>
-          <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-2xl p-8">
-            <div className="aspect-w-16 aspect-h-9">
-              <iframe
-                src="https://calendly.com/your-calendly-link"
-                width="100%"
-                height="600"
-                frameBorder="0"
-                className="rounded-lg"
-                title="Booking Calendar"
-              ></iframe>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              {/* Left Column - Text Content */}
+              <div className="text-white">
+                <h2 className="text-4xl font-bold mb-6">Ready to Find Your Perfect Candidate?</h2>
+                <p className="text-xl text-blue-100 mb-8">Schedule a free consultation with our recruitment experts to discuss your hiring needs</p>
+                <div className="space-y-4">
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mr-4">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg">30-Minute Consultation</h3>
+                      <p className="text-blue-100">Dedicated time to discuss your hiring needs</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mr-4">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg">Expert Guidance</h3>
+                      <p className="text-blue-100">Get insights from our recruitment specialists</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mr-4">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg">Quick Response</h3>
+                      <p className="text-blue-100">Receive a tailored recruitment strategy within 24 hours</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column - Calendar */}
+              <div className="bg-white rounded-xl shadow-2xl p-8">
+                <div className="grid grid-cols-7 gap-2 mb-4">
+                  <div className="text-center font-semibold text-gray-600">Sun</div>
+                  <div className="text-center font-semibold text-gray-600">Mon</div>
+                  <div className="text-center font-semibold text-gray-600">Tue</div>
+                  <div className="text-center font-semibold text-gray-600">Wed</div>
+                  <div className="text-center font-semibold text-gray-600">Thu</div>
+                  <div className="text-center font-semibold text-gray-600">Fri</div>
+                  <div className="text-center font-semibold text-gray-600">Sat</div>
+                </div>
+                <div className="grid grid-cols-7 gap-2">
+                  {[...Array(35)].map((_, i) => {
+                    const day = i + 1;
+                    const isToday = day === 15; // Mock today's date
+                    const isAvailable = [3, 4, 5, 10, 11, 12, 17, 18, 19, 24, 25, 26].includes(day); // Mock available dates
+                    return (
+                      <div
+                        key={i}
+                        className={`
+                          aspect-square flex items-center justify-center rounded-lg text-sm
+                          ${isToday ? 'bg-blue-100 text-blue-600 font-semibold' : ''}
+                          ${isAvailable ? 'hover:bg-blue-50 cursor-pointer' : 'text-gray-300'}
+                          ${!isAvailable && !isToday ? 'bg-gray-50' : ''}
+                        `}
+                      >
+                        {day}
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="mt-8 border-t pt-6">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-4">Available Time Slots</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    {['9:00 AM', '10:30 AM', '2:00 PM', '3:30 PM', '4:45 PM'].map((time) => (
+                      <button
+                        key={time}
+                        className="px-4 py-2 text-sm bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors duration-200"
+                      >
+                        {time}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                <div className="mt-8 text-center">
+                  <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300">
+                    Schedule Consultation
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
