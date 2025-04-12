@@ -109,6 +109,28 @@ const Navbar = () => {
                   </div>
                 </div>
               </div>
+              <div className="relative group">
+                <button 
+                  className="nav-link text-gray-500 hover:text-primary transition-colors duration-200"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Extra Pulse
+                </button>
+                <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                  <div className="py-1" role="menu">
+                    <Link href="/blog" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
+                      Blog
+                    </Link>
+                    <Link href="/resources" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
+                      Resources
+                    </Link>
+                    <Link href="/faq" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
+                      FAQ
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -254,6 +276,37 @@ const Navbar = () => {
                   onClick={toggleMenu}
                 >
                   Pricing Plans
+                </Link>
+              </div>
+            </div>
+            <div className="space-y-1">
+              <button
+                className="w-full text-left px-3 py-2 text-base font-medium text-gray-500 hover:text-primary hover:bg-gray-50 rounded-md"
+                onClick={() => {/* Toggle submenu */}}
+              >
+                Extra Pulse
+              </button>
+              <div className="pl-4 space-y-1">
+                <Link 
+                  href="/blog" 
+                  className="block px-3 py-2 text-base font-medium text-gray-500 hover:text-primary hover:bg-gray-50 rounded-md"
+                  onClick={toggleMenu}
+                >
+                  Blog
+                </Link>
+                <Link 
+                  href="/resources" 
+                  className="block px-3 py-2 text-base font-medium text-gray-500 hover:text-primary hover:bg-gray-50 rounded-md"
+                  onClick={toggleMenu}
+                >
+                  Resources
+                </Link>
+                <Link 
+                  href="/faq" 
+                  className="block px-3 py-2 text-base font-medium text-gray-500 hover:text-primary hover:bg-gray-50 rounded-md"
+                  onClick={toggleMenu}
+                >
+                  FAQ
                 </Link>
               </div>
             </div>
