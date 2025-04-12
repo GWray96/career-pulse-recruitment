@@ -670,6 +670,150 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Featured Jobs Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-deep-charcoal mb-4">
+              Featured Opportunities
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Discover exciting career opportunities with leading companies. Browse through our latest job listings and find your next role.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Senior Software Engineer",
+                company: "Tech Innovations Ltd",
+                location: "London, UK",
+                type: "Full-time",
+                salary: "£65,000 - £85,000",
+                posted: "2 days ago",
+                tags: ["React", "Node.js", "AWS"],
+                description: "Join our growing engineering team to build scalable solutions..."
+              },
+              {
+                title: "Product Manager",
+                company: "Digital Solutions Inc",
+                location: "Remote",
+                type: "Full-time",
+                salary: "£55,000 - £75,000",
+                posted: "1 week ago",
+                tags: ["Agile", "Product Strategy", "UX"],
+                description: "Lead product development initiatives and drive innovation..."
+              },
+              {
+                title: "UX/UI Designer",
+                company: "Creative Studios",
+                location: "Manchester, UK",
+                type: "Full-time",
+                salary: "£45,000 - £60,000",
+                posted: "3 days ago",
+                tags: ["Figma", "User Research", "Prototyping"],
+                description: "Create beautiful and intuitive user experiences..."
+              },
+              {
+                title: "Data Scientist",
+                company: "AI Analytics",
+                location: "Edinburgh, UK",
+                type: "Full-time",
+                salary: "£50,000 - £70,000",
+                posted: "5 days ago",
+                tags: ["Python", "Machine Learning", "SQL"],
+                description: "Develop and implement machine learning models..."
+              },
+              {
+                title: "Marketing Manager",
+                company: "Growth Partners",
+                location: "Birmingham, UK",
+                type: "Full-time",
+                salary: "£40,000 - £55,000",
+                posted: "1 day ago",
+                tags: ["Digital Marketing", "SEO", "Content Strategy"],
+                description: "Drive brand growth and customer engagement..."
+              },
+              {
+                title: "DevOps Engineer",
+                company: "Cloud Systems",
+                location: "Remote",
+                type: "Full-time",
+                salary: "£60,000 - £80,000",
+                posted: "4 days ago",
+                tags: ["Docker", "Kubernetes", "CI/CD"],
+                description: "Build and maintain cloud infrastructure..."
+              }
+            ].map((job, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden group"
+              >
+                <div className="p-6">
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <h3 className="text-xl font-semibold text-deep-charcoal group-hover:text-primary transition-colors duration-300">
+                        {job.title}
+                      </h3>
+                      <p className="text-gray-600 mt-1">{job.company}</p>
+                    </div>
+                    <span className="px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full">
+                      {job.type}
+                    </span>
+                  </div>
+                  
+                  <div className="flex items-center text-gray-500 text-sm mb-4">
+                    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    {job.location}
+                  </div>
+
+                  <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                    {job.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {job.tags.map((tag, tagIndex) => (
+                      <span
+                        key={tagIndex}
+                        className="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-600 rounded-full"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex justify-between items-center pt-4 border-t">
+                    <span className="text-primary font-semibold">{job.salary}</span>
+                    <span className="text-sm text-gray-500">{job.posted}</span>
+                  </div>
+                </div>
+
+                <div className="px-6 py-4 bg-gray-50">
+                  <button className="w-full bg-primary text-white px-4 py-2 rounded-lg font-semibold hover:bg-primary-dark transition-colors duration-300">
+                    View Details
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link
+              href="/jobs"
+              className="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary-dark transition-colors duration-300"
+            >
+              View All Jobs
+              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Employer CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800">
         <div className="container mx-auto px-4">
