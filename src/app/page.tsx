@@ -132,28 +132,174 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="bg-white py-12 sm:py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-center mb-8 sm:mb-12 text-2xl sm:text-3xl font-bold">Why Choose Career Pulse?</h2>
-          <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
-            <div className="card">
-              <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Modern & Fast</h3>
-              <p className="text-deep-charcoal/70 text-sm sm:text-base">
-                Stay in sync with the latest opportunities in your field with our real-time job matching.
+      <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-white to-primary-50 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-primary/5 animate-pulse-slow"></div>
+          <div className="absolute bottom-1/4 left-1/4 w-96 h-96 rounded-full bg-accent/5 animate-pulse-slower"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          {/* Section Header */}
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 md:mb-20">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-deep-charcoal">
+              Why Choose <span className="text-primary">Career Pulse</span>?
+            </h2>
+            <p className="text-base sm:text-lg text-deep-charcoal/70">
+              We're revolutionizing the recruitment process with cutting-edge technology and a human-centered approach.
+            </p>
+          </div>
+          
+          {/* Features Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+            {/* Feature 1 */}
+            <div className="group bg-white rounded-2xl shadow-soft hover:shadow-xl transition-all duration-300 p-6 sm:p-8 border border-gray-100 hover:border-primary/20 hover:scale-[1.02] transform">
+              <div className="flex items-center mb-4 sm:mb-6">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-primary/10 flex items-center justify-center mr-4 group-hover:bg-primary/20 transition-colors duration-300">
+                  <svg className="w-6 h-6 sm:w-7 sm:h-7 text-primary group-hover:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-deep-charcoal group-hover:text-primary transition-colors duration-300">Lightning Fast</h3>
+              </div>
+              <p className="text-base sm:text-lg text-deep-charcoal/70 mb-4 sm:mb-6">
+                Our AI-powered platform matches you with opportunities in real-time, reducing your job search time by up to 70%.
               </p>
+              <div className="flex items-center text-primary font-medium group-hover:translate-x-1 transition-transform duration-300">
+                <span>Learn more</span>
+                <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
             </div>
-            <div className="card">
-              <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Human Touch</h3>
-              <p className="text-deep-charcoal/70 text-sm sm:text-base">
-                Experience recruitment that feels personal and supportive, not robotic.
+            
+            {/* Feature 2 */}
+            <div className="group bg-white rounded-2xl shadow-soft hover:shadow-xl transition-all duration-300 p-6 sm:p-8 border border-gray-100 hover:border-primary/20 hover:scale-[1.02] transform">
+              <div className="flex items-center mb-4 sm:mb-6">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-accent/10 flex items-center justify-center mr-4 group-hover:bg-accent/20 transition-colors duration-300">
+                  <svg className="w-6 h-6 sm:w-7 sm:h-7 text-accent group-hover:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-deep-charcoal group-hover:text-accent transition-colors duration-300">Human Touch</h3>
+              </div>
+              <p className="text-base sm:text-lg text-deep-charcoal/70 mb-4 sm:mb-6">
+                Experience recruitment that feels personal and supportive, with dedicated career advisors ready to guide your journey.
               </p>
+              <div className="flex items-center text-accent font-medium group-hover:translate-x-1 transition-transform duration-300">
+                <span>Learn more</span>
+                <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
             </div>
-            <div className="card">
-              <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Perfect Match</h3>
-              <p className="text-deep-charcoal/70 text-sm sm:text-base">
-                Our smart matching system connects you with opportunities that truly fit your career pulse.
+            
+            {/* Feature 3 */}
+            <div className="group bg-white rounded-2xl shadow-soft hover:shadow-xl transition-all duration-300 p-6 sm:p-8 border border-gray-100 hover:border-primary/20 hover:scale-[1.02] transform">
+              <div className="flex items-center mb-4 sm:mb-6">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-primary/10 flex items-center justify-center mr-4 group-hover:bg-primary/20 transition-colors duration-300">
+                  <svg className="w-6 h-6 sm:w-7 sm:h-7 text-primary group-hover:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-deep-charcoal group-hover:text-primary transition-colors duration-300">Perfect Match</h3>
+              </div>
+              <p className="text-base sm:text-lg text-deep-charcoal/70 mb-4 sm:mb-6">
+                Our smart matching system connects you with opportunities that truly fit your skills, experience, and career goals.
               </p>
+              <div className="flex items-center text-primary font-medium group-hover:translate-x-1 transition-transform duration-300">
+                <span>Learn more</span>
+                <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
             </div>
+          </div>
+          
+          {/* Interactive Stats Section */}
+          <div className="mt-16 sm:mt-20 md:mt-24 bg-white rounded-2xl shadow-soft p-6 sm:p-8 md:p-10 border border-gray-100">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 items-center">
+              <div>
+                <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-deep-charcoal">
+                  The <span className="text-primary">Career Pulse</span> Difference
+                </h3>
+                <p className="text-base sm:text-lg text-deep-charcoal/70 mb-6 sm:mb-8">
+                  Our platform has helped thousands of professionals find their dream jobs and companies hire top talent faster than ever.
+                </p>
+                <div className="space-y-4 sm:space-y-6">
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                      <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-deep-charcoal">85% Faster Hiring Process</p>
+                      <p className="text-sm text-deep-charcoal/60">Reduce time-to-hire with our AI matching</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                      <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-deep-charcoal">3x More Quality Candidates</p>
+                      <p className="text-sm text-deep-charcoal/60">Access a larger pool of pre-screened talent</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                      <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-deep-charcoal">50% Cost Reduction</p>
+                      <p className="text-sm text-deep-charcoal/60">Lower recruitment costs with our platform</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="relative h-64 sm:h-80 md:h-96 rounded-xl overflow-hidden shadow-lg">
+                <Image
+                  src="/images/backgrounds/christina-wocintechchat-com-faEfWCdOKIg-unsplash.jpg"
+                  alt="Career Pulse in action"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex flex-col justify-end p-6">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-lg p-4 shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <div className="flex items-center">
+                      <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mr-4">
+                        <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <p className="font-bold text-deep-charcoal">Sarah Johnson</p>
+                        <p className="text-sm text-deep-charcoal/70">Found her dream job in 2 weeks</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* CTA Section */}
+          <div className="mt-16 sm:mt-20 md:mt-24 text-center">
+            <Link 
+              href="/job-search" 
+              className="btn-primary inline-flex items-center justify-center py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+            >
+              <span>Start Your Journey</span>
+              <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
