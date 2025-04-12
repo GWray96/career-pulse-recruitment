@@ -153,6 +153,110 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Pain Points Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-4xl font-bold text-center mb-16">Common Challenges in Today's Job Market</h2>
+            <div className="grid md:grid-cols-2 gap-12">
+              {/* Employers Pain Points */}
+              <div className="bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-transform duration-300">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-800">Employer Challenges</h3>
+                </div>
+                <div className="space-y-6">
+                  <div className="flex items-start">
+                    <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                      <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-800 mb-2">Time-Consuming Hiring Process</h4>
+                      <p className="text-gray-600">Spending countless hours sifting through unqualified candidates and conducting interviews</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                      <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-800 mb-2">Skill Gap</h4>
+                      <p className="text-gray-600">Difficulty finding candidates with the right technical skills and experience</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                      <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-800 mb-2">High Turnover Rates</h4>
+                      <p className="text-gray-600">Struggling with employee retention and finding candidates who fit company culture</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Candidates Pain Points */}
+              <div className="bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-transform duration-300">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                    <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-800">Candidate Challenges</h3>
+                </div>
+                <div className="space-y-6">
+                  <div className="flex items-start">
+                    <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                      <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-800 mb-2">Job Search Overwhelm</h4>
+                      <p className="text-gray-600">Navigating through countless job postings and lengthy application processes</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                      <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-800 mb-2">Limited Feedback</h4>
+                      <p className="text-gray-600">Receiving little to no feedback on applications and interviews</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                      <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-800 mb-2">Career Growth</h4>
+                      <p className="text-gray-600">Finding opportunities that match both skills and career aspirations</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-white to-primary-50 relative overflow-hidden">
         {/* Background Elements */}
