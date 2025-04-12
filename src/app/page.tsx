@@ -291,15 +291,21 @@ export default function Home() {
           
           {/* CTA Section */}
           <div className="mt-16 sm:mt-20 md:mt-24 text-center">
-            <Link 
-              href="/job-search" 
-              className="btn-primary inline-flex items-center justify-center py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
-            >
-              <span>Start Your Journey</span>
-              <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </Link>
+            <div className="relative inline-block">
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-lg blur opacity-30 group-hover:opacity-50 transition duration-1000 group-hover:duration-200 animate-pulse-slow"></div>
+              <Link 
+                href="/job-search" 
+                className="relative inline-flex items-center justify-center py-4 sm:py-5 px-8 sm:px-10 text-lg sm:text-xl font-bold text-white bg-gradient-to-r from-primary to-primary-dark rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 group"
+              >
+                <span className="mr-2">Start Your Journey</span>
+                <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </Link>
+              <div className="mt-4 text-sm text-deep-charcoal/70">
+                Join thousands of professionals who trust Career Pulse
+              </div>
+            </div>
           </div>
         </div>
       </section>
