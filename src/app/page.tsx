@@ -436,11 +436,11 @@ export default function Home() {
                   <div key={index} className="relative group">
                     <div className="relative h-full">
                       <div className="h-[220px] bg-white rounded-xl shadow-soft p-8 transition-all duration-300 group-hover:shadow-lg group-hover:scale-105 group-hover:bg-gradient-to-br group-hover:from-white group-hover:to-primary/5">
-                        <div className="flex flex-col h-full justify-between">
+                        <div className="flex flex-col h-full">
                           <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform duration-300">
                             {index + 1}
                           </div>
-                          <div className="text-center">
+                          <div className="flex flex-col items-center justify-center h-full text-center">
                             <h3 className="text-xl font-semibold text-deep-charcoal mb-3 mt-4 group-hover:text-primary transition-colors duration-300">{step.title}</h3>
                             <p className="text-deep-charcoal/70 group-hover:text-deep-charcoal/90 transition-colors duration-300">{step.description}</p>
                           </div>
@@ -463,11 +463,11 @@ export default function Home() {
                   <div key={index} className="relative group">
                     <div className="relative h-full">
                       <div className="h-[220px] bg-white rounded-xl shadow-soft p-8 transition-all duration-300 group-hover:shadow-lg group-hover:scale-105 group-hover:bg-gradient-to-br group-hover:from-white group-hover:to-primary/5">
-                        <div className="flex flex-col h-full justify-between">
+                        <div className="flex flex-col h-full">
                           <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform duration-300">
                             {index + 1}
                           </div>
-                          <div className="text-center">
+                          <div className="flex flex-col items-center justify-center h-full text-center">
                             <h3 className="text-xl font-semibold text-deep-charcoal mb-3 mt-4 group-hover:text-primary transition-colors duration-300">{step.title}</h3>
                             <p className="text-deep-charcoal/70 group-hover:text-deep-charcoal/90 transition-colors duration-300">{step.description}</p>
                           </div>
