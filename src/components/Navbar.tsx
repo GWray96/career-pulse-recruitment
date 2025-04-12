@@ -2,11 +2,13 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeItem, setActiveItem] = useState('home');
+  const [expandedSection, setExpandedSection] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +21,14 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    // Reset expanded section when closing menu
+    if (isMenuOpen) {
+      setExpandedSection(null);
+    }
+  };
+
+  const toggleSection = (section: string) => {
+    setExpandedSection(expandedSection === section ? null : section);
   };
 
   return (
@@ -36,10 +46,20 @@ const Navbar = () => {
             <div className="flex-shrink-0">
               <Link 
                 href="/" 
-                className="group"
+                className="group flex items-center"
                 aria-label="Career Pulse Home"
               >
-                <span className="text-2xl font-montserrat font-bold text-primary transition-colors duration-200 group-hover:text-primary-dark">
+                <div className="relative w-10 h-10 mr-2">
+                  <Image
+                    src="/images/icons/career-pulse-logo-large.png"
+                    alt="Career Pulse Logo"
+                    fill
+                    sizes="40px"
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+                <span className="text-xl sm:text-2xl font-montserrat font-bold text-primary transition-colors duration-200 group-hover:text-primary-dark">
                   Career Pulse
                 </span>
               </Link>
@@ -192,124 +212,234 @@ const Navbar = () => {
       >
         <div className="fixed inset-0 bg-black bg-opacity-25" onClick={toggleMenu} />
         <div className="relative flex flex-col w-full max-w-xs h-full bg-white shadow-xl">
-          <div className="px-4 pt-5 pb-6 space-y-1">
-            <Link 
-              href="/" 
-              className="block px-3 py-2 text-base font-medium text-primary hover:bg-gray-50 rounded-md"
-              onClick={() => {
-                setActiveItem('home');
-                toggleMenu();
-              }}
+          {/* Mobile menu header */}
+          <div className="px-4 py-4 border-b border-gray-200 flex items-center justify-between">
+            <div className="flex items-center">
+              <div className="relative w-8 h-8 mr-2">
+                <Image
+                  src="/images/icons/career-pulse-logo-large.png"
+                  alt="Career Pulse Logo"
+                  fill
+                  sizes="32px"
+                  className="object-contain"
+                  priority
+                />
+              </div>
+              <span className="text-lg font-montserrat font-bold text-primary">
+                Career Pulse
+              </span>
+            </div>
+            <button
+              onClick={toggleMenu}
+              className="p-1 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none"
+              aria-label="Close menu"
             >
-              Home
-            </Link>
-            <div className="space-y-1">
-              <button
-                className="w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
-                onClick={() => {/* Toggle submenu */}}
+              <svg
+                className="h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
-                For Candidates
-              </button>
-              <div className="pl-4 space-y-1">
-                <Link 
-                  href="/talent-pulse" 
-                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
-                  onClick={toggleMenu}
-                >
-                  Talent Pulse
-                </Link>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+          
+          {/* Mobile menu content */}
+          <div className="flex-1 overflow-y-auto">
+            <div className="px-4 pt-4 pb-6 space-y-3">
+              {/* Quick actions */}
+              <div className="grid grid-cols-2 gap-3 mb-4">
                 <Link 
                   href="/job-search" 
-                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
+                  className="flex flex-col items-center justify-center p-3 bg-primary-50 rounded-lg text-center hover:bg-primary-100 transition-colors duration-200"
                   onClick={toggleMenu}
                 >
-                  Browse All Jobs
-                </Link>
-                <Link 
-                  href="/featured-jobs" 
-                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
-                  onClick={toggleMenu}
-                >
-                  Featured Jobs
-                </Link>
-                <Link 
-                  href="/remote-jobs" 
-                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
-                  onClick={toggleMenu}
-                >
-                  Remote Jobs
-                </Link>
-              </div>
-            </div>
-            <div className="space-y-1">
-              <button
-                className="w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
-                onClick={() => {/* Toggle submenu */}}
-              >
-                For Employers
-              </button>
-              <div className="pl-4 space-y-1">
-                <Link 
-                  href="/employer-pulse" 
-                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
-                  onClick={toggleMenu}
-                >
-                  Employer Pulse
+                  <svg className="w-6 h-6 text-primary mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                  <span className="text-sm font-medium text-gray-700">Find Jobs</span>
                 </Link>
                 <Link 
                   href="/employer-form" 
-                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
+                  className="flex flex-col items-center justify-center p-3 bg-primary-50 rounded-lg text-center hover:bg-primary-100 transition-colors duration-200"
                   onClick={toggleMenu}
                 >
-                  Post a Job
-                </Link>
-                <Link 
-                  href="/employer-dashboard" 
-                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
-                  onClick={toggleMenu}
-                >
-                  Employer Dashboard
-                </Link>
-                <Link 
-                  href="/pricing" 
-                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
-                  onClick={toggleMenu}
-                >
-                  Pricing Plans
+                  <svg className="w-6 h-6 text-primary mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                  </svg>
+                  <span className="text-sm font-medium text-gray-700">Post a Job</span>
                 </Link>
               </div>
-            </div>
-            <div className="space-y-1">
-              <button
-                className="w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
-                onClick={() => {/* Toggle submenu */}}
+              
+              {/* Main navigation */}
+              <Link 
+                href="/" 
+                className="block px-3 py-2 text-base font-medium text-primary hover:bg-gray-50 rounded-md"
+                onClick={() => {
+                  setActiveItem('home');
+                  toggleMenu();
+                }}
               >
-                Extra Pulse
-              </button>
-              <div className="pl-4 space-y-1">
-                <Link 
-                  href="/blog" 
-                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
-                  onClick={toggleMenu}
+                Home
+              </Link>
+              
+              {/* For Candidates section */}
+              <div className="border-t border-gray-200 pt-3">
+                <button
+                  className="w-full flex items-center justify-between px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
+                  onClick={() => toggleSection('candidates')}
+                  aria-expanded={expandedSection === 'candidates'}
                 >
-                  Blog
-                </Link>
-                <Link 
-                  href="/resources" 
-                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
-                  onClick={toggleMenu}
+                  <span>For Candidates</span>
+                  <svg 
+                    className={`h-5 w-5 transform transition-transform duration-200 ${expandedSection === 'candidates' ? 'rotate-180' : ''}`}
+                    xmlns="http://www.w3.org/2000/svg" 
+                    viewBox="0 0 20 20" 
+                    fill="currentColor"
+                  >
+                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </button>
+                <div className={`overflow-hidden transition-all duration-200 ${expandedSection === 'candidates' ? 'max-h-96' : 'max-h-0'}`}>
+                  <div className="pl-4 space-y-1 mt-1">
+                    <Link 
+                      href="/talent-pulse" 
+                      className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
+                      onClick={toggleMenu}
+                    >
+                      Talent Pulse
+                    </Link>
+                    <Link 
+                      href="/job-search" 
+                      className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
+                      onClick={toggleMenu}
+                    >
+                      Browse All Jobs
+                    </Link>
+                    <Link 
+                      href="/featured-jobs" 
+                      className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
+                      onClick={toggleMenu}
+                    >
+                      Featured Jobs
+                    </Link>
+                    <Link 
+                      href="/remote-jobs" 
+                      className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
+                      onClick={toggleMenu}
+                    >
+                      Remote Jobs
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              
+              {/* For Employers section */}
+              <div className="border-t border-gray-200 pt-3">
+                <button
+                  className="w-full flex items-center justify-between px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
+                  onClick={() => toggleSection('employers')}
+                  aria-expanded={expandedSection === 'employers'}
                 >
-                  Resources
-                </Link>
-                <Link 
-                  href="/faq" 
-                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
-                  onClick={toggleMenu}
+                  <span>For Employers</span>
+                  <svg 
+                    className={`h-5 w-5 transform transition-transform duration-200 ${expandedSection === 'employers' ? 'rotate-180' : ''}`}
+                    xmlns="http://www.w3.org/2000/svg" 
+                    viewBox="0 0 20 20" 
+                    fill="currentColor"
+                  >
+                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </button>
+                <div className={`overflow-hidden transition-all duration-200 ${expandedSection === 'employers' ? 'max-h-96' : 'max-h-0'}`}>
+                  <div className="pl-4 space-y-1 mt-1">
+                    <Link 
+                      href="/employer-pulse" 
+                      className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
+                      onClick={toggleMenu}
+                    >
+                      Employer Pulse
+                    </Link>
+                    <Link 
+                      href="/employer-form" 
+                      className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
+                      onClick={toggleMenu}
+                    >
+                      Post a Job
+                    </Link>
+                    <Link 
+                      href="/employer-dashboard" 
+                      className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
+                      onClick={toggleMenu}
+                    >
+                      Employer Dashboard
+                    </Link>
+                    <Link 
+                      href="/pricing" 
+                      className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
+                      onClick={toggleMenu}
+                    >
+                      Pricing Plans
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Extra Pulse section */}
+              <div className="border-t border-gray-200 pt-3">
+                <button
+                  className="w-full flex items-center justify-between px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
+                  onClick={() => toggleSection('extra')}
+                  aria-expanded={expandedSection === 'extra'}
                 >
-                  FAQ
-                </Link>
+                  <span>Extra Pulse</span>
+                  <svg 
+                    className={`h-5 w-5 transform transition-transform duration-200 ${expandedSection === 'extra' ? 'rotate-180' : ''}`}
+                    xmlns="http://www.w3.org/2000/svg" 
+                    viewBox="0 0 20 20" 
+                    fill="currentColor"
+                  >
+                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </button>
+                <div className={`overflow-hidden transition-all duration-200 ${expandedSection === 'extra' ? 'max-h-96' : 'max-h-0'}`}>
+                  <div className="pl-4 space-y-1 mt-1">
+                    <Link 
+                      href="/blog" 
+                      className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
+                      onClick={toggleMenu}
+                    >
+                      Blog
+                    </Link>
+                    <Link 
+                      href="/resources" 
+                      className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
+                      onClick={toggleMenu}
+                    >
+                      Resources
+                    </Link>
+                    <Link 
+                      href="/faq" 
+                      className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
+                      onClick={toggleMenu}
+                    >
+                      FAQ
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
+          
+          {/* Mobile menu footer */}
+          <div className="px-4 py-4 border-t border-gray-200">
             <Link 
               href="/book-call" 
               className="block w-full px-3 py-2 text-base font-medium text-white bg-primary hover:bg-primary-dark transition-colors duration-200 rounded-md text-center"
