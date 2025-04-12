@@ -21,7 +21,7 @@ const Navbar = () => {
               <Link href="/" className="flex items-center space-x-3 group">
                 <div className="relative w-14 h-14">
                   <Image
-                    src="/images/icons/logo increased size-Photoroom.png"
+                    src="/images/icons/career-pulse-logo-large.png"
                     alt="Career Pulse Logo"
                     fill
                     sizes="(max-width: 768px) 56px, 56px"
