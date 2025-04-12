@@ -18,10 +18,13 @@ module.exports = {
         opensans: ['var(--font-opensans)'],
       },
       fontSize: {
-        'h1': ['42px', '1.2'],
-        'h2': ['28px', '1.3'],
-        'body': ['16px', '1.5'],
-        'caption': ['12px', '1.4'],
+        '2xs': ['0.625rem', { lineHeight: '0.75rem' }],
+      },
+      spacing: {
+        '18': '4.5rem',
+      },
+      boxShadow: {
+        'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
       },
     },
   },

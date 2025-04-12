@@ -12,19 +12,19 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white shadow-md fixed w-full z-50">
+    <nav className="bg-white shadow-soft fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           {/* Logo and primary nav */}
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
-              <Link href="/" className="flex items-center space-x-3">
+              <Link href="/" className="flex items-center space-x-3 group">
                 <Image
                   src="/images/icons/career-pulse-logo.png"
                   alt="Career Pulse Logo"
                   width={48}
                   height={48}
-                  className="h-12 w-auto"
+                  className="h-12 w-auto transition-transform duration-200 group-hover:scale-105"
                   priority
                 />
                 <span className="text-xl font-montserrat font-bold text-primary">
@@ -34,22 +34,13 @@ const Navbar = () => {
             </div>
             {/* Desktop Navigation */}
             <div className="hidden sm:ml-10 sm:flex sm:space-x-8">
-              <Link
-                href="/"
-                className="text-gray-900 hover:text-primary inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-primary transition-colors duration-200"
-              >
+              <Link href="/" className="nav-link">
                 Home
               </Link>
-              <Link
-                href="/job-search"
-                className="text-gray-900 hover:text-primary inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-primary transition-colors duration-200"
-              >
+              <Link href="/job-search" className="nav-link">
                 Find Jobs
               </Link>
-              <Link
-                href="/employer-form"
-                className="text-gray-900 hover:text-primary inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-primary transition-colors duration-200"
-              >
+              <Link href="/employer-form" className="nav-link">
                 Post a Job
               </Link>
             </div>
@@ -59,7 +50,7 @@ const Navbar = () => {
           <div className="flex items-center sm:hidden">
             <button
               onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary transition-colors duration-200"
               aria-expanded="false"
             >
               <span className="sr-only">Open main menu</span>
@@ -99,24 +90,17 @@ const Navbar = () => {
       </div>
 
       {/* Mobile menu */}
-      <div className={`${isMenuOpen ? 'block' : 'hidden'} sm:hidden`}>
+      <div 
+        className={`${isMenuOpen ? 'block' : 'hidden'} sm:hidden transition-all duration-200 ease-in-out`}
+      >
         <div className="pt-2 pb-3 space-y-1">
-          <Link
-            href="/"
-            className="text-gray-900 hover:text-primary block pl-3 pr-4 py-2 border-l-4 border-transparent hover:border-primary hover:bg-gray-50 transition-colors duration-200"
-          >
+          <Link href="/" className="nav-link-mobile">
             Home
           </Link>
-          <Link
-            href="/job-search"
-            className="text-gray-900 hover:text-primary block pl-3 pr-4 py-2 border-l-4 border-transparent hover:border-primary hover:bg-gray-50 transition-colors duration-200"
-          >
+          <Link href="/job-search" className="nav-link-mobile">
             Find Jobs
           </Link>
-          <Link
-            href="/employer-form"
-            className="text-gray-900 hover:text-primary block pl-3 pr-4 py-2 border-l-4 border-transparent hover:border-primary hover:bg-gray-50 transition-colors duration-200"
-          >
+          <Link href="/employer-form" className="nav-link-mobile">
             Post a Job
           </Link>
         </div>
