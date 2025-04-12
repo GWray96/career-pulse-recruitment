@@ -567,26 +567,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
-            {/* Process Stats */}
-            <div className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-              <div className="bg-white rounded-xl shadow-soft p-6 text-center">
-                <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">85%</div>
-                <p className="text-deep-charcoal/70">Faster Hiring Process</p>
-              </div>
-              <div className="bg-white rounded-xl shadow-soft p-6 text-center">
-                <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">95%</div>
-                <p className="text-deep-charcoal/70">Client Satisfaction</p>
-              </div>
-              <div className="bg-white rounded-xl shadow-soft p-6 text-center">
-                <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">3x</div>
-                <p className="text-deep-charcoal/70">More Quality Candidates</p>
-              </div>
-              <div className="bg-white rounded-xl shadow-soft p-6 text-center">
-                <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">50%</div>
-                <p className="text-deep-charcoal/70">Cost Reduction</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
