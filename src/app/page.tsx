@@ -815,19 +815,19 @@ export default function Home() {
       </section>
 
       {/* Candidate CTA Section */}
-      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+      <section className="py-20 bg-accent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Content */}
             <div>
-              <h2 className="text-4xl font-bold text-deep-charcoal mb-6">
+              <h2 className="text-4xl font-bold text-white mb-6">
                 Ready to Find Your Next Opportunity?
               </h2>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-xl text-white/90 mb-8">
                 Upload your CV or connect your LinkedIn profile to get started. Our AI-powered platform will match you with the best opportunities.
               </p>
               <div className="space-y-4">
-                <button className="w-full sm:w-auto px-8 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary-dark transition-colors duration-300 flex items-center justify-center">
+                <button className="w-full sm:w-auto px-8 py-3 bg-white text-accent rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 flex items-center justify-center">
                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
                   </svg>
@@ -844,8 +844,8 @@ export default function Home() {
 
             {/* Right Column - Mockup */}
             <div className="relative">
-              <div className="absolute -top-4 -left-4 w-24 h-24 bg-accent/20 rounded-full blur-2xl"></div>
-              <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-primary/20 rounded-full blur-2xl"></div>
+              <div className="absolute -top-4 -left-4 w-24 h-24 bg-white/20 rounded-full blur-2xl"></div>
+              <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-white/20 rounded-full blur-2xl"></div>
               <div className="relative bg-white rounded-xl shadow-2xl p-6">
                 <div className="space-y-4">
                   <div className="flex items-center space-x-4">
