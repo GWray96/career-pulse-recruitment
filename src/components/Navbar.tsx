@@ -19,14 +19,17 @@ const Navbar = () => {
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
               <Link href="/" className="flex items-center space-x-3 group">
-                <Image
-                  src="/images/icons/career-pulse-logo.png"
-                  alt="Career Pulse Logo"
-                  width={48}
-                  height={48}
-                  className="h-12 w-auto transition-transform duration-200 group-hover:scale-105"
-                  priority
-                />
+                <div className="relative w-12 h-12">
+                  <Image
+                    src="/images/icons/career-pulse-logo.png"
+                    alt="Career Pulse Logo"
+                    fill
+                    sizes="(max-width: 768px) 48px, 48px"
+                    className="object-contain transition-transform duration-200 group-hover:scale-105"
+                    priority
+                    quality={100}
+                  />
+                </div>
                 <span className="text-xl font-montserrat font-bold text-primary">
                   Career Pulse
                 </span>
