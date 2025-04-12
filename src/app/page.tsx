@@ -42,8 +42,8 @@ export default function Home() {
                   </h1>
                 </div>
                 <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-white font-medium drop-shadow-md">
-                  Career Pulse connects talented professionals with innovative companies. 
-                  Whether you're hiring or looking to be hired, we've got you covered.
+                  Career Pulse is a leading recruitment agency connecting talented professionals with innovative companies. 
+                  Our expert recruiters work with both job seekers and employers to create perfect matches.
                 </p>
                 
                 {/* CTA Buttons */}
@@ -98,7 +98,7 @@ export default function Home() {
                   </div>
                   <div className="text-center p-3 sm:p-4 bg-white/20 rounded-xl border border-white/30 hover:bg-white/30 transition-colors duration-300 group">
                     <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2 drop-shadow-lg group-hover:animate-pulse">24/7</div>
-                    <p className="text-white font-medium text-xs sm:text-sm drop-shadow-md">AI-powered matching</p>
+                    <p className="text-white font-medium text-xs sm:text-sm drop-shadow-md">Expert recruitment team</p>
                   </div>
                 </div>
                 
@@ -146,7 +146,7 @@ export default function Home() {
               Why Choose <span className="text-primary">Career Pulse</span>?
             </h2>
             <p className="text-base sm:text-lg text-deep-charcoal/70">
-              We're revolutionizing the recruitment process with cutting-edge technology and a human-centered approach.
+              We're a team of experienced recruitment professionals dedicated to finding the perfect match between candidates and companies.
             </p>
           </div>
           
@@ -163,7 +163,7 @@ export default function Home() {
                 <h3 className="text-xl sm:text-2xl font-bold text-deep-charcoal group-hover:text-primary transition-colors duration-300">Lightning Fast</h3>
               </div>
               <p className="text-base sm:text-lg text-deep-charcoal/70 mb-4 sm:mb-6">
-                Our AI-powered platform matches you with opportunities in real-time, reducing your job search time by up to 70%.
+                Our dedicated recruiters work efficiently to match you with opportunities, reducing your job search time by up to 70%.
               </p>
               <div className="flex items-center text-primary font-medium group-hover:translate-x-1 transition-transform duration-300">
                 <span>Learn more</span>
@@ -205,7 +205,7 @@ export default function Home() {
                 <h3 className="text-xl sm:text-2xl font-bold text-deep-charcoal group-hover:text-primary transition-colors duration-300">Perfect Match</h3>
               </div>
               <p className="text-base sm:text-lg text-deep-charcoal/70 mb-4 sm:mb-6">
-                Our smart matching system connects you with opportunities that truly fit your skills, experience, and career goals.
+                Our expert recruiters connect you with opportunities that truly fit your skills, experience, and career goals.
               </p>
               <div className="flex items-center text-primary font-medium group-hover:translate-x-1 transition-transform duration-300">
                 <span>Learn more</span>
@@ -224,7 +224,7 @@ export default function Home() {
                   The <span className="text-primary">Career Pulse</span> Difference
                 </h3>
                 <p className="text-base sm:text-lg text-deep-charcoal/70 mb-6 sm:mb-8">
-                  Our platform has helped thousands of professionals find their dream jobs and companies hire top talent faster than ever.
+                  Our recruitment team has helped thousands of professionals find their dream jobs and companies hire top talent faster than ever.
                 </p>
                 <div className="space-y-4 sm:space-y-6">
                   <div className="flex items-center">
@@ -235,7 +235,7 @@ export default function Home() {
                     </div>
                     <div>
                       <p className="font-semibold text-deep-charcoal">85% Faster Hiring Process</p>
-                      <p className="text-sm text-deep-charcoal/60">Reduce time-to-hire with our AI matching</p>
+                      <p className="text-sm text-deep-charcoal/60">Reduce time-to-hire with our expert recruiters</p>
                     </div>
                   </div>
                   <div className="flex items-center">
@@ -246,7 +246,7 @@ export default function Home() {
                     </div>
                     <div>
                       <p className="font-semibold text-deep-charcoal">3x More Quality Candidates</p>
-                      <p className="text-sm text-deep-charcoal/60">Access a larger pool of pre-screened talent</p>
+                      <p className="text-sm text-deep-charcoal/60">Access our extensive network of pre-screened talent</p>
                     </div>
                   </div>
                   <div className="flex items-center">
@@ -257,7 +257,7 @@ export default function Home() {
                     </div>
                     <div>
                       <p className="font-semibold text-deep-charcoal">50% Cost Reduction</p>
-                      <p className="text-sm text-deep-charcoal/60">Lower recruitment costs with our platform</p>
+                      <p className="text-sm text-deep-charcoal/60">Lower recruitment costs with our services</p>
                     </div>
                   </div>
                 </div>
@@ -307,9 +307,9 @@ export default function Home() {
       {/* CTA Section */}
       <section className="bg-primary-50 py-12 sm:py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="mb-4 sm:mb-6 text-2xl sm:text-3xl font-bold">Ready to Find Your Rhythm?</h2>
+          <h2 className="mb-4 sm:mb-6 text-2xl sm:text-3xl font-bold">Ready to Find Your Perfect Match?</h2>
           <p className="text-lg sm:text-xl text-deep-charcoal/80 mb-6 sm:mb-8 max-w-2xl mx-auto">
-            Join thousands of professionals who have found their perfect career match with Career Pulse.
+            Join thousands of professionals who have found their dream jobs with Career Pulse's expert recruitment team.
           </p>
           <Link href="/job-search" className="btn-primary py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg">
             Start Your Journey
