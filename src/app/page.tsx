@@ -36,15 +36,15 @@ export default function Home() {
               {/* Left Column - Text Content */}
               <div className="text-white">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center mr-4 animate-pulse">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                    </svg>
-                  </div>
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-montserrat font-bold leading-tight">
                     <span className="block drop-shadow-lg animate-fade-in">Find Your Perfect</span>
                     <span className="block text-accent drop-shadow-lg animate-fade-in-delayed">Career Match</span>
                   </h1>
+                  <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center ml-4 animate-pulse">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                  </div>
                 </div>
                 <p className="text-lg md:text-xl mb-8 text-white font-medium drop-shadow-md">
                   Career Pulse connects talented professionals with innovative companies. 
