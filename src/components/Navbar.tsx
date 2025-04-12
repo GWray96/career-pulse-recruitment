@@ -25,8 +25,8 @@ const Navbar = () => {
     <nav 
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/90 backdrop-blur-md shadow-soft' 
-          : 'bg-white/80 backdrop-blur-md'
+          ? 'bg-white shadow-soft' 
+          : 'bg-white'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -144,7 +144,7 @@ const Navbar = () => {
             </Link>
             <button
               onClick={toggleMenu}
-              className="sm:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary transition-colors duration-200"
+              className="sm:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary transition-colors duration-200"
               aria-expanded={isMenuOpen}
               aria-label="Toggle navigation menu"
             >
@@ -205,7 +205,7 @@ const Navbar = () => {
             </Link>
             <div className="space-y-1">
               <button
-                className="w-full text-left px-3 py-2 text-base font-medium text-gray-500 hover:text-primary hover:bg-gray-50 rounded-md"
+                className="w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
                 onClick={() => {/* Toggle submenu */}}
               >
                 For Candidates
@@ -213,28 +213,28 @@ const Navbar = () => {
               <div className="pl-4 space-y-1">
                 <Link 
                   href="/talent-pulse" 
-                  className="block px-3 py-2 text-base font-medium text-gray-500 hover:text-primary hover:bg-gray-50 rounded-md"
+                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
                   onClick={toggleMenu}
                 >
                   Talent Pulse
                 </Link>
                 <Link 
                   href="/job-search" 
-                  className="block px-3 py-2 text-base font-medium text-gray-500 hover:text-primary hover:bg-gray-50 rounded-md"
+                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
                   onClick={toggleMenu}
                 >
                   Browse All Jobs
                 </Link>
                 <Link 
                   href="/featured-jobs" 
-                  className="block px-3 py-2 text-base font-medium text-gray-500 hover:text-primary hover:bg-gray-50 rounded-md"
+                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
                   onClick={toggleMenu}
                 >
                   Featured Jobs
                 </Link>
                 <Link 
                   href="/remote-jobs" 
-                  className="block px-3 py-2 text-base font-medium text-gray-500 hover:text-primary hover:bg-gray-50 rounded-md"
+                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
                   onClick={toggleMenu}
                 >
                   Remote Jobs
@@ -243,7 +243,7 @@ const Navbar = () => {
             </div>
             <div className="space-y-1">
               <button
-                className="w-full text-left px-3 py-2 text-base font-medium text-gray-500 hover:text-primary hover:bg-gray-50 rounded-md"
+                className="w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
                 onClick={() => {/* Toggle submenu */}}
               >
                 For Employers
@@ -251,28 +251,28 @@ const Navbar = () => {
               <div className="pl-4 space-y-1">
                 <Link 
                   href="/employer-pulse" 
-                  className="block px-3 py-2 text-base font-medium text-gray-500 hover:text-primary hover:bg-gray-50 rounded-md"
+                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
                   onClick={toggleMenu}
                 >
                   Employer Pulse
                 </Link>
                 <Link 
                   href="/employer-form" 
-                  className="block px-3 py-2 text-base font-medium text-gray-500 hover:text-primary hover:bg-gray-50 rounded-md"
+                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
                   onClick={toggleMenu}
                 >
                   Post a Job
                 </Link>
                 <Link 
                   href="/employer-dashboard" 
-                  className="block px-3 py-2 text-base font-medium text-gray-500 hover:text-primary hover:bg-gray-50 rounded-md"
+                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
                   onClick={toggleMenu}
                 >
                   Employer Dashboard
                 </Link>
                 <Link 
                   href="/pricing" 
-                  className="block px-3 py-2 text-base font-medium text-gray-500 hover:text-primary hover:bg-gray-50 rounded-md"
+                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
                   onClick={toggleMenu}
                 >
                   Pricing Plans
@@ -281,7 +281,7 @@ const Navbar = () => {
             </div>
             <div className="space-y-1">
               <button
-                className="w-full text-left px-3 py-2 text-base font-medium text-gray-500 hover:text-primary hover:bg-gray-50 rounded-md"
+                className="w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
                 onClick={() => {/* Toggle submenu */}}
               >
                 Extra Pulse
@@ -289,21 +289,21 @@ const Navbar = () => {
               <div className="pl-4 space-y-1">
                 <Link 
                   href="/blog" 
-                  className="block px-3 py-2 text-base font-medium text-gray-500 hover:text-primary hover:bg-gray-50 rounded-md"
+                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
                   onClick={toggleMenu}
                 >
                   Blog
                 </Link>
                 <Link 
                   href="/resources" 
-                  className="block px-3 py-2 text-base font-medium text-gray-500 hover:text-primary hover:bg-gray-50 rounded-md"
+                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
                   onClick={toggleMenu}
                 >
                   Resources
                 </Link>
                 <Link 
                   href="/faq" 
-                  className="block px-3 py-2 text-base font-medium text-gray-500 hover:text-primary hover:bg-gray-50 rounded-md"
+                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md"
                   onClick={toggleMenu}
                 >
                   FAQ
