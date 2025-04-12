@@ -1,8 +1,72 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link'
 import Image from 'next/image'
+
+interface AnimatedCounterProps {
+  end: number;
+  duration?: number;
+  prefix?: string;
+  suffix?: string;
+}
+
+const AnimatedCounter = ({ end, duration = 2000, prefix = '', suffix = '' }: AnimatedCounterProps) => {
+  const [count, setCount] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const counterRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (counterRef.current) {
+      observer.observe(counterRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    let startTime: number | undefined;
+    let animationFrame: number;
+
+    const animate = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const progress = timestamp - startTime;
+      const percentage = Math.min(progress / duration, 1);
+
+      setCount(Math.floor(end * percentage));
+
+      if (percentage < 1) {
+        animationFrame = requestAnimationFrame(animate);
+      }
+    };
+
+    animationFrame = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationFrame) {
+        cancelAnimationFrame(animationFrame);
+      }
+    };
+  }, [isVisible, end, duration]);
+
+  return (
+    <span ref={counterRef} className="inline-block">
+      {prefix}{count}{suffix}
+    </span>
+  );
+};
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('employers');
@@ -485,19 +549,27 @@ export default function Home() {
           {/* Achievement Stats */}
           <div className="mt-12 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">95%</div>
+              <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">
+                <AnimatedCounter end={98} />
+              </div>
               <p className="text-deep-charcoal/70">Client Satisfaction</p>
             </div>
             <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">85%</div>
+              <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">
+                <AnimatedCounter end={85} />
+              </div>
               <p className="text-deep-charcoal/70">Faster Hiring</p>
             </div>
             <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">3x</div>
+              <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">
+                <AnimatedCounter end={3} />
+              </div>
               <p className="text-deep-charcoal/70">More Quality Candidates</p>
             </div>
             <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">50%</div>
+              <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">
+                <AnimatedCounter end={50} />
+              </div>
               <p className="text-deep-charcoal/70">Cost Reduction</p>
             </div>
           </div>
