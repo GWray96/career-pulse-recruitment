@@ -154,16 +154,27 @@ export default function Home() {
       </section>
 
       {/* Pain Points Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-blue-100/30 animate-pulse-slow"></div>
+          <div className="absolute bottom-1/4 left-1/4 w-96 h-96 rounded-full bg-purple-100/30 animate-pulse-slower"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-4 text-gray-900">Common Challenges in Today's Job Market</h2>
-            <p className="text-xl text-gray-800 text-center mb-16 max-w-3xl mx-auto">Discover how we address the key pain points faced by both employers and candidates in the modern recruitment landscape</p>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold mb-4 text-gray-900 relative inline-block">
+                Common Challenges in Today's Job Market
+                <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
+              </h2>
+              <p className="text-xl text-gray-800 text-center mt-6 max-w-3xl mx-auto">Discover how we address the key pain points faced by both employers and candidates in the modern recruitment landscape</p>
+            </div>
             <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
               {/* Employers Pain Points */}
-              <div className="group bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl border border-gray-100">
+              <div className="group bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl border border-blue-100">
                 <div className="flex items-center mb-8">
-                  <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mr-4 group-hover:rotate-12 transition-transform duration-300">
+                  <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mr-4 group-hover:rotate-12 transition-transform duration-300 shadow-lg shadow-blue-200">
                     <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                     </svg>
@@ -174,8 +185,8 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="space-y-6">
-                  <div className="group/item flex items-start p-4 rounded-lg hover:bg-blue-50 transition-colors duration-300">
-                    <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1 group-hover/item:bg-red-200 transition-colors duration-300">
+                  <div className="group/item flex items-start p-4 rounded-lg hover:bg-white/80 transition-colors duration-300 border border-transparent hover:border-blue-200">
+                    <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1 group-hover/item:bg-red-200 transition-colors duration-300 shadow-sm">
                       <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                       </svg>
@@ -185,8 +196,8 @@ export default function Home() {
                       <p className="text-gray-800">Spending countless hours sifting through unqualified candidates and conducting interviews</p>
                     </div>
                   </div>
-                  <div className="group/item flex items-start p-4 rounded-lg hover:bg-blue-50 transition-colors duration-300">
-                    <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1 group-hover/item:bg-red-200 transition-colors duration-300">
+                  <div className="group/item flex items-start p-4 rounded-lg hover:bg-white/80 transition-colors duration-300 border border-transparent hover:border-blue-200">
+                    <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1 group-hover/item:bg-red-200 transition-colors duration-300 shadow-sm">
                       <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                       </svg>
@@ -196,8 +207,8 @@ export default function Home() {
                       <p className="text-gray-800">Difficulty finding candidates with the right technical skills and experience</p>
                     </div>
                   </div>
-                  <div className="group/item flex items-start p-4 rounded-lg hover:bg-blue-50 transition-colors duration-300">
-                    <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1 group-hover/item:bg-red-200 transition-colors duration-300">
+                  <div className="group/item flex items-start p-4 rounded-lg hover:bg-white/80 transition-colors duration-300 border border-transparent hover:border-blue-200">
+                    <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1 group-hover/item:bg-red-200 transition-colors duration-300 shadow-sm">
                       <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                       </svg>
@@ -211,9 +222,9 @@ export default function Home() {
               </div>
 
               {/* Candidates Pain Points */}
-              <div className="group bg-white rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl border border-gray-100">
+              <div className="group bg-gradient-to-br from-white to-purple-50 rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl border border-purple-100">
                 <div className="flex items-center mb-8">
-                  <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mr-4 group-hover:rotate-12 transition-transform duration-300">
+                  <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mr-4 group-hover:rotate-12 transition-transform duration-300 shadow-lg shadow-purple-200">
                     <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>
@@ -224,8 +235,8 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="space-y-6">
-                  <div className="group/item flex items-start p-4 rounded-lg hover:bg-purple-50 transition-colors duration-300">
-                    <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1 group-hover/item:bg-red-200 transition-colors duration-300">
+                  <div className="group/item flex items-start p-4 rounded-lg hover:bg-white/80 transition-colors duration-300 border border-transparent hover:border-purple-200">
+                    <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1 group-hover/item:bg-red-200 transition-colors duration-300 shadow-sm">
                       <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                       </svg>
@@ -235,8 +246,8 @@ export default function Home() {
                       <p className="text-gray-800">Navigating through countless job postings and lengthy application processes</p>
                     </div>
                   </div>
-                  <div className="group/item flex items-start p-4 rounded-lg hover:bg-purple-50 transition-colors duration-300">
-                    <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1 group-hover/item:bg-red-200 transition-colors duration-300">
+                  <div className="group/item flex items-start p-4 rounded-lg hover:bg-white/80 transition-colors duration-300 border border-transparent hover:border-purple-200">
+                    <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1 group-hover/item:bg-red-200 transition-colors duration-300 shadow-sm">
                       <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                       </svg>
@@ -246,8 +257,8 @@ export default function Home() {
                       <p className="text-gray-800">Receiving little to no feedback on applications and interviews</p>
                     </div>
                   </div>
-                  <div className="group/item flex items-start p-4 rounded-lg hover:bg-purple-50 transition-colors duration-300">
-                    <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1 group-hover/item:bg-red-200 transition-colors duration-300">
+                  <div className="group/item flex items-start p-4 rounded-lg hover:bg-white/80 transition-colors duration-300 border border-transparent hover:border-purple-200">
+                    <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-4 mt-1 group-hover/item:bg-red-200 transition-colors duration-300 shadow-sm">
                       <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                       </svg>
