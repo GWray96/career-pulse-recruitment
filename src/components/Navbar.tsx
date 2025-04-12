@@ -11,12 +11,12 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white shadow-soft fixed w-full z-50">
+    <nav className="bg-white/80 backdrop-blur-md shadow-soft fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-24">
+        <div className="flex justify-between h-20">
           {/* Logo and primary nav */}
-          <div className="flex">
-            <div className="flex-shrink-0 flex items-center">
+          <div className="flex items-center">
+            <div className="flex-shrink-0">
               <Link href="/" className="group">
                 <span className="text-2xl font-montserrat font-bold text-primary transition-colors duration-200 group-hover:text-primary-dark">
                   Career Pulse
@@ -37,8 +37,14 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="flex items-center sm:hidden">
+          {/* CTA and Mobile menu button */}
+          <div className="flex items-center space-x-4">
+            <Link 
+              href="/book-call" 
+              className="hidden sm:inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-dark transition-colors duration-200 shadow-sm hover:shadow-md"
+            >
+              Book a Call
+            </Link>
             <button
               onClick={toggleMenu}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary transition-colors duration-200"
@@ -82,7 +88,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       <div 
-        className={`${isMenuOpen ? 'block' : 'hidden'} sm:hidden transition-all duration-200 ease-in-out`}
+        className={`${isMenuOpen ? 'block' : 'hidden'} sm:hidden transition-all duration-200 ease-in-out bg-white/95 backdrop-blur-md`}
       >
         <div className="pt-2 pb-3 space-y-1">
           <Link href="/" className="nav-link-mobile">
@@ -93,6 +99,12 @@ const Navbar = () => {
           </Link>
           <Link href="/employer-form" className="nav-link-mobile">
             Post a Job
+          </Link>
+          <Link 
+            href="/book-call" 
+            className="block px-4 py-2 text-base font-medium text-white bg-primary hover:bg-primary-dark transition-colors duration-200"
+          >
+            Book a Call
           </Link>
         </div>
       </div>
