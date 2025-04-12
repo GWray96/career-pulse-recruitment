@@ -423,7 +423,7 @@ export default function Home() {
             {/* Connecting Line - Desktop Only */}
             <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-primary/20 via-primary to-primary/20 -translate-y-1/2" />
 
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-10 relative">
+            <div className="relative">
               {/* Employer Process Steps */}
               <div
                 className={`grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-10 transition-all duration-500 ${
