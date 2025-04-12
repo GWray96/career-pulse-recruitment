@@ -814,8 +814,60 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Candidate CTA Section */}
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Content */}
+            <div>
+              <h2 className="text-4xl font-bold text-deep-charcoal mb-6">
+                Ready to Find Your Next Opportunity?
+              </h2>
+              <p className="text-xl text-gray-600 mb-8">
+                Upload your CV or connect your LinkedIn profile to get started. Our AI-powered platform will match you with the best opportunities.
+              </p>
+              <div className="space-y-4">
+                <button className="w-full sm:w-auto px-8 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary-dark transition-colors duration-300 flex items-center justify-center">
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                  </svg>
+                  Upload CV
+                </button>
+                <button className="w-full sm:w-auto px-8 py-3 bg-[#0077B5] text-white rounded-lg font-semibold hover:bg-[#006399] transition-colors duration-300 flex items-center justify-center">
+                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                  Connect LinkedIn
+                </button>
+              </div>
+            </div>
+
+            {/* Right Column - Mockup */}
+            <div className="relative">
+              <div className="absolute -top-4 -left-4 w-24 h-24 bg-accent/20 rounded-full blur-2xl"></div>
+              <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-primary/20 rounded-full blur-2xl"></div>
+              <div className="relative bg-white rounded-xl shadow-2xl p-6">
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-gray-100 rounded-full"></div>
+                    <div>
+                      <div className="h-4 w-32 bg-gray-100 rounded"></div>
+                      <div className="h-3 w-24 bg-gray-100 rounded mt-2"></div>
+                    </div>
+                  </div>
+                  <div className="h-4 w-full bg-gray-100 rounded"></div>
+                  <div className="h-4 w-3/4 bg-gray-100 rounded"></div>
+                  <div className="h-4 w-5/6 bg-gray-100 rounded"></div>
+                  <div className="h-4 w-2/3 bg-gray-100 rounded"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Employer CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800">
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -910,47 +962,6 @@ export default function Home() {
                     Schedule Consultation
                   </button>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Candidate CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-purple-600 to-purple-800">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-4xl font-bold text-white mb-6">Ready to Find Your Dream Job?</h2>
-            <p className="text-xl text-purple-100 mb-8">Upload your CV or connect with LinkedIn to get started</p>
-          </div>
-          <div className="max-w-3xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* CV Upload Card */}
-              <div className="bg-white rounded-xl shadow-2xl p-8 text-center transform hover:scale-105 transition-transform duration-300">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">Upload Your CV</h3>
-                <p className="text-gray-600 mb-6">Share your CV with us and let our AI match you with the perfect opportunities</p>
-                <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300">
-                  Upload CV
-                </button>
-              </div>
-
-              {/* LinkedIn Connect Card */}
-              <div className="bg-white rounded-xl shadow-2xl p-8 text-center transform hover:scale-105 transition-transform duration-300">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">Connect with LinkedIn</h3>
-                <p className="text-gray-600 mb-6">Quick and easy connection with your LinkedIn profile</p>
-                <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300">
-                  Connect LinkedIn
-                </button>
               </div>
             </div>
           </div>
