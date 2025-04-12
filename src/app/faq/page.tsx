@@ -3,11 +3,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
-export const metadata = {
-  title: 'FAQ | Career Pulse',
-  description: 'Find answers to frequently asked questions about Career Pulse, job searching, and recruitment.',
-};
-
 const FAQPage = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
