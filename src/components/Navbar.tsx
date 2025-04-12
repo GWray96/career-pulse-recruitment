@@ -65,10 +65,13 @@ const Navbar = () => {
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  Find Jobs
+                  For Candidates
                 </button>
                 <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <div className="py-1" role="menu">
+                    <Link href="/talent-pulse" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
+                      Talent Pulse
+                    </Link>
                     <Link href="/job-search" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
                       Browse All Jobs
                     </Link>
@@ -91,6 +94,9 @@ const Navbar = () => {
                 </button>
                 <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <div className="py-1" role="menu">
+                    <Link href="/employer-pulse" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
+                      Employer Pulse
+                    </Link>
                     <Link href="/employer-form" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
                       Post a Job
                     </Link>
@@ -180,9 +186,16 @@ const Navbar = () => {
                 className="w-full text-left px-3 py-2 text-base font-medium text-gray-500 hover:text-primary hover:bg-gray-50 rounded-md"
                 onClick={() => {/* Toggle submenu */}}
               >
-                Find Jobs
+                For Candidates
               </button>
               <div className="pl-4 space-y-1">
+                <Link 
+                  href="/talent-pulse" 
+                  className="block px-3 py-2 text-base font-medium text-gray-500 hover:text-primary hover:bg-gray-50 rounded-md"
+                  onClick={toggleMenu}
+                >
+                  Talent Pulse
+                </Link>
                 <Link 
                   href="/job-search" 
                   className="block px-3 py-2 text-base font-medium text-gray-500 hover:text-primary hover:bg-gray-50 rounded-md"
@@ -214,6 +227,13 @@ const Navbar = () => {
                 For Employers
               </button>
               <div className="pl-4 space-y-1">
+                <Link 
+                  href="/employer-pulse" 
+                  className="block px-3 py-2 text-base font-medium text-gray-500 hover:text-primary hover:bg-gray-50 rounded-md"
+                  onClick={toggleMenu}
+                >
+                  Employer Pulse
+                </Link>
                 <Link 
                   href="/employer-form" 
                   className="block px-3 py-2 text-base font-medium text-gray-500 hover:text-primary hover:bg-gray-50 rounded-md"
