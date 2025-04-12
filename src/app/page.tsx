@@ -264,8 +264,8 @@ export default function Home() {
               </div>
               <div className="relative h-64 sm:h-80 md:h-96 rounded-xl overflow-hidden shadow-lg">
                 <Image
-                  src="/images/backgrounds/christina-wocintechchat-com-faEfWCdOKIg-unsplash.jpg"
-                  alt="Career Pulse in action"
+                  src="/images/backgrounds/linkedin-sales-solutions-1A8yP_5msac-unsplash.jpg"
+                  alt="Career Pulse recruitment team in action"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
