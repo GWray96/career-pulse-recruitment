@@ -550,25 +550,25 @@ export default function Home() {
           <div className="mt-12 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             <div className="text-center">
               <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">
-                <AnimatedCounter end={98} />
+                <AnimatedCounter end={98} suffix="%" />
               </div>
               <p className="text-deep-charcoal/70">Client Satisfaction</p>
             </div>
             <div className="text-center">
               <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">
-                <AnimatedCounter end={85} />
+                <AnimatedCounter end={85} suffix="%" />
               </div>
               <p className="text-deep-charcoal/70">Faster Hiring</p>
             </div>
             <div className="text-center">
               <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">
-                <AnimatedCounter end={3} />
+                <AnimatedCounter end={3} suffix="x" />
               </div>
               <p className="text-deep-charcoal/70">More Quality Candidates</p>
             </div>
             <div className="text-center">
               <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">
-                <AnimatedCounter end={50} />
+                <AnimatedCounter end={50} suffix="%" />
               </div>
               <p className="text-deep-charcoal/70">Cost Reduction</p>
             </div>
