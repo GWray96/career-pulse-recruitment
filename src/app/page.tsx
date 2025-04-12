@@ -17,8 +17,9 @@ export default function Home() {
             sizes="100vw"
             quality={90}
           />
-          {/* Darker overlay for better text contrast */}
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 to-primary-dark/90 mix-blend-multiply"></div>
+          {/* Improved overlay with pattern */}
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/85 to-primary-dark/80 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-[url('/images/backgrounds/pattern.png')] opacity-10 mix-blend-overlay"></div>
         </div>
 
         {/* Hero Content */}
@@ -27,11 +28,11 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               {/* Left Column - Text Content */}
               <div className="text-white">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-montserrat font-bold mb-6 leading-tight">
-                  <span className="block drop-shadow-md">Find Your Perfect</span>
-                  <span className="block text-accent drop-shadow-md">Career Match</span>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-montserrat font-bold mb-8 leading-tight">
+                  <span className="block drop-shadow-lg animate-fade-in">Find Your Perfect</span>
+                  <span className="block text-accent drop-shadow-lg animate-fade-in-delayed">Career Match</span>
                 </h1>
-                <p className="text-xl md:text-2xl mb-8 text-white font-medium drop-shadow-sm">
+                <p className="text-lg md:text-xl mb-8 text-white font-medium drop-shadow-md">
                   Career Pulse connects talented professionals with innovative companies. 
                   Whether you're hiring or looking to be hired, we've got you covered.
                 </p>
@@ -40,14 +41,20 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
                   <Link 
                     href="/job-search" 
-                    className="btn-primary bg-white text-primary hover:bg-white/90 text-center py-4 px-6 rounded-lg font-medium text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    className="btn-primary bg-white text-primary hover:bg-white/90 text-center py-4 px-6 rounded-lg font-medium text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
                   >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
                     Find Opportunities
                   </Link>
                   <Link 
                     href="/employer-form" 
-                    className="btn-secondary bg-accent text-white hover:bg-accent/90 text-center py-4 px-6 rounded-lg font-medium text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    className="btn-secondary bg-accent text-white hover:bg-accent/90 text-center py-4 px-6 rounded-lg font-medium text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
                   >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                    </svg>
                     Post a Job
                   </Link>
                 </div>
@@ -59,30 +66,30 @@ export default function Home() {
                       <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-gray-200"></div>
                     ))}
                   </div>
-                  <p className="text-white font-medium drop-shadow-sm">
+                  <p className="text-white font-medium drop-shadow-md">
                     <span className="font-bold">10,000+</span> professionals hired
                   </p>
                 </div>
               </div>
               
               {/* Right Column - Stats/Features */}
-              <div className="bg-white/20 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-white/30">
+              <div className="bg-white/30 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-white/40">
                 <div className="grid grid-cols-2 gap-6">
-                  <div className="text-center p-4 bg-white/10 rounded-xl border border-white/20">
-                    <div className="text-3xl font-bold text-white mb-2 drop-shadow-md">85%</div>
-                    <p className="text-white font-medium text-sm drop-shadow-sm">Faster hiring process</p>
+                  <div className="text-center p-4 bg-white/20 rounded-xl border border-white/30 hover:bg-white/30 transition-colors duration-300">
+                    <div className="text-4xl font-bold text-white mb-2 drop-shadow-lg">85%</div>
+                    <p className="text-white font-medium text-sm drop-shadow-md">Faster hiring process</p>
                   </div>
-                  <div className="text-center p-4 bg-white/10 rounded-xl border border-white/20">
-                    <div className="text-3xl font-bold text-white mb-2 drop-shadow-md">3x</div>
-                    <p className="text-white font-medium text-sm drop-shadow-sm">More quality candidates</p>
+                  <div className="text-center p-4 bg-white/20 rounded-xl border border-white/30 hover:bg-white/30 transition-colors duration-300">
+                    <div className="text-4xl font-bold text-white mb-2 drop-shadow-lg">3x</div>
+                    <p className="text-white font-medium text-sm drop-shadow-md">More quality candidates</p>
                   </div>
-                  <div className="text-center p-4 bg-white/10 rounded-xl border border-white/20">
-                    <div className="text-3xl font-bold text-white mb-2 drop-shadow-md">50%</div>
-                    <p className="text-white font-medium text-sm drop-shadow-sm">Cost reduction</p>
+                  <div className="text-center p-4 bg-white/20 rounded-xl border border-white/30 hover:bg-white/30 transition-colors duration-300">
+                    <div className="text-4xl font-bold text-white mb-2 drop-shadow-lg">50%</div>
+                    <p className="text-white font-medium text-sm drop-shadow-md">Cost reduction</p>
                   </div>
-                  <div className="text-center p-4 bg-white/10 rounded-xl border border-white/20">
-                    <div className="text-3xl font-bold text-white mb-2 drop-shadow-md">24/7</div>
-                    <p className="text-white font-medium text-sm drop-shadow-sm">AI-powered matching</p>
+                  <div className="text-center p-4 bg-white/20 rounded-xl border border-white/30 hover:bg-white/30 transition-colors duration-300">
+                    <div className="text-4xl font-bold text-white mb-2 drop-shadow-lg">24/7</div>
+                    <p className="text-white font-medium text-sm drop-shadow-md">AI-powered matching</p>
                   </div>
                 </div>
                 
@@ -92,18 +99,18 @@ export default function Home() {
                     <input
                       type="text"
                       placeholder="Search jobs, skills, or companies..."
-                      className="w-full py-4 px-6 rounded-lg bg-white text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent shadow-md"
+                      className="w-full py-4 px-6 rounded-lg bg-white text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent shadow-lg"
                     />
-                    <button className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-primary text-white p-2 rounded-md hover:bg-primary-dark transition-colors duration-200">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <button className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-primary text-white p-3 rounded-md hover:bg-primary-dark transition-colors duration-200">
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                       </svg>
                     </button>
                   </div>
                   <div className="flex flex-wrap gap-2 mt-4">
-                    <span className="text-white font-medium text-sm drop-shadow-sm">Popular:</span>
+                    <span className="text-white font-medium text-sm drop-shadow-md">Popular:</span>
                     {['Remote', 'Tech', 'Marketing', 'Sales'].map((tag) => (
-                      <button key={tag} className="text-sm bg-white/20 hover:bg-white/30 text-white font-medium px-3 py-1 rounded-full transition-colors duration-200 border border-white/30">
+                      <button key={tag} className="text-sm bg-white/30 hover:bg-white/40 text-white font-medium px-4 py-1.5 rounded-full transition-colors duration-200 border border-white/40 hover:scale-105">
                         {tag}
                       </button>
                     ))}
