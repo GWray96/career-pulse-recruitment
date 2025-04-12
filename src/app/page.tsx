@@ -719,27 +719,27 @@ export default function Home() {
               {/* Right Column - Calendar */}
               <div className="bg-white rounded-xl shadow-2xl p-8">
                 <div className="grid grid-cols-7 gap-2 mb-4">
-                  <div className="text-center font-semibold text-gray-600">Sun</div>
-                  <div className="text-center font-semibold text-gray-600">Mon</div>
-                  <div className="text-center font-semibold text-gray-600">Tue</div>
-                  <div className="text-center font-semibold text-gray-600">Wed</div>
-                  <div className="text-center font-semibold text-gray-600">Thu</div>
-                  <div className="text-center font-semibold text-gray-600">Fri</div>
-                  <div className="text-center font-semibold text-gray-600">Sat</div>
+                  <div className="text-center font-semibold text-deep-charcoal/70">Sun</div>
+                  <div className="text-center font-semibold text-deep-charcoal/70">Mon</div>
+                  <div className="text-center font-semibold text-deep-charcoal/70">Tue</div>
+                  <div className="text-center font-semibold text-deep-charcoal/70">Wed</div>
+                  <div className="text-center font-semibold text-deep-charcoal/70">Thu</div>
+                  <div className="text-center font-semibold text-deep-charcoal/70">Fri</div>
+                  <div className="text-center font-semibold text-deep-charcoal/70">Sat</div>
                 </div>
                 <div className="grid grid-cols-7 gap-2">
                   {[...Array(35)].map((_, i) => {
                     const day = i + 1;
                     const isToday = day === 15; // Mock today's date
-                    // Update to show availability throughout the whole week
-                    const isAvailable = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35].includes(day); // All days are available
+                    // All days are available
+                    const isAvailable = true;
                     return (
                       <div
                         key={i}
                         className={`
                           aspect-square flex items-center justify-center rounded-lg text-sm
-                          ${isToday ? 'bg-blue-100 text-blue-600 font-semibold' : ''}
-                          ${isAvailable ? 'hover:bg-blue-50 cursor-pointer' : 'text-gray-300'}
+                          ${isToday ? 'bg-primary/20 text-primary font-semibold' : ''}
+                          ${isAvailable ? 'hover:bg-primary/10 cursor-pointer text-deep-charcoal' : 'text-gray-300'}
                           ${!isAvailable && !isToday ? 'bg-gray-50' : ''}
                         `}
                       >
@@ -749,12 +749,12 @@ export default function Home() {
                   })}
                 </div>
                 <div className="mt-8 border-t pt-6">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-4">Available Time Slots</h3>
+                  <h3 className="text-lg font-semibold text-deep-charcoal mb-4">Available Time Slots</h3>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                     {['9:00 AM', '10:30 AM', '2:00 PM', '3:30 PM', '4:45 PM'].map((time) => (
                       <button
                         key={time}
-                        className="px-4 py-2 text-sm bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors duration-200"
+                        className="px-4 py-2 text-sm bg-primary/10 text-primary rounded-lg hover:bg-primary/20 transition-colors duration-200"
                       >
                         {time}
                       </button>
@@ -762,7 +762,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="mt-8 text-center">
-                  <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300">
+                  <button className="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors duration-300">
                     Schedule Consultation
                   </button>
                 </div>
