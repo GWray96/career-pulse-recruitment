@@ -969,69 +969,76 @@ export default function Home() {
       </section>
 
       {/* Getting Started Section */}
-      <section className="py-16 sm:py-20 bg-gradient-to-b from-primary-50 to-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-b from-white to-primary-50 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-primary/5 animate-pulse-slow"></div>
+          <div className="absolute bottom-1/4 left-1/4 w-96 h-96 rounded-full bg-accent/5 animate-pulse-slower"></div>
+        </div>
+        
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-deep-charcoal">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-deep-charcoal relative inline-block">
               Getting <span className="text-primary">Started</span> is Easy
+              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-accent rounded-full"></div>
             </h2>
-            <p className="text-base sm:text-lg text-deep-charcoal/70">
+            <p className="text-lg sm:text-xl text-deep-charcoal/70">
               Follow these simple steps to begin your recruitment journey with us
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1">
-              <div className="space-y-6">
+              <div className="space-y-8">
                 {/* Step 1 */}
-                <div className="flex items-start">
-                  <div className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
-                    1
+                <div className="group flex items-start bg-white p-6 rounded-xl shadow-soft hover:shadow-lg transition-all duration-300 hover:scale-[1.02] transform">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary-dark text-white flex items-center justify-center mr-6 flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-xl font-bold">1</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-deep-charcoal mb-2">Contact Us</h3>
+                    <h3 className="text-xl font-bold text-deep-charcoal mb-2 group-hover:text-primary transition-colors duration-300">Contact Us</h3>
                     <p className="text-deep-charcoal/70">Reach out through our website, email, or phone to schedule a free consultation.</p>
                   </div>
                 </div>
                 
                 {/* Step 2 */}
-                <div className="flex items-start">
-                  <div className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
-                    2
+                <div className="group flex items-start bg-white p-6 rounded-xl shadow-soft hover:shadow-lg transition-all duration-300 hover:scale-[1.02] transform">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary-dark text-white flex items-center justify-center mr-6 flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-xl font-bold">2</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-deep-charcoal mb-2">Free Consultation</h3>
+                    <h3 className="text-xl font-bold text-deep-charcoal mb-2 group-hover:text-primary transition-colors duration-300">Free Consultation</h3>
                     <p className="text-deep-charcoal/70">Meet with our recruitment experts to discuss your needs and how we can help.</p>
                   </div>
                 </div>
                 
                 {/* Step 3 */}
-                <div className="flex items-start">
-                  <div className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
-                    3
+                <div className="group flex items-start bg-white p-6 rounded-xl shadow-soft hover:shadow-lg transition-all duration-300 hover:scale-[1.02] transform">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary-dark text-white flex items-center justify-center mr-6 flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-xl font-bold">3</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-deep-charcoal mb-2">Customized Strategy</h3>
+                    <h3 className="text-xl font-bold text-deep-charcoal mb-2 group-hover:text-primary transition-colors duration-300">Customized Strategy</h3>
                     <p className="text-deep-charcoal/70">We develop a tailored recruitment strategy based on your specific requirements.</p>
                   </div>
                 </div>
                 
                 {/* Step 4 */}
-                <div className="flex items-start">
-                  <div className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
-                    4
+                <div className="group flex items-start bg-white p-6 rounded-xl shadow-soft hover:shadow-lg transition-all duration-300 hover:scale-[1.02] transform">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary-dark text-white flex items-center justify-center mr-6 flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-xl font-bold">4</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-deep-charcoal mb-2">Begin Your Journey</h3>
+                    <h3 className="text-xl font-bold text-deep-charcoal mb-2 group-hover:text-primary transition-colors duration-300">Begin Your Journey</h3>
                     <p className="text-deep-charcoal/70">We start the recruitment process and keep you updated every step of the way.</p>
                   </div>
                 </div>
               </div>
               
-              <div className="mt-8">
+              <div className="mt-12 text-center md:text-left">
                 <Link 
                   href="/contact" 
-                  className="btn-primary inline-flex items-center justify-center py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+                  className="inline-flex items-center justify-center py-4 px-8 bg-gradient-to-r from-primary to-primary-dark text-white rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
                 >
                   <span>Contact Us Today</span>
                   <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -1041,25 +1048,28 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="order-1 md:order-2 relative h-64 sm:h-80 md:h-96 rounded-xl overflow-hidden shadow-lg">
-              <Image
-                src="/images/backgrounds/austin-distel-VvAcrVa56fc-unsplash.jpg"
-                alt="Career Pulse recruitment team"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex flex-col justify-end p-6">
-                <div className="bg-white/90 backdrop-blur-sm rounded-lg p-4 shadow-lg transform hover:scale-105 transition-transform duration-300">
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mr-4">
-                      <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="font-bold text-deep-charcoal">Free Consultation</p>
-                      <p className="text-sm text-deep-charcoal/70">Schedule yours today</p>
+            <div className="order-1 md:order-2 relative">
+              <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/images/backgrounds/austin-distel-VvAcrVa56fc-unsplash.jpg"
+                  alt="Career Pulse recruitment team"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-8">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <div className="flex items-center">
+                      <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mr-4">
+                        <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <p className="font-bold text-deep-charcoal text-lg">Free Consultation</p>
+                        <p className="text-deep-charcoal/70">Schedule yours today</p>
+                      </div>
                     </div>
                   </div>
                 </div>
