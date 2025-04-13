@@ -1175,6 +1175,115 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-16 sm:py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-deep-charcoal mb-4 relative inline-block">
+              Frequently Asked Questions
+              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mt-6">
+              Find answers to common questions about our recruitment services and processes.
+            </p>
+          </div>
+
+          {/* FAQ Tabs */}
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            {['All FAQs', 'General FAQs', 'Candidate FAQs', 'Employer FAQs'].map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`px-6 py-3 rounded-full text-base font-medium transition-all duration-300 ${
+                  activeTab === tab
+                    ? 'bg-primary text-white shadow-lg shadow-primary/20'
+                    : 'bg-white text-deep-charcoal/70 hover:bg-gray-50'
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
+
+          {/* FAQ Grid */}
+          <div className="grid gap-6 max-w-4xl mx-auto">
+            {[
+              {
+                category: 'General',
+                question: "What makes Career Pulse different from other recruitment agencies?",
+                answer: "Career Pulse combines cutting-edge technology with personalized service. We use AI-powered matching algorithms and maintain a human touch throughout the recruitment process. Our dedicated team ensures both candidates and employers receive tailored support and guidance."
+              },
+              {
+                category: 'General',
+                question: "How long does the recruitment process typically take?",
+                answer: "The recruitment timeline varies based on specific requirements, but our streamlined process typically takes 2-4 weeks from initial consultation to job offer. We work efficiently while ensuring quality matches for both parties."
+              },
+              {
+                category: 'Candidate',
+                question: "How do I get started as a job seeker?",
+                answer: "Getting started is easy! Simply upload your CV or connect your LinkedIn profile through our platform. Our AI will match you with relevant opportunities, and our recruiters will guide you through the process."
+              },
+              {
+                category: 'Candidate',
+                question: "What support do you provide during the interview process?",
+                answer: "We provide comprehensive interview preparation, including mock interviews, feedback sessions, and guidance on presenting your skills and experience effectively. Our team is available throughout the process to answer questions and provide support."
+              },
+              {
+                category: 'Employer',
+                question: "What industries do you specialize in?",
+                answer: "We specialize in technology, finance, healthcare, and professional services sectors. Our extensive network and industry expertise allow us to find the best talent for your specific needs."
+              },
+              {
+                category: 'Employer',
+                question: "How do you ensure the quality of candidates?",
+                answer: "We implement a rigorous screening process that includes skills assessment, background checks, and multiple interview stages. Our AI-powered matching system also helps ensure candidates meet your specific requirements."
+              },
+              {
+                category: 'General',
+                question: "What are your fees and payment terms?",
+                answer: "Our fee structure is transparent and success-based. We offer flexible payment terms and only charge when we successfully place a candidate. Contact us for a detailed breakdown of our pricing."
+              },
+              {
+                category: 'Candidate',
+                question: "Do you offer career counseling services?",
+                answer: "Yes, we provide career counseling to help you identify your strengths, explore opportunities, and develop your professional path. Our career advisors are available for one-on-one sessions."
+              },
+              {
+                category: 'Employer',
+                question: "Can you help with both permanent and temporary staffing?",
+                answer: "Yes, we offer comprehensive staffing solutions for both permanent and temporary positions. Our flexible approach allows us to adapt to your changing business needs."
+              }
+            ]
+              .filter(faq => activeTab === 'All FAQs' || activeTab === `${faq.category} FAQs`)
+              .map((faq, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-xl shadow-soft p-6 hover:shadow-lg transition-all duration-300"
+                >
+                  <h3 className="text-xl font-bold text-deep-charcoal mb-3">{faq.question}</h3>
+                  <p className="text-gray-600">{faq.answer}</p>
+                </div>
+              ))}
+          </div>
+
+          {/* Contact CTA */}
+          <div className="text-center mt-12">
+            <p className="text-lg text-gray-600 mb-6">
+              Still have questions? We're here to help!
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary-dark transition-all duration-300 hover:shadow-lg group"
+            >
+              Contact Us
+              <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA Section */}
       <section className="py-16 sm:py-20 bg-primary relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
