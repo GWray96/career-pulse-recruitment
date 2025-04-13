@@ -15,13 +15,13 @@ export default function HeroSection() {
   };
   
   return (
-    <section className="relative bg-gradient-to-r from-deep-navy to-primary-700 overflow-hidden">
+    <section className="relative bg-gradient-to-r from-deep-navy to-primary-700 pt-20">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/backgrounds/grid-pattern.svg')] bg-repeat"></div>
       </div>
       
-      <div className="container mx-auto px-4 py-20 md:py-32 relative z-10">
+      <div className="container mx-auto px-4 py-24 md:py-32 relative z-10">
         <div className="flex flex-col lg:flex-row items-center">
           <div className="lg:w-1/2 mb-12 lg:mb-0">
             <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6">
