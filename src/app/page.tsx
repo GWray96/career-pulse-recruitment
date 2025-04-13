@@ -1089,7 +1089,7 @@ export default function Home() {
                 category: "Remote Work",
                 date: "June 15, 2023",
                 readTime: "5 min read",
-                image: "/images/backgrounds/austin-distel-VvAcrVa56fc-unsplash.jpg",
+                image: "/images/backgrounds/annie-spratt-QckxruozjRg-unsplash.jpg",
                 slug: "future-of-remote-work",
               },
               {
@@ -1098,7 +1098,7 @@ export default function Home() {
                 category: "Technology",
                 date: "June 10, 2023",
                 readTime: "7 min read",
-                image: "/images/backgrounds/kaleidico-7lryofJ0H9s-unsplash.jpg",
+                image: "/images/backgrounds/cherrydeck-05gac-Qn0k4-unsplash.jpg",
                 slug: "ai-in-recruitment",
               },
               {
@@ -1107,7 +1107,7 @@ export default function Home() {
                 category: "Employer Branding",
                 date: "June 5, 2023",
                 readTime: "6 min read",
-                image: "/images/backgrounds/linkedin-sales-solutions-1A8yP_5msac-unsplash.jpg",
+                image: "/images/backgrounds/the-jopwell-collection-YBMt6ETGTWA-unsplash.jpg",
                 slug: "employer-branding-2023",
               },
             ].map((post) => (
