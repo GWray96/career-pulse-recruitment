@@ -4,79 +4,152 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Brand Colors */
+  --color-pulse-orange: #F05A28;
+  --color-deep-navy: #1D2A4D;
+  --color-light-grey: #9DA4AE;
+  --color-charcoal-grey: #333740;
+  
+  /* Primary/Accent naming for compatibility */
+  --color-primary: var(--color-deep-navy);
+  --color-primary-dark: #14213D;
+  --color-primary-light: #2E3C66;
+  --color-accent: var(--color-pulse-orange);
+  --color-accent-dark: #D14419;
+  --color-accent-light: #F37A52;
+  
+  /* Background Colors */
+  --color-bg-light: #FFFFFF;
+  --color-bg-off-white: #F8F9FA;
+  --color-bg-grey: #F1F3F5;
+  
+  /* Typography */
+  --font-sans: 'Montserrat', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-body: 'Open Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-  }
-
-  body {
-    @apply bg-background text-foreground antialiased;
-  }
-
   html {
-    @apply font-open-sans text-body text-deep-charcoal;
+    @apply scroll-smooth;
   }
-
+  
+  body {
+    @apply font-body text-deep-charcoal bg-white;
+  }
+  
   h1, h2, h3, h4, h5, h6 {
-    @apply font-montserrat font-bold text-deep-charcoal;
-  }
-
-  h1 {
-    @apply text-h1;
-  }
-
-  h2 {
-    @apply text-h2;
+    @apply font-sans font-bold text-deep-navy;
   }
 }
 
 @layer components {
   .container {
-    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-
+  
   .btn {
     @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
   }
-
+  
   .btn-primary {
-    @apply bg-pulse-blue text-white px-6 py-3 rounded-lg font-montserrat font-semibold 
-           hover:bg-primary-600 transition-colors duration-200;
+    @apply bg-pulse-orange text-white shadow hover:bg-accent-dark
+    focus:ring-accent transition-colors duration-200;
   }
-
+  
   .btn-secondary {
-    @apply bg-bright-coral text-white px-6 py-3 rounded-lg font-montserrat font-semibold 
-           hover:bg-secondary-600 transition-colors duration-200;
+    @apply bg-deep-navy text-white shadow hover:bg-primary-dark
+    focus:ring-primary transition-colors duration-200;
   }
-
+  
+  .btn-outline {
+    @apply border border-deep-navy text-deep-navy hover:bg-deep-navy hover:text-white;
+  }
+  
   .input {
-    @apply flex h-10 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent disabled:cursor-not-allowed disabled:opacity-50;
+    @apply px-4 py-2 border border-light-grey rounded-md
+    focus:ring-2 focus:ring-accent focus:border-accent focus:outline-none transition-all duration-200;
   }
-
-  .input-field {
-    @apply w-full px-4 py-2 border border-cool-gray rounded-lg focus:border-pulse-blue 
-           focus:ring-2 focus:ring-primary-100 outline-none transition-all duration-200;
-  }
-
+  
   .card {
-    @apply bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-200;
+    @apply bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-200;
+  }
+  
+  /* Pulse animation for brand elements */
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    70% {
+      transform: scale(1);
+    }
+  }
+  
+  .animate-pulse-heartbeat {
+    animation: pulse 2s infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 6s infinite;
+  }
+  
+  .animate-pulse-slower {
+    animation: pulse 8s infinite;
+  }
+  
+  .animate-pulse-medium {
+    animation: pulse 4s infinite;
+  }
+  
+  /* Section dividers */
+  .section-divider {
+    @apply w-24 h-1 bg-gradient-to-r from-pulse-orange to-deep-navy rounded-full my-8 mx-auto;
+  }
+
+  /* For headings with underline */
+  .heading-underline {
+    @apply relative inline-block;
+  }
+  
+  .heading-underline::after {
+    @apply content-[''] absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-pulse-orange to-deep-navy rounded-full;
   }
 }
 
-/* Pulse animation for brand elements */
-@keyframes pulse {
-  0% {
-    transform: scale(1);
+/* Tailwind color class extensions */
+@layer utilities {
+  .text-deep-navy {
+    color: var(--color-deep-navy);
   }
-  50% {
-    transform: scale(1.05);
+  
+  .text-pulse-orange {
+    color: var(--color-pulse-orange);
   }
-  100% {
-    transform: scale(1);
+  
+  .text-light-grey {
+    color: var(--color-light-grey);
   }
-}
-
-.animate-pulse-brand {
-  animation: pulse 2s infinite;
+  
+  .text-charcoal-grey {
+    color: var(--color-charcoal-grey);
+  }
+  
+  .bg-deep-navy {
+    background-color: var(--color-deep-navy);
+  }
+  
+  .bg-pulse-orange {
+    background-color: var(--color-pulse-orange);
+  }
+  
+  .bg-light-grey {
+    background-color: var(--color-light-grey);
+  }
+  
+  .bg-charcoal-grey {
+    background-color: var(--color-charcoal-grey);
+  }
 } 

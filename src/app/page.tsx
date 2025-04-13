@@ -36,7 +36,7 @@ export default function Home() {
 
       {/* Section Divider */}
       <div className="w-full flex justify-center">
-        <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent rounded-full my-8"></div>
+        <div className="section-divider"></div>
       </div>
 
       {/* Pain Points Section */}
@@ -67,7 +67,7 @@ export default function Home() {
 
       {/* Section Divider */}
       <div className="w-full flex justify-center">
-        <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent rounded-full my-8"></div>
+        <div className="section-divider"></div>
       </div>
 
       {/* Process Section */}
@@ -160,14 +160,14 @@ export default function Home() {
 
       {/* Section Divider */}
       <div className="w-full flex justify-center">
-        <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent rounded-full my-8"></div>
+        <div className="section-divider"></div>
       </div>
 
       <StatsSection />
 
       {/* Section Divider */}
       <div className="w-full flex justify-center">
-        <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent rounded-full my-8"></div>
+        <div className="section-divider"></div>
       </div>
 
       {/* Featured Jobs Section */}
@@ -175,7 +175,7 @@ export default function Home() {
 
       {/* Section Divider */}
       <div className="w-full flex justify-center">
-        <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent rounded-full my-8"></div>
+        <div className="section-divider"></div>
       </div>
 
       {/* Employer CTA Section - with simplified calendar */}
@@ -224,7 +224,7 @@ export default function Home() {
 
       {/* Section Divider */}
       <div className="w-full flex justify-center">
-        <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent rounded-full my-8"></div>
+        <div className="section-divider"></div>
       </div>
 
       {/* Insights Section - using our component with lazy loading */}
@@ -232,7 +232,7 @@ export default function Home() {
 
       {/* Section Divider */}
       <div className="w-full flex justify-center">
-        <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent rounded-full my-8"></div>
+        <div className="section-divider"></div>
       </div>
 
       {/* FAQ Section */}

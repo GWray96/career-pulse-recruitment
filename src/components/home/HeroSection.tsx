@@ -1,97 +1,154 @@
 'use client';
 
-import Image from 'next/image';
+import { useState } from 'react';
 import Link from 'next/link';
 
 export default function HeroSection() {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchCategory, setSearchCategory] = useState('jobs');
+  
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Searching for:', searchQuery, 'in category:', searchCategory);
+    // In a real app, you would navigate to search results page
+    // router.push(`/search?q=${searchQuery}&category=${searchCategory}`);
+  };
+  
   return (
-    <section className="relative overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/backgrounds/christina-wocintechchat-com-faEfWCdOKIg-unsplash.jpg"
-          alt="Modern office workspace"
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-          quality={90}
-        />
-        {/* Improved overlay with pattern */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/85 to-primary-dark/80 mix-blend-multiply"></div>
-        <div className="absolute inset-0 bg-[url('/images/backgrounds/pattern.png')] opacity-10 mix-blend-overlay"></div>
+    <section className="relative bg-gradient-to-r from-deep-navy to-primary-700 overflow-hidden">
+      {/* Background pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/backgrounds/grid-pattern.svg')] bg-repeat"></div>
       </div>
-
-      {/* Hero Content */}
-      <div className="relative z-10 container mx-auto px-4 py-16 sm:py-20 md:py-24 lg:py-32">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-            {/* Left Column - Text Content */}
-            <div className="text-white text-center md:text-left">
-              <div className="mb-4">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-montserrat font-bold leading-tight">
-                  <span className="block drop-shadow-lg">Find Your Perfect</span>
-                  <span className="block text-accent drop-shadow-lg">Career Match</span>
-                </h1>
-              </div>
-              <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-white font-medium drop-shadow-md">
-                Career Pulse is a leading recruitment agency connecting talented professionals with innovative companies. 
-                Our expert recruiters work with both job seekers and employers to create perfect matches.
-              </p>
-              
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 mb-6 sm:mb-8 justify-center md:justify-start">
-                <Link 
-                  href="/candidate-pulse" 
-                  className="btn-primary bg-white text-primary hover:bg-white/90 text-center py-3 sm:py-4 px-4 sm:px-6 rounded-lg font-medium text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2 group"
-                >
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
-                  Candidate Pulse
-                </Link>
-                <Link 
-                  href="/employer-pulse" 
-                  className="btn-secondary bg-accent text-white hover:bg-accent/90 text-center py-3 sm:py-4 px-4 sm:px-6 rounded-lg font-medium text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2 group"
-                >
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                  </svg>
-                  Employer Pulse
-                </Link>
-              </div>
-              
-              {/* Trust Indicators */}
-              <div className="flex items-center gap-4 sm:gap-6 justify-center md:justify-start">
-                <div className="flex -space-x-2">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white bg-gray-200"></div>
-                  ))}
-                </div>
-                <p className="text-white font-medium drop-shadow-md text-sm sm:text-base">
-                  <span className="font-bold">10,000+</span> professionals hired
-                </p>
-              </div>
-            </div>
+      
+      <div className="container mx-auto px-4 py-20 md:py-32 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center">
+          <div className="lg:w-1/2 mb-12 lg:mb-0">
+            <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6">
+              Find Your Dream Career. <span className="text-pulse-orange animate-pulse-heartbeat inline-block">Thrive</span> With Us.
+            </h1>
+            <p className="text-xl text-white/80 mb-8 max-w-2xl font-body">
+              Connect with top employers and discover opportunities that match your skills, experience, and career aspirations.
+            </p>
             
-            {/* Right Column - Stats/Features */}
-            <div className="bg-white/30 backdrop-blur-md rounded-2xl p-4 sm:p-6 md:p-8 shadow-xl border border-white/40 mt-8 md:mt-0">
-              <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6">
-                <div className="text-center p-3 sm:p-4 bg-white/20 rounded-xl border border-white/30 hover:bg-white/30 transition-colors duration-200 group">
-                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2 drop-shadow-lg">85%</div>
-                  <p className="text-white font-medium text-xs sm:text-sm drop-shadow-md">Faster hiring process</p>
+            <form onSubmit={handleSearch} className="bg-white p-2 rounded-lg shadow-xl flex flex-col md:flex-row mb-8">
+              <div className="flex-1 flex items-center px-3 py-2">
+                <svg className="w-5 h-5 text-light-grey mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd"></path>
+                </svg>
+                <input 
+                  type="text" 
+                  placeholder="Job title, skills, or company"
+                  className="w-full outline-none text-deep-charcoal font-body"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+              </div>
+              
+              <div className="md:border-l border-light-grey px-3 py-2 md:w-48 flex items-center justify-between">
+                <select
+                  className="w-full outline-none bg-transparent text-deep-charcoal font-body"
+                  value={searchCategory}
+                  onChange={(e) => setSearchCategory(e.target.value)}
+                >
+                  <option value="jobs">All Jobs</option>
+                  <option value="remote">Remote Jobs</option>
+                  <option value="fulltime">Full Time</option>
+                  <option value="parttime">Part Time</option>
+                  <option value="contract">Contract</option>
+                </select>
+                <svg className="w-5 h-5 text-light-grey" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path>
+                </svg>
+              </div>
+              
+              <button 
+                type="submit"
+                className="bg-pulse-orange hover:bg-accent-600 text-white font-medium py-2 px-6 rounded-md mt-3 md:mt-0 ml-0 md:ml-2 transition-colors duration-200"
+              >
+                Search
+              </button>
+            </form>
+            
+            <div className="flex flex-wrap gap-2 text-sm text-white/80 font-body">
+              <span>Popular:</span>
+              {['Software Engineer', 'Marketing', 'Product Manager', 'UX Designer'].map((term, index) => (
+                <button 
+                  key={index}
+                  className="border border-white/30 rounded-full px-3 py-1 hover:bg-white/10 transition-colors duration-200"
+                  onClick={() => setSearchQuery(term)}
+                >
+                  {term}
+                </button>
+              ))}
+            </div>
+          </div>
+          
+          <div className="lg:w-1/2 lg:pl-12 flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-md">
+              {/* Decorative elements */}
+              <div className="absolute -top-6 -left-6 w-24 h-24 bg-pulse-orange rounded-full opacity-70 blur-xl"></div>
+              <div className="absolute -bottom-8 -right-8 w-40 h-40 bg-deep-navy rounded-full opacity-70 blur-xl"></div>
+              
+              <div className="relative bg-white rounded-xl shadow-2xl overflow-hidden">
+                <div className="bg-primary-50 p-4 border-b border-gray-100">
+                  <div className="flex justify-between items-center">
+                    <h3 className="font-bold text-deep-navy">Featured Job</h3>
+                    <span className="bg-pulse-orange/10 text-pulse-orange text-xs px-2 py-1 rounded-full">New</span>
+                  </div>
                 </div>
-                <div className="text-center p-3 sm:p-4 bg-white/20 rounded-xl border border-white/30 hover:bg-white/30 transition-colors duration-200 group">
-                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2 drop-shadow-lg">3x</div>
-                  <p className="text-white font-medium text-xs sm:text-sm drop-shadow-md">More quality candidates</p>
-                </div>
-                <div className="text-center p-3 sm:p-4 bg-white/20 rounded-xl border border-white/30 hover:bg-white/30 transition-colors duration-200 group">
-                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2 drop-shadow-lg">50%</div>
-                  <p className="text-white font-medium text-xs sm:text-sm drop-shadow-md">Cost reduction</p>
-                </div>
-                <div className="text-center p-3 sm:p-4 bg-white/20 rounded-xl border border-white/30 hover:bg-white/30 transition-colors duration-200 group">
-                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2 drop-shadow-lg">24/7</div>
-                  <p className="text-white font-medium text-xs sm:text-sm drop-shadow-md">Expert recruitment team</p>
+                
+                <div className="p-6">
+                  <div className="flex items-center mb-4">
+                    <div className="w-14 h-14 bg-gray-100 rounded-md flex items-center justify-center mr-4">
+                      <span className="text-xl font-bold text-deep-navy">A</span>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-deep-navy">Senior Product Designer</h4>
+                      <p className="text-light-grey font-body">AcmeTech Inc.</p>
+                    </div>
+                  </div>
+                  
+                  <div className="mb-4 font-body">
+                    <div className="flex items-center mb-2">
+                      <svg className="w-4 h-4 text-light-grey mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"></path>
+                      </svg>
+                      <span className="text-sm text-charcoal-grey">San Francisco (Remote Available)</span>
+                    </div>
+                    <div className="flex items-center">
+                      <svg className="w-4 h-4 text-light-grey mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd"></path>
+                      </svg>
+                      <span className="text-sm text-charcoal-grey">Full-time</span>
+                    </div>
+                  </div>
+                  
+                  <div className="mb-6 font-body">
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-sm font-medium text-charcoal-grey">Salary</span>
+                      <span className="font-bold text-pulse-orange">$120,000 - $150,000</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium text-charcoal-grey">Posted</span>
+                      <span className="text-sm text-light-grey">2 days ago</span>
+                    </div>
+                  </div>
+                  
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {['UI/UX', 'Product Design', 'Figma', 'User Research'].map((tag, index) => (
+                      <span key={index} className="px-2 py-1 bg-primary-50 text-deep-navy text-xs rounded-full font-body">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  <Link 
+                    href="/jobs/senior-product-designer"
+                    className="block w-full py-3 px-4 bg-pulse-orange hover:bg-accent-600 text-white text-center font-medium rounded-lg transition-colors duration-200"
+                  >
+                    View Job Details
+                  </Link>
                 </div>
               </div>
             </div>
