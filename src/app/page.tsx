@@ -1070,13 +1070,20 @@ export default function Home() {
       </section>
 
       {/* Insights Section */}
-      <section className="py-16 sm:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 sm:py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-primary/5 animate-pulse-slow"></div>
+          <div className="absolute bottom-1/4 left-1/4 w-96 h-96 rounded-full bg-accent/5 animate-pulse-slower"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-deep-charcoal mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-deep-charcoal mb-4 relative inline-block">
               Latest Insights
+              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-accent rounded-full"></div>
             </h2>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mt-6">
               Stay updated with the latest trends and insights in recruitment and career development.
             </p>
           </div>
@@ -1111,40 +1118,41 @@ export default function Home() {
                 slug: "employer-branding-2023",
               },
             ].map((post) => (
-              <article key={post.slug} className="bg-white rounded-xl shadow-soft overflow-hidden transition-all duration-300 hover:shadow-md hover:-translate-y-1">
-                <div className="relative h-48">
+              <article key={post.slug} className="group bg-white rounded-xl shadow-soft overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <div className="relative h-48 overflow-hidden">
                   <Image
                     src={post.image}
                     alt={post.title}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                   <div className="absolute top-4 left-4">
-                    <span className="inline-block px-3 py-1 text-xs font-semibold text-white bg-primary rounded-full">
+                    <span className="inline-block px-3 py-1 text-xs font-semibold text-white bg-primary/90 backdrop-blur-sm rounded-full shadow-lg">
                       {post.category}
                     </span>
                   </div>
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center text-sm text-gray-500 mb-2">
+                  <div className="absolute bottom-4 left-4 right-4 flex items-center text-white/90 text-sm">
                     <span>{post.date}</span>
                     <span className="mx-2">•</span>
                     <span>{post.readTime}</span>
                   </div>
-                  <h3 className="text-xl font-bold text-deep-charcoal mb-3">
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-deep-charcoal mb-3 group-hover:text-primary transition-colors duration-200">
                     <Link href={`/blog/${post.slug}`} className="hover:text-primary transition-colors duration-200">
                       {post.title}
                     </Link>
                   </h3>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-gray-600 mb-4 line-clamp-2">
                     {post.excerpt}
                   </p>
                   <Link 
                     href={`/blog/${post.slug}`}
-                    className="inline-flex items-center text-primary font-medium hover:text-primary-dark transition-colors duration-200"
+                    className="inline-flex items-center text-primary font-medium hover:text-primary-dark transition-colors duration-200 group/link"
                   >
                     Read More
-                    <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="ml-2 w-4 h-4 transform group-hover/link:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                   </Link>
@@ -1156,10 +1164,10 @@ export default function Home() {
           <div className="text-center mt-12">
             <Link
               href="/blog"
-              className="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary-dark transition-colors duration-300"
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary to-primary-dark text-white rounded-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105 group"
             >
               View All Articles
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
