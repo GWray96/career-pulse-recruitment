@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Footer from '@/components/Footer';
-import HeroSection from '@/components/HeroSection';
+import HeroSection from '@/components/home/HeroSection';
 import InsightsSection from '@/components/InsightsSection';
 import CalendarWidget from '@/components/CalendarWidget';
 
@@ -30,7 +30,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-primary-50">
-      {/* Hero Section */}
       <HeroSection />
 
       {/* Section Divider */}
