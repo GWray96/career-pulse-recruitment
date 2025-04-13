@@ -1088,99 +1088,111 @@ export default function Home() {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-deep-charcoal mb-4 relative inline-block">
-              Latest Insights
-              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-deep-charcoal mb-4">
+              Latest <span className="text-primary">Insights</span>
             </h2>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mt-6">
-              Stay updated with the latest trends and insights in recruitment and career development.
+            <p className="text-lg text-deep-charcoal/70 max-w-3xl mx-auto">
+              Stay updated with the latest trends and insights in recruitment and career development
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "The Future of Remote Work: What Employers Need to Know",
-                excerpt: "Explore how remote work is reshaping the recruitment landscape and what employers should consider when building remote teams.",
-                category: "Remote Work",
-                date: "June 15, 2023",
-                readTime: "5 min read",
-                image: "/images/backgrounds/annie-spratt-QckxruozjRg-unsplash.jpg",
-                slug: "future-of-remote-work",
-              },
-              {
-                title: "How AI is Transforming the Recruitment Process",
-                excerpt: "Discover how artificial intelligence is revolutionizing talent acquisition and what it means for both employers and job seekers.",
-                category: "Technology",
-                date: "June 10, 2023",
-                readTime: "7 min read",
-                image: "/images/backgrounds/cherrydeck-05gac-Qn0k4-unsplash.jpg",
-                slug: "ai-in-recruitment",
-              },
-              {
-                title: "Building a Strong Employer Brand in 2023",
-                excerpt: "Learn the essential strategies for creating an employer brand that attracts top talent and fosters employee loyalty.",
-                category: "Employer Branding",
-                date: "June 5, 2023",
-                readTime: "6 min read",
-                image: "/images/backgrounds/the-jopwell-collection-YBMt6ETGTWA-unsplash.jpg",
-                slug: "employer-branding-2023",
-              },
-            ].map((post) => (
-              <article key={post.slug} className="group bg-white rounded-xl shadow-soft overflow-hidden hover:shadow-xl">
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  <div className="absolute top-4 left-4">
-                    <span className="inline-block px-3 py-1 text-xs font-semibold text-white bg-primary/90 backdrop-blur-sm rounded-full shadow-lg">
-                      {post.category}
-                    </span>
-                  </div>
-                  <div className="absolute bottom-4 left-4 right-4 flex items-center text-white/90 text-sm">
-                    <span>{post.date}</span>
-                    <span className="mx-2">•</span>
-                    <span>{post.readTime}</span>
-                  </div>
+            {/* Insight Card 1 */}
+            <div className="group bg-white rounded-2xl shadow-soft hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              <div className="relative h-48 rounded-t-2xl overflow-hidden">
+                <Image
+                  src="/images/blog/post-1.jpg"
+                  alt="Recruitment trends"
+                  fill
+                  className="object-cover transform group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <span className="inline-block px-3 py-1 bg-primary/90 text-white text-sm rounded-full backdrop-blur-sm">
+                    Recruitment
+                  </span>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-deep-charcoal mb-3 group-hover:text-primary">
-                    <Link href={`/blog/${post.slug}`} className="hover:text-primary">
-                      {post.title}
-                    </Link>
-                  </h3>
-                  <p className="text-gray-600 mb-4 line-clamp-2">
-                    {post.excerpt}
-                  </p>
-                  <Link 
-                    href={`/blog/${post.slug}`}
-                    className="inline-flex items-center text-primary font-medium hover:text-primary-dark group/link"
-                  >
-                    Read More
-                    <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </Link>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-deep-charcoal mb-3 group-hover:text-primary transition-colors duration-300">
+                  The Future of Remote Work
+                </h3>
+                <p className="text-deep-charcoal/70 mb-4">
+                  Explore how remote work is reshaping recruitment and what it means for your career.
+                </p>
+                <div className="flex items-center text-primary font-medium group-hover:translate-x-1 transition-transform duration-300">
+                  <span>Read more</span>
+                  <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </div>
-              </article>
-            ))}
-          </div>
+              </div>
+            </div>
 
-          <div className="text-center mt-12">
-            <Link
-              href="/blog"
-              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary to-primary-dark text-white rounded-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105 group"
-            >
-              View All Articles
-              <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
+            {/* Insight Card 2 */}
+            <div className="group bg-white rounded-2xl shadow-soft hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              <div className="relative h-48 rounded-t-2xl overflow-hidden">
+                <Image
+                  src="/images/blog/post-2.jpg"
+                  alt="Career development"
+                  fill
+                  className="object-cover transform group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <span className="inline-block px-3 py-1 bg-accent/90 text-white text-sm rounded-full backdrop-blur-sm">
+                    Career Growth
+                  </span>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-deep-charcoal mb-3 group-hover:text-accent transition-colors duration-300">
+                  Skills for the Digital Age
+                </h3>
+                <p className="text-deep-charcoal/70 mb-4">
+                  Discover the essential skills needed to thrive in today's digital workplace.
+                </p>
+                <div className="flex items-center text-accent font-medium group-hover:translate-x-1 transition-transform duration-300">
+                  <span>Read more</span>
+                  <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            {/* Insight Card 3 */}
+            <div className="group bg-white rounded-2xl shadow-soft hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              <div className="relative h-48 rounded-t-2xl overflow-hidden">
+                <Image
+                  src="/images/blog/post-3.jpg"
+                  alt="Industry insights"
+                  fill
+                  className="object-cover transform group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <span className="inline-block px-3 py-1 bg-primary/90 text-white text-sm rounded-full backdrop-blur-sm">
+                    Industry Trends
+                  </span>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-deep-charcoal mb-3 group-hover:text-primary transition-colors duration-300">
+                  AI in Recruitment
+                </h3>
+                <p className="text-deep-charcoal/70 mb-4">
+                  How artificial intelligence is transforming the recruitment process.
+                </p>
+                <div className="flex items-center text-primary font-medium group-hover:translate-x-1 transition-transform duration-300">
+                  <span>Read more</span>
+                  <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
