@@ -69,7 +69,7 @@ const AnimatedCounter = ({ end, duration = 2000, prefix = '', suffix = '' }: Ani
 };
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState('employers');
+  const [activeTab, setActiveTab] = useState('All FAQs');
   const [activeProcess, setActiveProcess] = useState('employer');
 
   const employerProcess = [
