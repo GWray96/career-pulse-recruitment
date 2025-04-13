@@ -147,7 +147,7 @@ export default function HeroSection() {
                 </div>
               </div>
               
-              <div className="w-full lg:w-1/2 lg:pl-8 xl:pl-12 flex justify-center lg:justify-end">
+              <div className="hidden lg:block w-full lg:w-1/2 lg:pl-8 xl:pl-12 flex justify-center lg:justify-end">
                 <div className="relative w-full max-w-[280px] xs:max-w-sm sm:max-w-md">
                   {/* Decorative elements */}
                   <div className="absolute -top-4 -left-4 w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 bg-pulse-orange rounded-full opacity-70 blur-xl"></div>
@@ -285,7 +285,7 @@ export default function HeroSection() {
                 </div>
               </div>
               
-              <div className="w-full lg:w-1/2 lg:pl-8 xl:pl-12 flex justify-center lg:justify-end">
+              <div className="hidden lg:block w-full lg:w-1/2 lg:pl-8 xl:pl-12 flex justify-center lg:justify-end">
                 <div className="relative w-full max-w-sm md:max-w-md">
                   {/* Decorative elements */}
                   <div className="absolute -top-4 sm:-top-6 -left-4 sm:-left-6 w-16 sm:w-24 h-16 sm:h-24 bg-pulse-orange rounded-full opacity-70 blur-xl"></div>
