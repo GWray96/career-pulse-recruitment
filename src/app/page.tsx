@@ -1084,8 +1084,8 @@ export default function Home() {
       <section className="py-16 sm:py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-primary/5 animate-pulse-slow"></div>
-          <div className="absolute bottom-1/4 left-1/4 w-96 h-96 rounded-full bg-accent/5 animate-pulse-slower"></div>
+          <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-primary/5 opacity-50"></div>
+          <div className="absolute bottom-1/4 left-1/4 w-96 h-96 rounded-full bg-accent/5 opacity-50"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -1100,29 +1100,29 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Insight Card 1 */}
-            <div className="group bg-white rounded-2xl shadow-soft hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div className="group bg-white rounded-2xl shadow-soft hover:shadow-md transition-shadow duration-200">
               <div className="relative h-48 rounded-t-2xl overflow-hidden">
                 <Image
                   src="/images/backgrounds/annie-spratt-QckxruozjRg-unsplash.jpg"
                   alt="Recruitment trends"
                   fill
-                  className="object-cover transform group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover group-hover:scale-[1.02] transition-transform duration-200 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <span className="inline-block px-3 py-1 bg-primary/90 text-white text-sm rounded-full backdrop-blur-sm">
+                  <span className="inline-block px-3 py-1 bg-primary/90 text-white text-sm rounded-full">
                     Recruitment
                   </span>
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-deep-charcoal mb-3 group-hover:text-primary transition-colors duration-300">
+                <h3 className="text-xl font-bold text-deep-charcoal mb-3 group-hover:text-primary transition-colors duration-200">
                   The Future of Remote Work
                 </h3>
                 <p className="text-deep-charcoal/70 mb-4">
                   Explore how remote work is reshaping recruitment and what it means for your career.
                 </p>
-                <div className="flex items-center text-primary font-medium group-hover:translate-x-1 transition-transform duration-300">
+                <div className="flex items-center text-primary font-medium group-hover:translate-x-1 transition-transform duration-200">
                   <span>Read more</span>
                   <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -1132,29 +1132,29 @@ export default function Home() {
             </div>
 
             {/* Insight Card 2 */}
-            <div className="group bg-white rounded-2xl shadow-soft hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div className="group bg-white rounded-2xl shadow-soft hover:shadow-md transition-shadow duration-200">
               <div className="relative h-48 rounded-t-2xl overflow-hidden">
                 <Image
                   src="/images/backgrounds/cherrydeck-05gac-Qn0k4-unsplash.jpg"
                   alt="Career development"
                   fill
-                  className="object-cover transform group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover group-hover:scale-[1.02] transition-transform duration-200 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <span className="inline-block px-3 py-1 bg-accent/90 text-white text-sm rounded-full backdrop-blur-sm">
+                  <span className="inline-block px-3 py-1 bg-accent/90 text-white text-sm rounded-full">
                     Career Growth
                   </span>
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-deep-charcoal mb-3 group-hover:text-accent transition-colors duration-300">
+                <h3 className="text-xl font-bold text-deep-charcoal mb-3 group-hover:text-accent transition-colors duration-200">
                   Skills for the Digital Age
                 </h3>
                 <p className="text-deep-charcoal/70 mb-4">
                   Discover the essential skills needed to thrive in today's digital workplace.
                 </p>
-                <div className="flex items-center text-accent font-medium group-hover:translate-x-1 transition-transform duration-300">
+                <div className="flex items-center text-accent font-medium group-hover:translate-x-1 transition-transform duration-200">
                   <span>Read more</span>
                   <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -1164,29 +1164,29 @@ export default function Home() {
             </div>
 
             {/* Insight Card 3 */}
-            <div className="group bg-white rounded-2xl shadow-soft hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div className="group bg-white rounded-2xl shadow-soft hover:shadow-md transition-shadow duration-200">
               <div className="relative h-48 rounded-t-2xl overflow-hidden">
                 <Image
                   src="/images/backgrounds/the-jopwell-collection-YBMt6ETGTWA-unsplash.jpg"
                   alt="Industry insights"
                   fill
-                  className="object-cover transform group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover group-hover:scale-[1.02] transition-transform duration-200 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <span className="inline-block px-3 py-1 bg-primary/90 text-white text-sm rounded-full backdrop-blur-sm">
+                  <span className="inline-block px-3 py-1 bg-primary/90 text-white text-sm rounded-full">
                     Industry Trends
                   </span>
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-deep-charcoal mb-3 group-hover:text-primary transition-colors duration-300">
+                <h3 className="text-xl font-bold text-deep-charcoal mb-3 group-hover:text-primary transition-colors duration-200">
                   AI in Recruitment
                 </h3>
                 <p className="text-deep-charcoal/70 mb-4">
                   How artificial intelligence is transforming the recruitment process.
                 </p>
-                <div className="flex items-center text-primary font-medium group-hover:translate-x-1 transition-transform duration-300">
+                <div className="flex items-center text-primary font-medium group-hover:translate-x-1 transition-transform duration-200">
                   <span>Read more</span>
                   <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
