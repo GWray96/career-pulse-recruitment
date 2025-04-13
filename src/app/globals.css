@@ -58,11 +58,11 @@ body {
   }
 
   .btn-primary {
-    @apply bg-primary text-white hover:bg-primary-dark transition-colors duration-200;
+    @apply bg-primary text-white hover:bg-primary-700 transition-colors duration-200;
   }
 
   .btn-secondary {
-    @apply bg-accent text-white hover:bg-accent/90 transition-colors duration-200;
+    @apply bg-accent text-white hover:bg-accent-600 transition-colors duration-200;
   }
 
   .card {
