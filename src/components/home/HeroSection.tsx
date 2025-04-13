@@ -63,7 +63,7 @@ export default function HeroSection() {
         </div>
         
         {/* Sliding container - Adjust height for different screen sizes */}
-        <div className="relative h-[800px] xs:h-[750px] sm:h-[700px] md:h-[650px] lg:h-[600px] xl:h-[550px] overflow-hidden">
+        <div className="relative h-[600px] xs:h-[550px] sm:h-[500px] md:h-[450px] lg:h-[600px] xl:h-[550px] overflow-hidden">
           {/* Employer View */}
           <div 
             className={`absolute w-full transition-all duration-1000 ease-in-out ${
@@ -220,8 +220,8 @@ export default function HeroSection() {
                 : 'translate-x-full opacity-0'
             }`}
           >
-            <div className="flex flex-col lg:flex-row items-start lg:items-center">
-              <div className="lg:w-1/2 mb-8 sm:mb-10 lg:mb-0">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-12">
+              <div className="w-full lg:w-1/2 mb-8 sm:mb-10 lg:mb-0">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-white leading-tight mb-4 sm:mb-6">
                   Your Career <span className="text-pulse-orange animate-pulse-heartbeat inline-block">Accelerated</span>
                 </h1>
