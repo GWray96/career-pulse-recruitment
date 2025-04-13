@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link'
 import Image from 'next/image'
+import Footer from '@/components/Footer';
 
 interface AnimatedCounterProps {
   end: number;
@@ -1342,6 +1343,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </div>
-  )
-} 
+  );
+}
