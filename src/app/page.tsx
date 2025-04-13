@@ -1118,17 +1118,17 @@ export default function Home() {
                 slug: "employer-branding-2023",
               },
             ].map((post) => (
-              <article key={post.slug} className="group bg-white rounded-xl shadow-soft overflow-hidden transition-all duration-200 ease-out hover:shadow-xl hover:-translate-y-1">
+              <article key={post.slug} className="group bg-white rounded-xl shadow-soft overflow-hidden transition-all duration-0 hover:shadow-xl hover:-translate-y-1">
                 <div className="relative h-48 overflow-hidden">
                   <Image
                     src={post.image}
                     alt={post.title}
                     fill
-                    className="object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+                    className="object-cover transition-transform duration-0 ease-out group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-200 ease-out"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-0 ease-out"></div>
                   <div className="absolute top-4 left-4">
-                    <span className="inline-block px-3 py-1 text-xs font-semibold text-white bg-primary/90 backdrop-blur-sm rounded-full shadow-lg transition-transform duration-200 ease-out group-hover:scale-105">
+                    <span className="inline-block px-3 py-1 text-xs font-semibold text-white bg-primary/90 backdrop-blur-sm rounded-full shadow-lg transition-transform duration-0 ease-out group-hover:scale-105">
                       {post.category}
                     </span>
                   </div>
@@ -1139,8 +1139,8 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-deep-charcoal mb-3 transition-colors duration-200 ease-out group-hover:text-primary">
-                    <Link href={`/blog/${post.slug}`} className="hover:text-primary transition-colors duration-200 ease-out">
+                  <h3 className="text-xl font-bold text-deep-charcoal mb-3 transition-colors duration-0 ease-out group-hover:text-primary">
+                    <Link href={`/blog/${post.slug}`} className="hover:text-primary transition-colors duration-0 ease-out">
                       {post.title}
                     </Link>
                   </h3>
@@ -1149,10 +1149,10 @@ export default function Home() {
                   </p>
                   <Link 
                     href={`/blog/${post.slug}`}
-                    className="inline-flex items-center text-primary font-medium hover:text-primary-dark transition-colors duration-200 ease-out group/link"
+                    className="inline-flex items-center text-primary font-medium hover:text-primary-dark transition-colors duration-0 ease-out group/link"
                   >
                     Read More
-                    <svg className="ml-2 w-4 h-4 transform transition-transform duration-200 ease-out group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="ml-2 w-4 h-4 transform transition-transform duration-0 ease-out group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                   </Link>
