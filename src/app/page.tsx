@@ -1102,7 +1102,7 @@ export default function Home() {
             <div className="group bg-white rounded-2xl shadow-soft hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
               <div className="relative h-48 rounded-t-2xl overflow-hidden">
                 <Image
-                  src="/images/blog/post-1.jpg"
+                  src="/images/backgrounds/annie-spratt-QckxruozjRg-unsplash.jpg"
                   alt="Recruitment trends"
                   fill
                   className="object-cover transform group-hover:scale-105 transition-transform duration-500"
@@ -1134,7 +1134,7 @@ export default function Home() {
             <div className="group bg-white rounded-2xl shadow-soft hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
               <div className="relative h-48 rounded-t-2xl overflow-hidden">
                 <Image
-                  src="/images/blog/post-2.jpg"
+                  src="/images/backgrounds/cherrydeck-05gac-Qn0k4-unsplash.jpg"
                   alt="Career development"
                   fill
                   className="object-cover transform group-hover:scale-105 transition-transform duration-500"
@@ -1166,7 +1166,7 @@ export default function Home() {
             <div className="group bg-white rounded-2xl shadow-soft hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
               <div className="relative h-48 rounded-t-2xl overflow-hidden">
                 <Image
-                  src="/images/blog/post-3.jpg"
+                  src="/images/backgrounds/the-jopwell-collection-YBMt6ETGTWA-unsplash.jpg"
                   alt="Industry insights"
                   fill
                   className="object-cover transform group-hover:scale-105 transition-transform duration-500"
