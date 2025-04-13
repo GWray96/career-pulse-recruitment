@@ -63,7 +63,7 @@ export default function HeroSection() {
         </div>
         
         {/* Sliding container - Adjust height for different screen sizes */}
-        <div className="relative h-[600px] xs:h-[550px] sm:h-[500px] md:h-[450px] lg:h-[600px] xl:h-[550px] overflow-hidden">
+        <div className="relative h-[650px] xs:h-[600px] sm:h-[550px] md:h-[500px] lg:h-[600px] xl:h-[550px] overflow-hidden">
           {/* Employer View */}
           <div 
             className={`absolute w-full transition-all duration-1000 ease-in-out ${
@@ -147,7 +147,7 @@ export default function HeroSection() {
                 </div>
               </div>
               
-              <div className="hidden lg:block w-full lg:w-1/2 lg:pl-8 xl:pl-12 flex justify-center lg:justify-end">
+              <div className="hidden lg:block w-full lg:w-1/2 lg:pl-8 xl:pl-12 flex justify-center lg:justify-center">
                 <div className="relative w-full max-w-[280px] xs:max-w-sm sm:max-w-md">
                   {/* Decorative elements */}
                   <div className="absolute -top-4 -left-4 w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 bg-pulse-orange rounded-full opacity-70 blur-xl"></div>
@@ -277,7 +277,7 @@ export default function HeroSection() {
                   </div>
                 </div>
                 
-                <div className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 rounded-full text-white text-xs sm:text-sm">
+                <div className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 rounded-full text-white text-xs sm:text-sm mb-4">
                   <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-1.5 sm:mr-2 text-pulse-orange" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
@@ -285,7 +285,7 @@ export default function HeroSection() {
                 </div>
               </div>
               
-              <div className="hidden lg:block w-full lg:w-1/2 lg:pl-8 xl:pl-12 flex justify-center lg:justify-end">
+              <div className="hidden lg:block w-full lg:w-1/2 lg:pl-8 xl:pl-12 flex justify-center lg:justify-center">
                 <div className="relative w-full max-w-sm md:max-w-md">
                   {/* Decorative elements */}
                   <div className="absolute -top-4 sm:-top-6 -left-4 sm:-left-6 w-16 sm:w-24 h-16 sm:h-24 bg-pulse-orange rounded-full opacity-70 blur-xl"></div>
