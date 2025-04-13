@@ -5,8 +5,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Footer from '@/components/Footer';
 import HeroSection from '@/components/home/HeroSection';
-import InsightsSection from '@/components/InsightsSection';
-import CalendarWidget from '@/components/CalendarWidget';
+import InsightsSection from '@/components/home/InsightsSection';
+import CalendarWidget from '@/components/home/CalendarWidget';
+import StatsSection from '@/components/home/StatsSection';
+import FeaturedJobsSection from '@/components/home/FeaturedJobsSection';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('All FAQs');
@@ -161,36 +163,15 @@ export default function Home() {
         <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent rounded-full my-8"></div>
       </div>
 
-      {/* Featured Jobs Section - simplified scanning */}
-      <section id="featured-jobs" className="py-16 sm:py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-deep-charcoal mb-4">
-              Featured Opportunities
-            </h2>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover exciting career opportunities with leading companies
-            </p>
-          </div>
+      <StatsSection />
 
-          {/* Job cards in grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8">
-            {/* Job cards */}
-          </div>
-          
-          <div className="text-center">
-            <Link 
-              href="/jobs"
-              className="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary-dark transition-colors duration-200 shadow-md"
-            >
-              View All Jobs
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* Section Divider */}
+      <div className="w-full flex justify-center">
+        <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent rounded-full my-8"></div>
+      </div>
+
+      {/* Featured Jobs Section */}
+      <FeaturedJobsSection />
 
       {/* Section Divider */}
       <div className="w-full flex justify-center">
