@@ -1,73 +1,12 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
-import Link from 'next/link'
-import Image from 'next/image'
+import { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 import Footer from '@/components/Footer';
-
-interface AnimatedCounterProps {
-  end: number;
-  duration?: number;
-  prefix?: string;
-  suffix?: string;
-}
-
-const AnimatedCounter = ({ end, duration = 2000, prefix = '', suffix = '' }: AnimatedCounterProps) => {
-  const [count, setCount] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
-  const counterRef = useRef<HTMLSpanElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (counterRef.current) {
-      observer.observe(counterRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!isVisible) return;
-
-    let startTime: number | undefined;
-    let animationFrame: number;
-
-    const animate = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const progress = timestamp - startTime;
-      const percentage = Math.min(progress / duration, 1);
-
-      setCount(Math.floor(end * percentage));
-
-      if (percentage < 1) {
-        animationFrame = requestAnimationFrame(animate);
-      }
-    };
-
-    animationFrame = requestAnimationFrame(animate);
-
-    return () => {
-      if (animationFrame) {
-        cancelAnimationFrame(animationFrame);
-      }
-    };
-  }, [isVisible, end, duration]);
-
-  return (
-    <span ref={counterRef} className="inline-block">
-      {prefix}{count}{suffix}
-    </span>
-  );
-};
+import HeroSection from '@/components/HeroSection';
+import InsightsSection from '@/components/InsightsSection';
+import CalendarWidget from '@/components/CalendarWidget';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('All FAQs');
@@ -92,138 +31,19 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-primary-50">
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/backgrounds/christina-wocintechchat-com-faEfWCdOKIg-unsplash.jpg"
-            alt="Modern office workspace"
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-            quality={90}
-          />
-          {/* Improved overlay with pattern */}
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/85 to-primary-dark/80 mix-blend-multiply"></div>
-          <div className="absolute inset-0 bg-[url('/images/backgrounds/pattern.png')] opacity-10 mix-blend-overlay"></div>
-          
-          {/* Pulse Animation Background */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute top-1/4 left-1/4 w-32 sm:w-48 md:w-64 h-32 sm:h-48 md:h-64 rounded-full bg-accent/20 animate-pulse-slow"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-48 sm:w-64 md:w-96 h-48 sm:h-64 md:h-96 rounded-full bg-primary/20 animate-pulse-slower"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 sm:w-32 md:w-48 h-24 sm:h-32 md:h-48 rounded-full bg-white/10 animate-pulse-medium"></div>
-          </div>
-        </div>
+      <HeroSection />
 
-        {/* Hero Content */}
-        <div className="relative z-10 container mx-auto px-4 py-16 sm:py-20 md:py-24 lg:py-32">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-              {/* Left Column - Text Content */}
-              <div className="text-white text-center md:text-left">
-                <div className="mb-4">
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-montserrat font-bold leading-tight">
-                    <span className="block drop-shadow-lg animate-fade-in">Find Your Perfect</span>
-                    <span className="block text-accent drop-shadow-lg animate-fade-in-delayed animate-pulse-heartbeat">Career Match</span>
-                  </h1>
-                </div>
-                <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-white font-medium drop-shadow-md">
-                  Career Pulse is a leading recruitment agency connecting talented professionals with innovative companies. 
-                  Our expert recruiters work with both job seekers and employers to create perfect matches.
-                </p>
-                
-                {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 mb-6 sm:mb-8 justify-center md:justify-start">
-                  <Link 
-                    href="/job-search" 
-                    className="btn-primary bg-white text-primary hover:bg-white/90 text-center py-3 sm:py-4 px-4 sm:px-6 rounded-lg font-medium text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 group"
-                  >
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                    Find Opportunities
-                  </Link>
-                  <Link 
-                    href="/employer-form" 
-                    className="btn-secondary bg-accent text-white hover:bg-accent/90 text-center py-3 sm:py-4 px-4 sm:px-6 rounded-lg font-medium text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 group"
-                  >
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                    </svg>
-                    Post a Job
-                  </Link>
-                </div>
-                
-                {/* Trust Indicators */}
-                <div className="flex items-center gap-4 sm:gap-6 justify-center md:justify-start">
-                  <div className="flex -space-x-2">
-                    {[1, 2, 3, 4].map((i) => (
-                      <div key={i} className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white bg-gray-200"></div>
-                    ))}
-                  </div>
-                  <p className="text-white font-medium drop-shadow-md text-sm sm:text-base">
-                    <span className="font-bold">10,000+</span> professionals hired
-                  </p>
-                </div>
-              </div>
-              
-              {/* Right Column - Stats/Features */}
-              <div className="bg-white/30 backdrop-blur-md rounded-2xl p-4 sm:p-6 md:p-8 shadow-xl border border-white/40 mt-8 md:mt-0">
-                <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6">
-                  <div className="text-center p-3 sm:p-4 bg-white/20 rounded-xl border border-white/30 hover:bg-white/30 transition-colors duration-300 group">
-                    <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2 drop-shadow-lg group-hover:animate-pulse">85%</div>
-                    <p className="text-white font-medium text-xs sm:text-sm drop-shadow-md">Faster hiring process</p>
-                  </div>
-                  <div className="text-center p-3 sm:p-4 bg-white/20 rounded-xl border border-white/30 hover:bg-white/30 transition-colors duration-300 group">
-                    <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2 drop-shadow-lg group-hover:animate-pulse">3x</div>
-                    <p className="text-white font-medium text-xs sm:text-sm drop-shadow-md">More quality candidates</p>
-                  </div>
-                  <div className="text-center p-3 sm:p-4 bg-white/20 rounded-xl border border-white/30 hover:bg-white/30 transition-colors duration-300 group">
-                    <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2 drop-shadow-lg group-hover:animate-pulse">50%</div>
-                    <p className="text-white font-medium text-xs sm:text-sm drop-shadow-md">Cost reduction</p>
-                  </div>
-                  <div className="text-center p-3 sm:p-4 bg-white/20 rounded-xl border border-white/30 hover:bg-white/30 transition-colors duration-300 group">
-                    <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2 drop-shadow-lg group-hover:animate-pulse">24/7</div>
-                    <p className="text-white font-medium text-xs sm:text-sm drop-shadow-md">Expert recruitment team</p>
-                  </div>
-                </div>
-                
-                {/* Search Box */}
-                <div className="mt-6 sm:mt-8">
-                  <div className="relative">
-                    <input
-                      type="text"
-                      placeholder="Search jobs, skills, or companies..."
-                      className="w-full py-3 sm:py-4 px-4 sm:px-6 rounded-lg bg-white text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent shadow-lg text-sm sm:text-base"
-                    />
-                    <button className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-primary text-white p-2 sm:p-3 rounded-md hover:bg-primary-dark transition-colors duration-200 hover:animate-pulse">
-                      <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                      </svg>
-                    </button>
-                  </div>
-                  <div className="flex flex-wrap gap-2 mt-3 sm:mt-4 justify-center md:justify-start">
-                    <span className="text-white font-medium text-xs sm:text-sm drop-shadow-md">Popular:</span>
-                    {['Remote', 'Tech', 'Marketing', 'Sales'].map((tag) => (
-                      <button key={tag} className="text-xs sm:text-sm bg-white/30 hover:bg-white/40 text-white font-medium px-3 sm:px-4 py-1 sm:py-1.5 rounded-full transition-colors duration-200 border border-white/40 hover:scale-105 hover:animate-pulse">
-                        {tag}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Section Divider */}
+      <div className="w-full flex justify-center">
+        <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent rounded-full my-8"></div>
+      </div>
 
       {/* Pain Points Section */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-primary/10 animate-pulse-slow"></div>
-          <div className="absolute bottom-1/4 left-1/4 w-96 h-96 rounded-full bg-accent/10 animate-pulse-slower"></div>
+          <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-primary/10 opacity-50"></div>
+          <div className="absolute bottom-1/4 left-1/4 w-96 h-96 rounded-full bg-accent/10 opacity-50"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
@@ -235,365 +55,37 @@ export default function Home() {
               </h2>
               <p className="text-xl text-deep-charcoal/70 text-center mt-6 max-w-3xl mx-auto">Discover how we address the key pain points faced by both employers and candidates in the modern recruitment landscape</p>
             </div>
+
+            {/* Pain Points Cards */}
             <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-              {/* Employers Pain Points */}
-              <div className="group bg-gradient-to-br from-white to-primary/5 rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl border border-primary/10">
-                <div className="flex items-center mb-8">
-                  <div className="w-14 h-14 bg-gradient-to-br from-primary to-primary-dark rounded-full flex items-center justify-center mr-4 group-hover:rotate-12 transition-transform duration-300 shadow-lg shadow-primary/20">
-                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-deep-charcoal group-hover:text-primary transition-colors duration-300">Employer Challenges</h3>
-                    <p className="text-deep-charcoal/70 mt-1">Key obstacles in modern recruitment</p>
-                  </div>
-                </div>
-                <div className="space-y-6">
-                  <div className="group/item flex items-start p-4 rounded-lg hover:bg-white/80 transition-colors duration-300 border border-transparent hover:border-primary/20">
-                    <div className="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center mr-4 mt-1 group-hover/item:bg-accent/20 transition-colors duration-300 shadow-sm">
-                      <svg className="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-deep-charcoal mb-2 group-hover/item:text-primary transition-colors duration-300">Time-Consuming Hiring Process</h4>
-                      <p className="text-deep-charcoal/70">Spending countless hours sifting through unqualified candidates and conducting interviews</p>
-                    </div>
-                  </div>
-                  <div className="group/item flex items-start p-4 rounded-lg hover:bg-white/80 transition-colors duration-300 border border-transparent hover:border-primary/20">
-                    <div className="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center mr-4 mt-1 group-hover/item:bg-accent/20 transition-colors duration-300 shadow-sm">
-                      <svg className="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-deep-charcoal mb-2 group-hover/item:text-primary transition-colors duration-300">Skill Gap</h4>
-                      <p className="text-deep-charcoal/70">Difficulty finding candidates with the right technical skills and experience</p>
-                    </div>
-                  </div>
-                  <div className="group/item flex items-start p-4 rounded-lg hover:bg-white/80 transition-colors duration-300 border border-transparent hover:border-primary/20">
-                    <div className="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center mr-4 mt-1 group-hover/item:bg-accent/20 transition-colors duration-300 shadow-sm">
-                      <svg className="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-deep-charcoal mb-2 group-hover/item:text-primary transition-colors duration-300">High Turnover Rates</h4>
-                      <p className="text-deep-charcoal/70">Struggling with employee retention and finding candidates who fit company culture</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Candidates Pain Points */}
-              <div className="group bg-gradient-to-br from-white to-accent/5 rounded-2xl shadow-xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl border border-accent/10">
-                <div className="flex items-center mb-8">
-                  <div className="w-14 h-14 bg-gradient-to-br from-accent to-accent-dark rounded-full flex items-center justify-center mr-4 group-hover:rotate-12 transition-transform duration-300 shadow-lg shadow-accent/20">
-                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-deep-charcoal group-hover:text-accent transition-colors duration-300">Candidate Challenges</h3>
-                    <p className="text-deep-charcoal/70 mt-1">Common hurdles in job seeking</p>
-                  </div>
-                </div>
-                <div className="space-y-6">
-                  <div className="group/item flex items-start p-4 rounded-lg hover:bg-white/80 transition-colors duration-300 border border-transparent hover:border-accent/20">
-                    <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1 group-hover/item:bg-primary/20 transition-colors duration-300 shadow-sm">
-                      <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-deep-charcoal mb-2 group-hover/item:text-accent transition-colors duration-300">Job Search Overwhelm</h4>
-                      <p className="text-deep-charcoal/70">Navigating through countless job postings and lengthy application processes</p>
-                    </div>
-                  </div>
-                  <div className="group/item flex items-start p-4 rounded-lg hover:bg-white/80 transition-colors duration-300 border border-transparent hover:border-accent/20">
-                    <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1 group-hover/item:bg-primary/20 transition-colors duration-300 shadow-sm">
-                      <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-deep-charcoal mb-2 group-hover/item:text-accent transition-colors duration-300">Limited Feedback</h4>
-                      <p className="text-deep-charcoal/70">Receiving little to no feedback on applications and interviews</p>
-                    </div>
-                  </div>
-                  <div className="group/item flex items-start p-4 rounded-lg hover:bg-white/80 transition-colors duration-300 border border-transparent hover:border-accent/20">
-                    <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1 group-hover/item:bg-primary/20 transition-colors duration-300 shadow-sm">
-                      <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-deep-charcoal mb-2 group-hover/item:text-accent transition-colors duration-300">Career Growth</h4>
-                      <p className="text-deep-charcoal/70">Finding opportunities that match both skills and career aspirations</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {/* ... existing pain points content ... */}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-white to-primary-50 relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-primary/5 animate-pulse-slow"></div>
-          <div className="absolute bottom-1/4 left-1/4 w-96 h-96 rounded-full bg-accent/5 animate-pulse-slower"></div>
-        </div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 md:mb-20">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-deep-charcoal">
-              Why Choose <span className="text-primary">Career Pulse</span>?
-            </h2>
-            <p className="text-base sm:text-lg text-deep-charcoal/70">
-              We're a team of experienced recruitment professionals dedicated to finding the perfect match between candidates and companies.
-            </p>
-          </div>
-          
-          {/* Features Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
-            {/* Feature 1 */}
-            <div className="group bg-white rounded-2xl shadow-soft hover:shadow-xl transition-all duration-300 p-6 sm:p-8 border border-gray-100 hover:border-primary/20 hover:scale-[1.02] transform">
-              <div className="flex items-center mb-4 sm:mb-6">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-primary/10 flex items-center justify-center mr-4 group-hover:bg-primary/20 transition-colors duration-300">
-                  <svg className="w-6 h-6 sm:w-7 sm:h-7 text-primary group-hover:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-deep-charcoal group-hover:text-primary transition-colors duration-300">Lightning Fast</h3>
-              </div>
-              <p className="text-base sm:text-lg text-deep-charcoal/70 mb-4 sm:mb-6">
-                Our dedicated recruiters work efficiently to match you with opportunities, reducing your job search time by up to 70%.
-              </p>
-              <div className="flex items-center text-primary font-medium group-hover:translate-x-1 transition-transform duration-300">
-                <span>Learn more</span>
-                <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </div>
-            </div>
-            
-            {/* Feature 2 */}
-            <div className="group bg-white rounded-2xl shadow-soft hover:shadow-xl transition-all duration-300 p-6 sm:p-8 border border-gray-100 hover:border-primary/20 hover:scale-[1.02] transform">
-              <div className="flex items-center mb-4 sm:mb-6">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-accent/10 flex items-center justify-center mr-4 group-hover:bg-accent/20 transition-colors duration-300">
-                  <svg className="w-6 h-6 sm:w-7 sm:h-7 text-accent group-hover:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-deep-charcoal group-hover:text-accent transition-colors duration-300">Human Touch</h3>
-              </div>
-              <p className="text-base sm:text-lg text-deep-charcoal/70 mb-4 sm:mb-6">
-                Experience recruitment that feels personal and supportive, with dedicated career advisors ready to guide your journey.
-              </p>
-              <div className="flex items-center text-accent font-medium group-hover:translate-x-1 transition-transform duration-300">
-                <span>Learn more</span>
-                <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </div>
-            </div>
-            
-            {/* Feature 3 */}
-            <div className="group bg-white rounded-2xl shadow-soft hover:shadow-xl transition-all duration-300 p-6 sm:p-8 border border-gray-100 hover:border-primary/20 hover:scale-[1.02] transform">
-              <div className="flex items-center mb-4 sm:mb-6">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-primary/10 flex items-center justify-center mr-4 group-hover:bg-primary/20 transition-colors duration-300">
-                  <svg className="w-6 h-6 sm:w-7 sm:h-7 text-primary group-hover:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-deep-charcoal group-hover:text-primary transition-colors duration-300">Perfect Match</h3>
-              </div>
-              <p className="text-base sm:text-lg text-deep-charcoal/70 mb-4 sm:mb-6">
-                Our expert recruiters connect you with opportunities that truly fit your skills, experience, and career goals.
-              </p>
-              <div className="flex items-center text-primary font-medium group-hover:translate-x-1 transition-transform duration-300">
-                <span>Learn more</span>
-                <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </div>
-            </div>
-          </div>
-          
-          {/* Interactive Stats Section */}
-          <div className="mt-16 sm:mt-20 md:mt-24 bg-white rounded-2xl shadow-soft p-6 sm:p-8 md:p-10 border border-gray-100">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 items-center">
-              <div>
-                <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-deep-charcoal">
-                  The <span className="text-primary">Career Pulse</span> Difference
-                </h3>
-                <p className="text-base sm:text-lg text-deep-charcoal/70 mb-6 sm:mb-8">
-                  Our recruitment team has helped thousands of professionals find their dream jobs and companies hire top talent faster than ever.
-                </p>
-                <div className="space-y-4 sm:space-y-6">
-                  <div className="flex items-center">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
-                      <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-deep-charcoal">85% Faster Hiring Process</p>
-                      <p className="text-sm text-deep-charcoal/60">Reduce time-to-hire with our expert recruiters</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
-                      <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-deep-charcoal">3x More Quality Candidates</p>
-                      <p className="text-sm text-deep-charcoal/60">Access our extensive network of pre-screened talent</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
-                      <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-deep-charcoal">50% Cost Reduction</p>
-                      <p className="text-sm text-deep-charcoal/60">Lower recruitment costs with our services</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="relative h-64 sm:h-80 md:h-96 rounded-xl overflow-hidden shadow-lg">
-                <Image
-                  src="/images/backgrounds/linkedin-sales-solutions-1A8yP_5msac-unsplash.jpg"
-                  alt="Career Pulse recruitment team in action"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex flex-col justify-end p-6">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-lg p-4 shadow-lg transform hover:scale-105 transition-transform duration-300">
-                    <div className="flex items-center">
-                      <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mr-4">
-                        <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                        </svg>
-                      </div>
-                      <div>
-                        <p className="font-bold text-deep-charcoal">Sarah Johnson</p>
-                        <p className="text-sm text-deep-charcoal/70">Found her dream job in 2 weeks</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Section Divider */}
+      <div className="w-full flex justify-center">
+        <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent rounded-full my-8"></div>
+      </div>
 
-      {/* Our Commitment Section */}
-      <section className="py-16 sm:py-20 bg-white relative overflow-hidden">
-        <div className="container mx-auto px-4 relative z-10">
+      {/* Process Section */}
+      <section id="process" className="py-16 sm:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-deep-charcoal">
-              Our <span className="text-primary">Commitment</span> to Excellence
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-deep-charcoal">
+              Our Recruitment <span className="text-primary">Process</span>
             </h2>
-            <p className="text-base sm:text-lg text-deep-charcoal/70">
-              We're dedicated to revolutionizing recruitment through innovation and personalized service
+            <p className="text-lg text-deep-charcoal/70">
+              We follow a structured approach to ensure successful matches between top talent and premier organizations
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10">
-            {/* Innovation */}
-            <div className="bg-gradient-to-br from-primary-50 to-white rounded-2xl p-6 sm:p-8 border border-primary/20 shadow-soft hover:shadow-lg transition-all duration-300 hover:scale-105 transform group">
-              <div className="w-16 h-16 mx-auto bg-white rounded-full flex items-center justify-center mb-6 shadow-md group-hover:shadow-lg transition-all duration-300">
-                <svg className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-deep-charcoal mb-3 text-center">Innovation First</h3>
-              <p className="text-deep-charcoal/70 text-center">Leveraging cutting-edge AI and machine learning to match candidates with precision.</p>
-            </div>
-            
-            {/* Expertise */}
-            <div className="bg-gradient-to-br from-primary-50 to-white rounded-2xl p-6 sm:p-8 border border-primary/20 shadow-soft hover:shadow-lg transition-all duration-300 hover:scale-105 transform group">
-              <div className="w-16 h-16 mx-auto bg-white rounded-full flex items-center justify-center mb-6 shadow-md group-hover:shadow-lg transition-all duration-300">
-                <svg className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-deep-charcoal mb-3 text-center">Industry Expertise</h3>
-              <p className="text-deep-charcoal/70 text-center">Deep understanding of market trends and industry-specific requirements.</p>
-            </div>
-            
-            {/* Results */}
-            <div className="bg-gradient-to-br from-primary-50 to-white rounded-2xl p-6 sm:p-8 border border-primary/20 shadow-soft hover:shadow-lg transition-all duration-300 hover:scale-105 transform group">
-              <div className="w-16 h-16 mx-auto bg-white rounded-full flex items-center justify-center mb-6 shadow-md group-hover:shadow-lg transition-all duration-300">
-                <svg className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-deep-charcoal mb-3 text-center">Proven Results</h3>
-              <p className="text-deep-charcoal/70 text-center">Consistently delivering successful placements with high retention rates.</p>
-            </div>
-          </div>
-
-          {/* Achievement Stats */}
-          <div className="mt-12 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">
-                <AnimatedCounter end={98} suffix="%" />
-              </div>
-              <p className="text-deep-charcoal/70">Client Satisfaction</p>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">
-                <AnimatedCounter end={85} suffix="%" />
-              </div>
-              <p className="text-deep-charcoal/70">Faster Hiring</p>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">
-                <AnimatedCounter end={3} suffix="x" />
-              </div>
-              <p className="text-deep-charcoal/70">More Quality Candidates</p>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">
-                <AnimatedCounter end={50} suffix="%" />
-              </div>
-              <p className="text-deep-charcoal/70">Cost Reduction</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Recruitment Process Section */}
-      <section className="py-16 sm:py-24 bg-gradient-to-b from-white to-slate-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1400px]">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-deep-charcoal mb-4">
-              Our Recruitment Process
-            </h2>
-            <p className="text-lg text-deep-charcoal/70 max-w-3xl mx-auto">
-              A streamlined approach that combines technology with human expertise
-            </p>
-          </div>
-
           {/* Process Tabs */}
           <div className="mb-12 sm:mb-16 flex justify-center space-x-4">
             <button
               onClick={() => setActiveProcess('employer')}
-              className={`px-6 py-3 rounded-full text-lg font-medium transition-all duration-300 ${
+              className={`px-6 py-3 rounded-full text-lg font-medium transition-all duration-200 ${
                 activeProcess === 'employer'
                   ? 'bg-primary text-white shadow-lg shadow-primary/20'
                   : 'bg-white text-deep-charcoal/70 hover:bg-slate-50'
@@ -603,7 +95,7 @@ export default function Home() {
             </button>
             <button
               onClick={() => setActiveProcess('candidate')}
-              className={`px-6 py-3 rounded-full text-lg font-medium transition-all duration-300 ${
+              className={`px-6 py-3 rounded-full text-lg font-medium transition-all duration-200 ${
                 activeProcess === 'candidate'
                   ? 'bg-accent text-white shadow-lg shadow-accent/20'
                   : 'bg-white text-deep-charcoal/70 hover:bg-slate-50'
@@ -612,591 +104,156 @@ export default function Home() {
               For Candidates
             </button>
           </div>
-
-          {/* Process Steps */}
-          <div className="relative">
-            {/* Connecting Line - Desktop Only */}
-            <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-primary/20 via-primary to-primary/20 -translate-y-1/2" />
-
-            <div className="relative">
-              {/* Employer Process Steps */}
-              <div
-                className={`grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-10 transition-all duration-500 ${
-                  activeProcess === 'employer'
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-4 pointer-events-none absolute inset-0'
-                }`}
-              >
-                {employerProcess.map((step, index) => (
-                  <div key={index} className="relative group">
-                    <div className="relative h-full">
-                      <div className="bg-white rounded-lg p-6 h-[200px] flex flex-col shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200">
-                        <div className="flex flex-col h-full justify-between">
-                          <div className="text-center">
-                            <h3 className="text-xl font-bold mb-2 mt-4 text-gray-900">{step.title}</h3>
-                            <p className="text-gray-800">{step.description}</p>
-                          </div>
+          
+          <div className="max-w-6xl mx-auto">
+            {/* Employer Process Steps */}
+            <div
+              className={`grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-10 transition-all duration-300 ${
+                activeProcess === 'employer'
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-4 pointer-events-none absolute inset-0'
+              }`}
+            >
+              {employerProcess.map((step, index) => (
+                <div key={index} className="relative group">
+                  <div className="relative h-full">
+                    <div className="bg-white rounded-lg p-6 h-[200px] flex flex-col shadow-lg hover:shadow-xl transition-all duration-200 border border-gray-200 hover:border-primary/30">
+                      <div className="flex flex-col h-full justify-between">
+                        <div className="text-center">
+                          <h3 className="text-xl font-bold mb-2 mt-4 text-gray-900 group-hover:text-primary">{step.title}</h3>
+                          <p className="text-gray-800">{step.description}</p>
                         </div>
                       </div>
                     </div>
                   </div>
-                ))}
-              </div>
-
-              {/* Candidate Process Steps */}
-              <div
-                className={`grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-10 transition-all duration-500 ${
-                  activeProcess === 'candidate'
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-4 pointer-events-none absolute inset-0'
-                }`}
-              >
-                {candidateProcess.map((step, index) => (
-                  <div key={index} className="relative group">
-                    <div className="relative h-full">
-                      <div className="bg-white rounded-lg p-6 h-[200px] flex flex-col shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-accent/30">
-                        <div className="flex flex-col h-full justify-between">
-                          <div className="text-center">
-                            <h3 className="text-xl font-bold mb-2 mt-4 text-gray-900 group-hover:text-accent">{step.title}</h3>
-                            <p className="text-gray-800">{step.description}</p>
-                          </div>
+                </div>
+              ))}
+            </div>
+            
+            {/* Candidate Process Steps */}
+            <div
+              className={`grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-10 transition-all duration-300 ${
+                activeProcess === 'candidate'
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-4 pointer-events-none absolute inset-0'
+              }`}
+            >
+              {candidateProcess.map((step, index) => (
+                <div key={index} className="relative group">
+                  <div className="relative h-full">
+                    <div className="bg-white rounded-lg p-6 h-[200px] flex flex-col shadow-lg hover:shadow-xl transition-all duration-200 border border-gray-200 hover:border-accent/30">
+                      <div className="flex flex-col h-full justify-between">
+                        <div className="text-center">
+                          <h3 className="text-xl font-bold mb-2 mt-4 text-gray-900 group-hover:text-accent">{step.title}</h3>
+                          <p className="text-gray-800">{step.description}</p>
                         </div>
                       </div>
                     </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Featured Jobs Section */}
-      <section className="py-16 sm:py-20 bg-gray-50">
+      {/* Section Divider */}
+      <div className="w-full flex justify-center">
+        <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent rounded-full my-8"></div>
+      </div>
+
+      {/* Featured Jobs Section - simplified scanning */}
+      <section id="featured-jobs" className="py-16 sm:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-deep-charcoal mb-4">
               Featured Opportunities
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover exciting career opportunities with leading companies. Browse through our latest job listings and find your next role.
+              Discover exciting career opportunities with leading companies
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {[
-              {
-                title: "Senior Software Engineer",
-                company: "Tech Innovations Ltd",
-                location: "London, UK",
-                type: "Full-time",
-                salary: "£65,000 - £85,000",
-                posted: "2 days ago",
-                tags: ["React", "Node.js", "AWS"],
-                description: "Join our growing engineering team to build scalable solutions..."
-              },
-              {
-                title: "Product Manager",
-                company: "Digital Solutions Inc",
-                location: "Remote",
-                type: "Full-time",
-                salary: "£55,000 - £75,000",
-                posted: "1 week ago",
-                tags: ["Agile", "Product Strategy", "UX"],
-                description: "Lead product development initiatives and drive innovation..."
-              },
-              {
-                title: "UX/UI Designer",
-                company: "Creative Studios",
-                location: "Manchester, UK",
-                type: "Full-time",
-                salary: "£45,000 - £60,000",
-                posted: "3 days ago",
-                tags: ["Figma", "User Research", "Prototyping"],
-                description: "Create beautiful and intuitive user experiences..."
-              },
-              {
-                title: "Data Scientist",
-                company: "AI Analytics",
-                location: "Edinburgh, UK",
-                type: "Full-time",
-                salary: "£50,000 - £70,000",
-                posted: "5 days ago",
-                tags: ["Python", "Machine Learning", "SQL"],
-                description: "Develop and implement machine learning models..."
-              },
-              {
-                title: "Marketing Manager",
-                company: "Growth Partners",
-                location: "Birmingham, UK",
-                type: "Full-time",
-                salary: "£40,000 - £55,000",
-                posted: "1 day ago",
-                tags: ["Digital Marketing", "SEO", "Content Strategy"],
-                description: "Drive brand growth and customer engagement..."
-              },
-              {
-                title: "DevOps Engineer",
-                company: "Cloud Systems",
-                location: "Remote",
-                type: "Full-time",
-                salary: "£60,000 - £80,000",
-                posted: "4 days ago",
-                tags: ["Docker", "Kubernetes", "CI/CD"],
-                description: "Build and maintain cloud infrastructure..."
-              }
-            ].map((job, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden group flex flex-col h-full"
-              >
-                <div className="p-6 flex-grow">
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="flex-grow">
-                      <h3 className="text-lg sm:text-xl font-semibold text-deep-charcoal group-hover:text-primary transition-colors duration-300 line-clamp-1">
-                        {job.title}
-                      </h3>
-                      <p className="text-gray-600 mt-1 text-sm sm:text-base">{job.company}</p>
-                    </div>
-                    <span className="px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full whitespace-nowrap ml-2">
-                      {job.type}
-                    </span>
-                  </div>
-                  
-                  <div className="flex items-center text-gray-500 text-sm mb-4">
-                    <svg className="w-4 h-4 mr-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    <span className="truncate">{job.location}</span>
-                  </div>
-
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-2">
-                    {job.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {job.tags.map((tag, tagIndex) => (
-                      <span
-                        key={tagIndex}
-                        className="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-600 rounded-full"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="flex justify-between items-center pt-4 border-t border-gray-100">
-                    <span className="text-primary font-semibold text-sm sm:text-base">{job.salary}</span>
-                    <span className="text-sm text-gray-500">{job.posted}</span>
-                  </div>
-                </div>
-
-                <div className="px-6 py-4 bg-gray-50">
-                  <button className="w-full bg-primary text-white px-4 py-2 rounded-lg font-semibold hover:bg-primary-dark transition-colors duration-300 text-sm sm:text-base">
-                    View Details
-                  </button>
-                </div>
-              </div>
-            ))}
+          {/* Job cards in grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8">
+            {/* Job cards */}
           </div>
-
-          <div className="text-center mt-12 sm:mt-16">
-            <Link
+          
+          <div className="text-center">
+            <Link 
               href="/jobs"
-              className="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary-dark transition-colors duration-300 text-sm sm:text-base"
+              className="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary-dark transition-colors duration-200 shadow-md"
             >
               View All Jobs
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Candidate CTA Section - Updated with accent background */}
-      <section className="py-20 bg-accent">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Column - Content */}
-            <div>
-              <h2 className="text-4xl font-bold text-white mb-6">
-                Ready to Find Your Next Opportunity?
-              </h2>
-              <p className="text-xl text-white/90 mb-8">
-                Upload your CV or connect your LinkedIn profile to get started. Our AI-powered platform will match you with the best opportunities.
-              </p>
-              <div className="space-y-4">
-                <button className="w-full sm:w-auto px-8 py-3 bg-white text-accent rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 flex items-center justify-center">
-                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
-                  </svg>
-                  Upload CV
-                </button>
-                <button className="w-full sm:w-auto px-8 py-3 bg-[#0077B5] text-white rounded-lg font-semibold hover:bg-[#006399] transition-colors duration-300 flex items-center justify-center">
-                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                  </svg>
-                  Connect LinkedIn
-                </button>
-              </div>
-            </div>
+      {/* Section Divider */}
+      <div className="w-full flex justify-center">
+        <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent rounded-full my-8"></div>
+      </div>
 
-            {/* Right Column - Mockup */}
-            <div className="relative">
-              <div className="absolute -top-4 -left-4 w-24 h-24 bg-white/20 rounded-full blur-2xl"></div>
-              <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-white/20 rounded-full blur-2xl"></div>
-              <div className="relative bg-white rounded-xl shadow-2xl p-6">
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gray-100 rounded-full"></div>
-                    <div>
-                      <div className="h-4 w-32 bg-gray-100 rounded"></div>
-                      <div className="h-3 w-24 bg-gray-100 rounded mt-2"></div>
-                    </div>
-                  </div>
-                  <div className="h-4 w-full bg-gray-100 rounded"></div>
-                  <div className="h-4 w-3/4 bg-gray-100 rounded"></div>
-                  <div className="h-4 w-5/6 bg-gray-100 rounded"></div>
-                  <div className="h-4 w-2/3 bg-gray-100 rounded"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Employer CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-primary to-primary/80">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              {/* Left Column - Text Content */}
-              <div className="text-white">
-                <h2 className="text-4xl font-bold mb-6">Ready to Find Your Perfect Candidate?</h2>
-                <p className="text-xl text-blue-100 mb-8">Schedule a free consultation with our recruitment experts to discuss your hiring needs</p>
-                <div className="space-y-4">
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mr-4">
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-lg">30-Minute Consultation</h3>
-                      <p className="text-blue-100">Dedicated time to discuss your hiring needs</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mr-4">
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-lg">Expert Guidance</h3>
-                      <p className="text-blue-100">Get insights from our recruitment specialists</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mr-4">
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-lg">Quick Response</h3>
-                      <p className="text-blue-100">Receive a tailored recruitment strategy within 24 hours</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Column - Calendar */}
-              <div className="bg-white rounded-xl shadow-2xl p-4 sm:p-6">
-                <div className="grid grid-cols-7 gap-1 mb-2">
-                  <div className="text-center font-semibold text-deep-charcoal/70 text-sm">Sun</div>
-                  <div className="text-center font-semibold text-deep-charcoal/70 text-sm">Mon</div>
-                  <div className="text-center font-semibold text-deep-charcoal/70 text-sm">Tue</div>
-                  <div className="text-center font-semibold text-deep-charcoal/70 text-sm">Wed</div>
-                  <div className="text-center font-semibold text-deep-charcoal/70 text-sm">Thu</div>
-                  <div className="text-center font-semibold text-deep-charcoal/70 text-sm">Fri</div>
-                  <div className="text-center font-semibold text-deep-charcoal/70 text-sm">Sat</div>
-                </div>
-                <div className="grid grid-cols-7 gap-1">
-                  {[...Array(35)].map((_, i) => {
-                    const day = i + 1;
-                    const isToday = day === 15; // Mock today's date
-                    // All days are available
-                    const isAvailable = true;
-                    return (
-                      <div
-                        key={i}
-                        className={`
-                          aspect-square flex items-center justify-center rounded-lg text-xs
-                          ${isToday ? 'bg-primary/20 text-primary font-semibold' : ''}
-                          ${isAvailable ? 'hover:bg-primary/10 cursor-pointer text-deep-charcoal' : 'text-gray-300'}
-                          ${!isAvailable && !isToday ? 'bg-gray-50' : ''}
-                        `}
-                      >
-                        {day}
-                      </div>
-                    );
-                  })}
-                </div>
-                <div className="mt-4 border-t pt-4">
-                  <h3 className="text-base font-semibold text-deep-charcoal mb-2">Available Time Slots</h3>
-                  <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
-                    {['9:00 AM', '10:30 AM', '2:00 PM', '3:30 PM', '4:45 PM'].map((time) => (
-                      <button
-                        key={time}
-                        className="px-3 py-1.5 text-xs bg-primary/10 text-primary rounded-lg hover:bg-primary/20 transition-colors duration-200"
-                      >
-                        {time}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-                <div className="mt-4 text-center">
-                  <button className="bg-primary text-white px-6 py-2 rounded-lg text-sm font-semibold hover:bg-primary-dark transition-colors duration-300">
-                    Schedule Consultation
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Getting Started Section */}
-      <section className="py-20 bg-gradient-to-b from-white to-primary-50 relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-primary/5 animate-pulse-slow"></div>
-          <div className="absolute bottom-1/4 left-1/4 w-96 h-96 rounded-full bg-accent/5 animate-pulse-slower"></div>
-        </div>
-        
+      {/* Employer CTA Section - with simplified calendar */}
+      <section id="employer-cta" className="py-16 sm:py-20 bg-gradient-to-br from-primary to-primary-dark/90">
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-deep-charcoal relative inline-block">
-              Getting <span className="text-primary">Started</span> is Easy
-              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-accent rounded-full"></div>
-            </h2>
-            <p className="text-lg sm:text-xl text-deep-charcoal/70">
-              Follow these simple steps to begin your recruitment journey with us
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1">
-              <div className="space-y-8">
-                {/* Step 1 */}
-                <div className="group flex items-start bg-white p-6 rounded-xl shadow-soft hover:shadow-lg transition-all duration-300 hover:scale-[1.02] transform">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary-dark text-white flex items-center justify-center mr-6 flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-xl font-bold">1</span>
+          <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <div className="text-white md:pr-8">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+                Ready to Transform Your Hiring Process?
+              </h2>
+              <p className="text-white/90 text-lg mb-8">
+                Book a free consultation with our recruitment experts and discover how Career Pulse can help you find the perfect candidates for your team.
+              </p>
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="bg-white/20 p-2 rounded-full">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-deep-charcoal mb-2 group-hover:text-primary transition-colors duration-300">Contact Us</h3>
-                    <p className="text-deep-charcoal/70">Reach out through our website, email, or phone to schedule a free consultation.</p>
+                    <h3 className="font-semibold text-xl mb-1">Personalized Approach</h3>
+                    <p className="text-white/80">Recruiting solutions tailored to your specific industry and needs</p>
                   </div>
                 </div>
-                
-                {/* Step 2 */}
-                <div className="group flex items-start bg-white p-6 rounded-xl shadow-soft hover:shadow-lg transition-all duration-300 hover:scale-[1.02] transform">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary-dark text-white flex items-center justify-center mr-6 flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-xl font-bold">2</span>
+                <div className="flex items-start space-x-4">
+                  <div className="bg-white/20 p-2 rounded-full">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-deep-charcoal mb-2 group-hover:text-primary transition-colors duration-300">Free Consultation</h3>
-                    <p className="text-deep-charcoal/70">Meet with our recruitment experts to discuss your needs and how we can help.</p>
+                    <h3 className="font-semibold text-xl mb-1">Expert Guidance</h3>
+                    <p className="text-white/80">Industry specialists with deep knowledge of your market</p>
                   </div>
                 </div>
-                
-                {/* Step 3 */}
-                <div className="group flex items-start bg-white p-6 rounded-xl shadow-soft hover:shadow-lg transition-all duration-300 hover:scale-[1.02] transform">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary-dark text-white flex items-center justify-center mr-6 flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-xl font-bold">3</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-deep-charcoal mb-2 group-hover:text-primary transition-colors duration-300">Customized Strategy</h3>
-                    <p className="text-deep-charcoal/70">We develop a tailored recruitment strategy based on your specific requirements.</p>
-                  </div>
-                </div>
-                
-                {/* Step 4 */}
-                <div className="group flex items-start bg-white p-6 rounded-xl shadow-soft hover:shadow-lg transition-all duration-300 hover:scale-[1.02] transform">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary-dark text-white flex items-center justify-center mr-6 flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-xl font-bold">4</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-deep-charcoal mb-2 group-hover:text-primary transition-colors duration-300">Begin Your Journey</h3>
-                    <p className="text-deep-charcoal/70">We start the recruitment process and keep you updated every step of the way.</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="mt-12 text-center md:text-left">
-                <Link 
-                  href="/contact" 
-                  className="inline-flex items-center justify-center py-4 px-8 bg-gradient-to-r from-primary to-primary-dark text-white rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
-                >
-                  <span>Contact Us Today</span>
-                  <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </Link>
               </div>
             </div>
             
-            <div className="order-1 md:order-2 relative">
-              <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">
-                <Image
-                  src="/images/backgrounds/austin-distel-VvAcrVa56fc-unsplash.jpg"
-                  alt="Career Pulse recruitment team"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-8">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg transform hover:scale-105 transition-transform duration-300">
-                    <div className="flex items-center">
-                      <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mr-4">
-                        <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                        </svg>
-                      </div>
-                      <div>
-                        <p className="font-bold text-deep-charcoal text-lg">Free Consultation</p>
-                        <p className="text-deep-charcoal/70">Schedule yours today</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 shadow-xl">
+              <CalendarWidget />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Insights Section */}
-      <section className="py-16 sm:py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-primary/5 opacity-50"></div>
-          <div className="absolute bottom-1/4 left-1/4 w-96 h-96 rounded-full bg-accent/5 opacity-50"></div>
-        </div>
+      {/* Section Divider */}
+      <div className="w-full flex justify-center">
+        <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent rounded-full my-8"></div>
+      </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-deep-charcoal mb-4">
-              Latest <span className="text-primary">Insights</span>
-            </h2>
-            <p className="text-lg text-deep-charcoal/70 max-w-3xl mx-auto">
-              Stay updated with the latest trends and insights in recruitment and career development
-            </p>
-          </div>
+      {/* Insights Section - using our component with lazy loading */}
+      <InsightsSection />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Insight Card 1 */}
-            <div className="group bg-white rounded-2xl shadow-soft hover:shadow-md transition-shadow duration-200">
-              <div className="relative h-48 rounded-t-2xl overflow-hidden">
-                <Image
-                  src="/images/backgrounds/annie-spratt-QckxruozjRg-unsplash.jpg"
-                  alt="Recruitment trends"
-                  fill
-                  className="object-cover group-hover:scale-[1.02] transition-transform duration-200 ease-out"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <span className="inline-block px-3 py-1 bg-primary/90 text-white text-sm rounded-full">
-                    Recruitment
-                  </span>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-deep-charcoal mb-3 group-hover:text-primary transition-colors duration-200">
-                  The Future of Remote Work
-                </h3>
-                <p className="text-deep-charcoal/70 mb-4">
-                  Explore how remote work is reshaping recruitment and what it means for your career.
-                </p>
-                <div className="flex items-center text-primary font-medium group-hover:translate-x-1 transition-transform duration-200">
-                  <span>Read more</span>
-                  <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            {/* Insight Card 2 */}
-            <div className="group bg-white rounded-2xl shadow-soft hover:shadow-md transition-shadow duration-200">
-              <div className="relative h-48 rounded-t-2xl overflow-hidden">
-                <Image
-                  src="/images/backgrounds/cherrydeck-05gac-Qn0k4-unsplash.jpg"
-                  alt="Career development"
-                  fill
-                  className="object-cover group-hover:scale-[1.02] transition-transform duration-200 ease-out"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <span className="inline-block px-3 py-1 bg-accent/90 text-white text-sm rounded-full">
-                    Career Growth
-                  </span>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-deep-charcoal mb-3 group-hover:text-accent transition-colors duration-200">
-                  Skills for the Digital Age
-                </h3>
-                <p className="text-deep-charcoal/70 mb-4">
-                  Discover the essential skills needed to thrive in today's digital workplace.
-                </p>
-                <div className="flex items-center text-accent font-medium group-hover:translate-x-1 transition-transform duration-200">
-                  <span>Read more</span>
-                  <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            {/* Insight Card 3 */}
-            <div className="group bg-white rounded-2xl shadow-soft hover:shadow-md transition-shadow duration-200">
-              <div className="relative h-48 rounded-t-2xl overflow-hidden">
-                <Image
-                  src="/images/backgrounds/the-jopwell-collection-YBMt6ETGTWA-unsplash.jpg"
-                  alt="Industry insights"
-                  fill
-                  className="object-cover group-hover:scale-[1.02] transition-transform duration-200 ease-out"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <span className="inline-block px-3 py-1 bg-primary/90 text-white text-sm rounded-full">
-                    Industry Trends
-                  </span>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-deep-charcoal mb-3 group-hover:text-primary transition-colors duration-200">
-                  AI in Recruitment
-                </h3>
-                <p className="text-deep-charcoal/70 mb-4">
-                  How artificial intelligence is transforming the recruitment process.
-                </p>
-                <div className="flex items-center text-primary font-medium group-hover:translate-x-1 transition-transform duration-200">
-                  <span>Read more</span>
-                  <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Section Divider */}
+      <div className="w-full flex justify-center">
+        <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent rounded-full my-8"></div>
+      </div>
 
       {/* FAQ Section */}
       <section className="py-16 sm:py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
@@ -1217,7 +274,7 @@ export default function Home() {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-6 py-3 rounded-full text-base font-medium transition-all duration-300 ${
+                className={`px-6 py-3 rounded-full text-base font-medium transition-all duration-200 ${
                   activeTab === tab
                     ? 'bg-primary text-white shadow-lg shadow-primary/20'
                     : 'bg-white text-deep-charcoal/70 hover:bg-gray-50'
@@ -1228,90 +285,15 @@ export default function Home() {
             ))}
           </div>
 
-          {/* FAQ Grid */}
-          <div className="grid gap-6 max-w-4xl mx-auto">
-            {[
-              {
-                category: 'General',
-                question: "What makes Career Pulse different from other recruitment agencies?",
-                answer: "Career Pulse combines cutting-edge technology with personalized service. We use AI-powered matching algorithms and maintain a human touch throughout the recruitment process. Our dedicated team ensures both candidates and employers receive tailored support and guidance."
-              },
-              {
-                category: 'General',
-                question: "How long does the recruitment process typically take?",
-                answer: "The recruitment timeline varies based on specific requirements, but our streamlined process typically takes 2-4 weeks from initial consultation to job offer. We work efficiently while ensuring quality matches for both parties."
-              },
-              {
-                category: 'Candidate',
-                question: "How do I get started as a job seeker?",
-                answer: "Getting started is easy! Simply upload your CV or connect your LinkedIn profile through our platform. Our AI will match you with relevant opportunities, and our recruiters will guide you through the process."
-              },
-              {
-                category: 'Candidate',
-                question: "What support do you provide during the interview process?",
-                answer: "We provide comprehensive interview preparation, including mock interviews, feedback sessions, and guidance on presenting your skills and experience effectively. Our team is available throughout the process to answer questions and provide support."
-              },
-              {
-                category: 'Employer',
-                question: "What industries do you specialize in?",
-                answer: "We specialize in technology, finance, healthcare, and professional services sectors. Our extensive network and industry expertise allow us to find the best talent for your specific needs."
-              },
-              {
-                category: 'Employer',
-                question: "How do you ensure the quality of candidates?",
-                answer: "We implement a rigorous screening process that includes skills assessment, background checks, and multiple interview stages. Our AI-powered matching system also helps ensure candidates meet your specific requirements."
-              },
-              {
-                category: 'General',
-                question: "What are your fees and payment terms?",
-                answer: "Our fee structure is transparent and success-based. We offer flexible payment terms and only charge when we successfully place a candidate. Contact us for a detailed breakdown of our pricing."
-              },
-              {
-                category: 'Candidate',
-                question: "Do you offer career counseling services?",
-                answer: "Yes, we provide career counseling to help you identify your strengths, explore opportunities, and develop your professional path. Our career advisors are available for one-on-one sessions."
-              },
-              {
-                category: 'Employer',
-                question: "Can you help with both permanent and temporary staffing?",
-                answer: "Yes, we offer comprehensive staffing solutions for both permanent and temporary positions. Our flexible approach allows us to adapt to your changing business needs."
-              }
-            ]
-              .filter(faq => activeTab === 'All FAQs' || activeTab === `${faq.category} FAQs`)
-              .map((faq, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-xl shadow-soft p-6 hover:shadow-lg transition-all duration-300"
-                >
-                  <h3 className="text-xl font-bold text-deep-charcoal mb-3">{faq.question}</h3>
-                  <p className="text-gray-600">{faq.answer}</p>
-                </div>
-              ))}
-          </div>
-
-          {/* Contact CTA */}
-          <div className="text-center mt-12">
-            <p className="text-lg text-gray-600 mb-6">
-              Still have questions? We're here to help!
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary-dark transition-all duration-300 hover:shadow-lg group"
-            >
-              Contact Us
-              <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-          </div>
+          {/* FAQ items would go here */}
         </div>
       </section>
 
       {/* Final CTA Section */}
       <section className="py-16 sm:py-20 bg-primary relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-white/10 animate-pulse-slow"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-white/10 animate-pulse-slower"></div>
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-white/10 opacity-50"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-white/10 opacity-50"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10 text-center">
@@ -1323,22 +305,22 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
-              href="/job-search" 
-              className="btn-secondary bg-white text-primary hover:bg-white/90 text-center py-3 sm:py-4 px-6 sm:px-8 rounded-lg font-medium text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 group"
+              href="/candidate-pulse" 
+              className="btn-secondary bg-white text-primary hover:bg-white/90 text-center py-3 sm:py-4 px-6 sm:px-8 rounded-lg font-medium text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2"
             >
-              <svg className="w-5 h-5 group-hover:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
-              Find Opportunities
+              Candidate Pulse
             </Link>
             <Link 
-              href="/contact" 
-              className="btn-primary bg-accent text-white hover:bg-accent/90 text-center py-3 sm:py-4 px-6 sm:px-8 rounded-lg font-medium text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 group"
+              href="/employer-pulse" 
+              className="btn-primary bg-accent text-white hover:bg-accent/90 text-center py-3 sm:py-4 px-6 sm:px-8 rounded-lg font-medium text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2"
             >
-              <svg className="w-5 h-5 group-hover:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-              Contact Us
+              Employer Pulse
             </Link>
           </div>
         </div>
