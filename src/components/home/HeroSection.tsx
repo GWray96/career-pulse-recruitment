@@ -147,8 +147,8 @@ export default function HeroSection() {
                 </div>
               </div>
               
-              <div className="hidden lg:block w-full lg:w-1/2 lg:pl-8 xl:pl-12 flex justify-center lg:justify-center">
-                <div className="relative w-full max-w-[280px] xs:max-w-sm sm:max-w-md">
+              <div className="hidden lg:block w-full lg:w-1/2 lg:pl-8 xl:pl-12 flex justify-center lg:justify-end">
+                <div className="relative w-full max-w-[280px] xs:max-w-sm sm:max-w-md lg:mr-4 xl:mr-8">
                   {/* Decorative elements */}
                   <div className="absolute -top-4 -left-4 w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 bg-pulse-orange rounded-full opacity-70 blur-xl"></div>
                   <div className="absolute -bottom-4 -right-4 w-16 h-16 sm:w-24 sm:h-24 md:w-40 md:h-40 bg-deep-navy rounded-full opacity-70 blur-xl"></div>
@@ -285,8 +285,8 @@ export default function HeroSection() {
                 </div>
               </div>
               
-              <div className="hidden lg:block w-full lg:w-1/2 lg:pl-8 xl:pl-12 flex justify-center lg:justify-center">
-                <div className="relative w-full max-w-sm md:max-w-md">
+              <div className="hidden lg:block w-full lg:w-1/2 lg:pl-8 xl:pl-12 flex justify-center lg:justify-end">
+                <div className="relative w-full max-w-sm md:max-w-md lg:mr-4 xl:mr-8">
                   {/* Decorative elements */}
                   <div className="absolute -top-4 sm:-top-6 -left-4 sm:-left-6 w-16 sm:w-24 h-16 sm:h-24 bg-pulse-orange rounded-full opacity-70 blur-xl"></div>
                   <div className="absolute -bottom-6 sm:-bottom-8 -right-6 sm:-right-8 w-28 sm:w-40 h-28 sm:h-40 bg-deep-navy rounded-full opacity-70 blur-xl"></div>
