@@ -867,7 +867,7 @@ export default function Home() {
       </section>
 
       {/* Employer CTA Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-20 bg-gradient-to-br from-primary to-primary/80">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
