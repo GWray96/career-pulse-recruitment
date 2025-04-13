@@ -32,11 +32,11 @@ body {
   }
 
   body {
-    @apply bg-white text-dark font-opensans;
+    @apply bg-white text-deep-charcoal font-body;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-montserrat font-bold;
+    @apply font-sans font-bold;
   }
 
   h1 {
