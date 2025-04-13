@@ -605,7 +605,7 @@ export default function Home() {
               onClick={() => setActiveProcess('candidate')}
               className={`px-6 py-3 rounded-full text-lg font-medium transition-all duration-300 ${
                 activeProcess === 'candidate'
-                  ? 'bg-primary text-white shadow-lg shadow-primary/20'
+                  ? 'bg-accent text-white shadow-lg shadow-accent/20'
                   : 'bg-white text-deep-charcoal/70 hover:bg-slate-50'
               }`}
             >
@@ -654,10 +654,10 @@ export default function Home() {
                 {candidateProcess.map((step, index) => (
                   <div key={index} className="relative group">
                     <div className="relative h-full">
-                      <div className="bg-white rounded-lg p-6 h-[200px] flex flex-col shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200">
+                      <div className="bg-white rounded-lg p-6 h-[200px] flex flex-col shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-accent/30">
                         <div className="flex flex-col h-full justify-between">
                           <div className="text-center">
-                            <h3 className="text-xl font-bold mb-2 mt-4 text-gray-900">{step.title}</h3>
+                            <h3 className="text-xl font-bold mb-2 mt-4 text-gray-900 group-hover:text-accent">{step.title}</h3>
                             <p className="text-gray-800">{step.description}</p>
                           </div>
                         </div>
