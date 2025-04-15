@@ -58,17 +58,33 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative bg-gradient-to-r from-deep-navy to-primary-700 pt-16 sm:pt-20 overflow-hidden">
+    <section className="relative overflow-hidden">
       {/* Background pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/backgrounds/grid-pattern.svg')] bg-repeat"></div>
+      <div className="absolute inset-0">
+        <div 
+          className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
+            activeView === 'employer' ? 'opacity-100' : 'opacity-0'
+          }`}
+          style={{
+            backgroundImage: "url('/images/backgrounds/linkedin-sales-solutions-1A8yP_5msac-unsplash.jpg')"
+          }}
+        />
+        <div 
+          className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
+            activeView === 'candidate' ? 'opacity-100' : 'opacity-0'
+          }`}
+          style={{
+            backgroundImage: "url('/images/backgrounds/christina-wocintechchat-com-faEfWCdOKIg-unsplash.jpg')"
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-deep-navy/95 to-primary-700/95" />
       </div>
       
       <div className="container mx-auto px-4 py-8 sm:py-12 md:py-16 lg:py-20 relative z-10">
         {/* Sliding container - Adjust height for different screen sizes */}
         <div 
           ref={containerRef}
-          className="relative min-h-[600px] xs:min-h-[550px] sm:min-h-[500px] md:min-h-[550px] lg:min-h-[600px] xl:min-h-[550px] overflow-hidden"
+          className="relative min-h-[700px] xs:min-h-[650px] sm:min-h-[600px] md:min-h-[650px] lg:min-h-[700px] xl:min-h-[650px] overflow-hidden"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
