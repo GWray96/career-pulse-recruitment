@@ -80,11 +80,11 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-deep-navy/95 to-primary-700/95" />
       </div>
       
-      <div className="container mx-auto px-4 py-24 sm:py-28 md:py-32 lg:py-36 xl:py-40 relative z-10">
+      <div className="container mx-auto px-4 py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32 relative z-10">
         {/* Sliding container - Adjust height for different screen sizes */}
         <div 
           ref={containerRef}
-          className="relative min-h-[500px] xs:min-h-[550px] sm:min-h-[600px] md:min-h-[650px] lg:min-h-[700px] xl:min-h-[750px] overflow-hidden"
+          className="relative min-h-[600px] xs:min-h-[650px] sm:min-h-[700px] md:min-h-[750px] lg:min-h-[800px] xl:min-h-[850px] overflow-hidden"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
@@ -97,9 +97,9 @@ export default function HeroSection() {
                 : '-translate-x-full opacity-0'
             }`}
           >
-            <div className="flex flex-col items-center text-center max-w-3xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto">
+            <div className="flex flex-col items-center text-center max-w-3xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto py-8 sm:py-12 md:py-16">
               {/* Mobile-optimized banner */}
-              <div className="inline-flex items-center px-3 py-2 bg-pulse-orange/20 rounded-full text-white text-sm sm:text-base mb-4 sm:mb-6">
+              <div className="inline-flex items-center px-3 py-2 bg-pulse-orange/20 rounded-full text-white text-sm sm:text-base mb-6 sm:mb-8 md:mb-10">
                 <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-pulse-orange" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                   <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
@@ -107,12 +107,12 @@ export default function HeroSection() {
               </div>
 
               {/* Mobile-optimized heading */}
-              <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-3 sm:mb-4 md:mb-5">
+              <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4 sm:mb-6 md:mb-8">
                 Hire Top Sales Talent <span className="text-pulse-orange animate-pulse-heartbeat inline-block overflow-visible px-1">In Half The Time</span>
               </h1>
 
               {/* Mobile-optimized description */}
-              <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-6 sm:mb-8 md:mb-10 max-w-2xl md:max-w-3xl font-body">
+              <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 sm:mb-10 md:mb-12 max-w-2xl md:max-w-3xl font-body">
                 Specialized recruitment for sales roles. Find revenue-driving professionals who consistently exceed targets.
               </p>
 
@@ -178,9 +178,9 @@ export default function HeroSection() {
                 : 'translate-x-full opacity-0'
             }`}
           >
-            <div className="flex flex-col items-center text-center max-w-3xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto">
+            <div className="flex flex-col items-center text-center max-w-3xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto py-8 sm:py-12 md:py-16">
               {/* Mobile-optimized banner */}
-              <div className="inline-flex items-center px-3 py-2 bg-pulse-orange/20 rounded-full text-white text-sm sm:text-base md:text-lg mb-4 sm:mb-6 md:mb-8">
+              <div className="inline-flex items-center px-3 py-2 bg-pulse-orange/20 rounded-full text-white text-sm sm:text-base md:text-lg mb-6 sm:mb-8 md:mb-10">
                 <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 mr-2 text-pulse-orange" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                   <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
@@ -188,12 +188,12 @@ export default function HeroSection() {
               </div>
 
               {/* Mobile-optimized heading */}
-              <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-3 sm:mb-4 md:mb-5">
+              <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4 sm:mb-6 md:mb-8">
                 Your Sales Career <span className="text-pulse-orange animate-pulse-heartbeat inline-block overflow-visible px-1">Accelerated</span>
               </h1>
 
               {/* Mobile-optimized description */}
-              <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-6 sm:mb-8 md:mb-10 max-w-2xl md:max-w-3xl font-body">
+              <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 sm:mb-10 md:mb-12 max-w-2xl md:max-w-3xl font-body">
                 Connect with companies actively hiring top sales talent. Get matched with opportunities that align with your skills.
               </p>
 
