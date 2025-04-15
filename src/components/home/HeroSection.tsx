@@ -80,7 +80,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-deep-navy/95 to-primary-700/95" />
       </div>
       
-      <div className="container mx-auto px-4 py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32 relative z-10">
+      <div className="container mx-auto px-4 py-24 sm:py-28 md:py-32 lg:py-36 xl:py-40 relative z-10">
         {/* Sliding container - Adjust height for different screen sizes */}
         <div 
           ref={containerRef}
