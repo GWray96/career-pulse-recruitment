@@ -1,10 +1,33 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
 const HeroSection = () => {
+  const [activeHeading, setActiveHeading] = useState<'employer' | 'candidate'>('employer');
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveHeading(prev => prev === 'employer' ? 'candidate' : 'employer');
+    }, 5000); // Switch every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const headings = {
+    employer: {
+      main: "Transform Your",
+      highlight: "Sales Team",
+      sub: "with Top Talent"
+    },
+    candidate: {
+      main: "Accelerate Your",
+      highlight: "Sales Career",
+      sub: "with Premium Opportunities"
+    }
+  };
+
   return (
     <div className="relative overflow-hidden">
       {/* Animated gradient background */}
@@ -46,13 +69,19 @@ const HeroSection = () => {
 
           {/* Main Heading */}
           <div className="text-center max-w-4xl mx-auto mb-12">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Transform Your 
-              <span className="relative">
-                <span className="relative z-10 text-blue-400"> Sales </span>
-                <span className="absolute bottom-0 left-0 w-full h-3 bg-blue-400/20 -skew-x-12" />
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 min-h-[200px] flex flex-col items-center justify-center">
+              <span className="transition-all duration-500 transform">
+                {headings[activeHeading].main}
               </span>
-              Career
+              <span className="relative mt-2">
+                <span className="relative z-10 text-blue-400 transition-all duration-500 transform">
+                  {headings[activeHeading].highlight}
+                </span>
+                <span className="absolute bottom-0 left-0 w-full h-3 bg-blue-400/20 -skew-x-12 transition-all duration-500 transform" />
+              </span>
+              <span className="mt-2 transition-all duration-500 transform">
+                {headings[activeHeading].sub}
+              </span>
             </h1>
             <p className="text-xl sm:text-2xl text-gray-300 mb-8">
               Whether you're hiring top talent or finding your next opportunity, 
