@@ -120,9 +120,9 @@ body {
 
 @keyframes heartbeat {
   0% { transform: scale(1); }
-  14% { transform: scale(1.05); }
+  14% { transform: scale(1.03); }
   28% { transform: scale(1); }
-  42% { transform: scale(1.05); }
+  42% { transform: scale(1.03); }
   70% { transform: scale(1); }
 }
 
@@ -151,4 +151,6 @@ body {
   display: inline-block;
   transform-origin: center;
   will-change: transform;
+  position: relative;
+  z-index: 10;
 } 
