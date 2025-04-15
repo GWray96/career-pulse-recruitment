@@ -84,7 +84,7 @@ export default function HeroSection() {
         {/* Sliding container - Adjust height for different screen sizes */}
         <div 
           ref={containerRef}
-          className="relative min-h-[700px] xs:min-h-[650px] sm:min-h-[600px] md:min-h-[650px] lg:min-h-[700px] xl:min-h-[650px] overflow-hidden"
+          className="relative min-h-[600px] xs:min-h-[650px] sm:min-h-[700px] md:min-h-[750px] lg:min-h-[800px] xl:min-h-[850px] overflow-hidden"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
@@ -97,24 +97,23 @@ export default function HeroSection() {
                 : '-translate-x-full opacity-0'
             }`}
           >
-            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-10">
-              <div className="w-full lg:w-1/2 mb-6 sm:mb-8 lg:mb-0">
-                <div className="inline-flex items-center px-2 sm:px-3 py-1 sm:py-1.5 bg-pulse-orange/20 rounded-full text-white text-xs sm:text-sm mb-3 sm:mb-4">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4 sm:gap-6 lg:gap-10">
+              <div className="w-full lg:w-1/2 mb-4 sm:mb-6 lg:mb-0">
+                <div className="inline-flex items-center px-2 sm:px-3 py-1 sm:py-1.5 bg-pulse-orange/20 rounded-full text-white text-xs sm:text-sm mb-2 sm:mb-3">
                   <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-1.5 text-pulse-orange" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <span>Limited Time Offer: Save 50% on Your First Hire</span>
                 </div>
-                <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-white leading-tight mb-3 sm:mb-4">
+                <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-white leading-tight mb-2 sm:mb-3">
                   Hire Top Sales Talent <span className="text-pulse-orange animate-pulse-heartbeat inline-block overflow-visible px-1">In Half The Time</span>
                 </h1>
-                <p className="text-base xs:text-lg sm:text-xl text-white/90 mb-4 sm:mb-6 max-w-2xl font-body">
+                <p className="text-base xs:text-lg sm:text-xl text-white/90 mb-3 sm:mb-4 max-w-2xl font-body">
                   Specialized recruitment for sales roles. Find revenue-driving professionals who consistently exceed targets and grow your business.
                 </p>
                 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-3 sm:mb-4">
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 md:p-5 border border-white/20 transform transition-all duration-300 hover:scale-105 hover:bg-white/15">
-                    {/* Card content with responsive adjustments */}
                     <div className="flex items-center mb-2">
                       <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-pulse-orange flex items-center justify-center mr-2 sm:mr-3">
                         <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -123,11 +122,11 @@ export default function HeroSection() {
                       </div>
                       <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white">Junior Sales Roles</h3>
                     </div>
-                    <div className="mb-2 sm:mb-3">
+                    <div className="mb-2">
                       <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white">£999</span>
                       <span className="text-white/80 ml-2 text-sm sm:text-base">fixed price</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-white/80 mb-2 sm:mb-3">
+                    <p className="text-xs sm:text-sm text-white/80 mb-2">
                       One predictable fee for all junior sales positions. No surprises, no percentage calculations.
                     </p>
                     <Link 
@@ -141,7 +140,6 @@ export default function HeroSection() {
                     </Link>
                   </div>
                   
-                  {/* Second card with similar responsive adjustments */}
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 md:p-5 border border-white/20 transform transition-all duration-300 hover:scale-105 hover:bg-white/15">
                     <div className="flex items-center mb-2">
                       <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-pulse-orange flex items-center justify-center mr-2 sm:mr-3">
@@ -151,11 +149,11 @@ export default function HeroSection() {
                       </div>
                       <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white">Senior Sales Roles</h3>
                     </div>
-                    <div className="mb-2 sm:mb-3">
+                    <div className="mb-2">
                       <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white">Just 10%</span>
                       <span className="text-white/80 ml-2 text-sm sm:text-base">flat fee</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-white/80 mb-2 sm:mb-3">
+                    <p className="text-xs sm:text-sm text-white/80 mb-2">
                       Find proven sales professionals who consistently exceed targets and drive revenue growth.
                     </p>
                     <Link 
@@ -177,11 +175,11 @@ export default function HeroSection() {
                   <span>Sales talent guaranteed or your money back</span>
                 </div>
                 
-                <div className="mt-4 sm:mt-6 flex items-center">
-                  <div className="flex -space-x-2 mr-3">
-                    <img className="w-8 h-8 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/women/1.jpg" alt="Client" />
-                    <img className="w-8 h-8 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/men/2.jpg" alt="Client" />
-                    <img className="w-8 h-8 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/women/3.jpg" alt="Client" />
+                <div className="mt-3 sm:mt-4 flex items-center">
+                  <div className="flex -space-x-2 mr-2 sm:mr-3">
+                    <img className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/women/1.jpg" alt="Client" />
+                    <img className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/men/2.jpg" alt="Client" />
+                    <img className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/women/3.jpg" alt="Client" />
                   </div>
                   <p className="text-white/80 text-xs sm:text-sm">Trusted by 200+ companies to find their sales talent</p>
                 </div>
@@ -202,10 +200,10 @@ export default function HeroSection() {
                     </div>
                     
                     <div className="p-3 sm:p-4 md:p-5">
-                      <div className="mb-3 sm:mb-4 md:mb-5">
-                        <h4 className="font-bold text-xs sm:text-sm md:text-base text-deep-navy mb-2 sm:mb-3">For a £50,000 senior sales role:</h4>
+                      <div className="mb-3 sm:mb-4">
+                        <h4 className="font-bold text-xs sm:text-sm md:text-base text-deep-navy mb-2">For a £50,000 senior sales role:</h4>
                         
-                        <div className="space-y-2 sm:space-y-3 md:space-y-4">
+                        <div className="space-y-2 sm:space-y-3">
                           <div className="flex items-start">
                             <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 rounded-full bg-red-500 mt-1 sm:mt-1.5 mr-2 sm:mr-3 flex-shrink-0"></div>
                             <div>
@@ -233,8 +231,8 @@ export default function HeroSection() {
                         </div>
                       </div>
                       
-                      <div className="border-t border-gray-100 pt-2 sm:pt-3 md:pt-4 mb-3 sm:mb-4 md:mb-5">
-                        <p className="text-xs sm:text-sm text-charcoal-grey mb-2 sm:mb-3">
+                      <div className="border-t border-gray-100 pt-2 sm:pt-3 md:pt-4 mb-3 sm:mb-4">
+                        <p className="text-xs sm:text-sm text-charcoal-grey mb-2">
                           Skip the inflated recruitment fees while getting the same high-quality sales candidates. Our specialized process delivers results without the markup.
                         </p>
                       </div>
@@ -260,22 +258,22 @@ export default function HeroSection() {
                 : 'translate-x-full opacity-0'
             }`}
           >
-            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-10">
-              <div className="w-full lg:w-1/2 mb-6 sm:mb-8 lg:mb-0">
-                <div className="inline-flex items-center px-2 sm:px-3 py-1 sm:py-1.5 bg-pulse-orange/20 rounded-full text-white text-xs sm:text-sm mb-3 sm:mb-4">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4 sm:gap-6 lg:gap-10">
+              <div className="w-full lg:w-1/2 mb-4 sm:mb-6 lg:mb-0">
+                <div className="inline-flex items-center px-2 sm:px-3 py-1 sm:py-1.5 bg-pulse-orange/20 rounded-full text-white text-xs sm:text-sm mb-2 sm:mb-3">
                   <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-1.5 text-pulse-orange" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <span>Exclusive Sales Opportunities Available Now</span>
                 </div>
-                <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-white leading-tight mb-3 sm:mb-4">
+                <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-white leading-tight mb-2 sm:mb-3">
                   Your Sales Career <span className="text-pulse-orange animate-pulse-heartbeat inline-block overflow-visible px-1">Accelerated</span>
                 </h1>
-                <p className="text-base xs:text-lg sm:text-xl text-white/90 mb-4 sm:mb-6 max-w-2xl font-body">
+                <p className="text-base xs:text-lg sm:text-xl text-white/90 mb-3 sm:mb-4 max-w-2xl font-body">
                   Connect with companies actively hiring top sales talent. Get matched with opportunities that align with your skills and commission goals.
                 </p>
                 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-3 sm:mb-4">
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 md:p-5 border border-white/20 transform transition-all duration-300 hover:scale-105 hover:bg-white/15">
                     <div className="flex items-center mb-2">
                       <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-pulse-orange flex items-center justify-center mr-2 sm:mr-3">
@@ -285,7 +283,7 @@ export default function HeroSection() {
                       </div>
                       <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white">Sales Opportunities</h3>
                     </div>
-                    <p className="text-xs sm:text-sm text-white/80 mb-2 sm:mb-3">
+                    <p className="text-xs sm:text-sm text-white/80 mb-2">
                       Our expert recruiters understand your sales skills and career aspirations to match you with the perfect role.
                     </p>
                     <Link 
@@ -308,7 +306,7 @@ export default function HeroSection() {
                       </div>
                       <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white">Sales Coaching</h3>
                     </div>
-                    <p className="text-xs sm:text-sm text-white/80 mb-2 sm:mb-3">
+                    <p className="text-xs sm:text-sm text-white/80 mb-2">
                       Get valuable insights and feedback to improve your sales pitch, prepare for interviews, and negotiate better commission structures.
                     </p>
                     <Link 
@@ -323,19 +321,19 @@ export default function HeroSection() {
                   </div>
                 </div>
                 
-                <div className="inline-flex items-center px-2 sm:px-3 py-1 sm:py-1.5 bg-white/10 rounded-full text-white text-xs sm:text-sm mb-4">
+                <div className="inline-flex items-center px-2 sm:px-3 py-1 sm:py-1.5 bg-white/10 rounded-full text-white text-xs sm:text-sm mb-3 sm:mb-4">
                   <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-1.5 text-pulse-orange" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <span>100% free for sales professionals</span>
                 </div>
                 
-                <div className="mt-4 sm:mt-6">
+                <div className="mt-3 sm:mt-4">
                   <div className="flex items-center mb-2">
-                    <div className="flex -space-x-2 mr-3">
-                      <img className="w-8 h-8 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/men/4.jpg" alt="Client" />
-                      <img className="w-8 h-8 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/women/5.jpg" alt="Client" />
-                      <img className="w-8 h-8 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/men/6.jpg" alt="Client" />
+                    <div className="flex -space-x-2 mr-2 sm:mr-3">
+                      <img className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/men/4.jpg" alt="Client" />
+                      <img className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/women/5.jpg" alt="Client" />
+                      <img className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/men/6.jpg" alt="Client" />
                     </div>
                     <p className="text-white/80 text-xs sm:text-sm">Join 1,000+ sales professionals who found their dream roles</p>
                   </div>
@@ -377,10 +375,10 @@ export default function HeroSection() {
                     </div>
                     
                     <div className="p-4 sm:p-5">
-                      <div className="mb-4 sm:mb-5">
-                        <h4 className="font-bold text-sm sm:text-base text-deep-navy mb-3 sm:mb-4">How We Help You Succeed:</h4>
+                      <div className="mb-4">
+                        <h4 className="font-bold text-sm sm:text-base text-deep-navy mb-3">How We Help You Succeed:</h4>
                         
-                        <div className="space-y-3 sm:space-y-4">
+                        <div className="space-y-3">
                           <div className="flex items-start">
                             <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary-50 flex items-center justify-center mr-2 sm:mr-3 flex-shrink-0">
                               <span className="font-bold text-xs sm:text-sm text-pulse-orange">1</span>
@@ -428,18 +426,18 @@ export default function HeroSection() {
         </div>
         
         {/* Slide indicators - smaller on mobile */}
-        <div className="flex justify-center mt-4 sm:mt-6">
+        <div className="flex justify-center mt-3 sm:mt-4">
           <div className="flex space-x-2">
             <button
               onClick={() => activeView !== 'employer' && toggleView()}
-              className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+              className={`w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-all duration-300 ${
                 activeView === 'employer' ? 'bg-pulse-orange scale-125' : 'bg-white/30 hover:bg-white/50'
               }`}
               aria-label="Show employer view"
             ></button>
             <button
               onClick={() => activeView !== 'candidate' && toggleView()}
-              className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+              className={`w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-all duration-300 ${
                 activeView === 'candidate' ? 'bg-pulse-orange scale-125' : 'bg-white/30 hover:bg-white/50'
               }`}
               aria-label="Show candidate view"
