@@ -1,11 +1,14 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 
 export default function HeroSection() {
   const [activeView, setActiveView] = useState<'employer' | 'candidate'>('employer');
   const [isAnimating, setIsAnimating] = useState(false);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   // Auto-switch between views every 10 seconds
   useEffect(() => {
@@ -28,6 +31,32 @@ export default function HeroSection() {
     }, 500);
   };
 
+  // Handle touch events for swipe functionality
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+    
+    if (isLeftSwipe && activeView === 'employer') {
+      toggleView();
+    } else if (isRightSwipe && activeView === 'candidate') {
+      toggleView();
+    }
+    
+    setTouchStart(null);
+    setTouchEnd(null);
+  };
+
   return (
     <section className="relative bg-gradient-to-r from-deep-navy to-primary-700 pt-20 overflow-hidden">
       {/* Background pattern */}
@@ -36,34 +65,14 @@ export default function HeroSection() {
       </div>
       
       <div className="container mx-auto px-4 py-12 sm:py-16 md:py-20 lg:py-24 relative z-10">
-        {/* View toggle buttons */}
-        <div className="flex justify-center mb-6 sm:mb-8">
-          <div className="bg-white/10 backdrop-blur-sm rounded-full p-1 inline-flex">
-            <button
-              onClick={() => activeView !== 'employer' && toggleView()}
-              className={`px-3 sm:px-4 md:px-6 py-2 rounded-full text-sm sm:text-base font-medium transition-all duration-300 ${
-                activeView === 'employer'
-                  ? 'bg-pulse-orange text-white shadow-md'
-                  : 'text-white hover:bg-white/10'
-              }`}
-            >
-              For Employers
-            </button>
-            <button
-              onClick={() => activeView !== 'candidate' && toggleView()}
-              className={`px-3 sm:px-4 md:px-6 py-2 rounded-full text-sm sm:text-base font-medium transition-all duration-300 ${
-                activeView === 'candidate'
-                  ? 'bg-pulse-orange text-white shadow-md'
-                  : 'text-white hover:bg-white/10'
-              }`}
-            >
-              For Job Seekers
-            </button>
-          </div>
-        </div>
-        
         {/* Sliding container - Adjust height for different screen sizes */}
-        <div className="relative h-[650px] xs:h-[600px] sm:h-[550px] md:h-[500px] lg:h-[600px] xl:h-[550px] overflow-hidden">
+        <div 
+          ref={containerRef}
+          className="relative h-[650px] xs:h-[600px] sm:h-[550px] md:h-[500px] lg:h-[600px] xl:h-[550px] overflow-hidden"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           {/* Employer View */}
           <div 
             className={`absolute w-full transition-all duration-1000 ease-in-out ${
