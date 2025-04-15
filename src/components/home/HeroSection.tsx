@@ -97,160 +97,85 @@ export default function HeroSection() {
                 : '-translate-x-full opacity-0'
             }`}
           >
-            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4 sm:gap-6 lg:gap-10">
-              <div className="w-full lg:w-1/2 mb-4 sm:mb-6 lg:mb-0">
-                <div className="inline-flex items-center px-2 sm:px-3 py-1 sm:py-1.5 bg-pulse-orange/20 rounded-full text-white text-xs sm:text-sm mb-2 sm:mb-3">
-                  <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-1.5 text-pulse-orange" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  <span>Limited Time Offer: Save 50% on Your First Hire</span>
-                </div>
-                <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-white leading-tight mb-2 sm:mb-3">
-                  Hire Top Sales Talent <span className="text-pulse-orange animate-pulse-heartbeat inline-block overflow-visible px-1">In Half The Time</span>
-                </h1>
-                <p className="text-base xs:text-lg sm:text-xl text-white/90 mb-3 sm:mb-4 max-w-2xl font-body">
-                  Specialized recruitment for sales roles. Find revenue-driving professionals who consistently exceed targets and grow your business.
-                </p>
-                
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-3 sm:mb-4">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 md:p-5 border border-white/20 transform transition-all duration-300 hover:scale-105 hover:bg-white/15">
-                    <div className="flex items-center mb-2">
-                      <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-pulse-orange flex items-center justify-center mr-2 sm:mr-3">
-                        <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                      </div>
-                      <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white">Junior Sales Roles</h3>
-                    </div>
-                    <div className="mb-2">
-                      <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white">£999</span>
-                      <span className="text-white/80 ml-2 text-sm sm:text-base">fixed price</span>
-                    </div>
-                    <p className="text-xs sm:text-sm text-white/80 mb-2">
-                      One predictable fee for all junior sales positions. No surprises, no percentage calculations.
-                    </p>
-                    <Link 
-                      href="/employer-pulse" 
-                      className="inline-flex items-center px-2 sm:px-3 py-1 sm:py-1.5 bg-white text-deep-navy rounded-lg text-xs sm:text-sm font-medium hover:bg-white/90 transition-colors duration-200"
-                    >
-                      Start Hiring Now
-                      <svg className="w-3 h-3 sm:w-4 sm:h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+              <div className="inline-flex items-center px-2 sm:px-3 py-1 sm:py-1.5 bg-pulse-orange/20 rounded-full text-white text-xs sm:text-sm mb-2 sm:mb-3">
+                <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-1.5 text-pulse-orange" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <span>Limited Time Offer: Save 50% on Your First Hire</span>
+              </div>
+              <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-white leading-tight mb-2 sm:mb-3">
+                Hire Top Sales Talent <span className="text-pulse-orange animate-pulse-heartbeat inline-block overflow-visible px-1">In Half The Time</span>
+              </h1>
+              <p className="text-base xs:text-lg sm:text-xl text-white/90 mb-6 sm:mb-8 max-w-2xl font-body">
+                Specialized recruitment for sales roles. Find revenue-driving professionals who consistently exceed targets and grow your business.
+              </p>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-5 md:p-6 border border-white/20 transform transition-all duration-300 hover:scale-105 hover:bg-white/15">
+                  <div className="flex items-center justify-center mb-3">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-pulse-orange flex items-center justify-center">
+                      <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
-                    </Link>
-                  </div>
-                  
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 md:p-5 border border-white/20 transform transition-all duration-300 hover:scale-105 hover:bg-white/15">
-                    <div className="flex items-center mb-2">
-                      <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-pulse-orange flex items-center justify-center mr-2 sm:mr-3">
-                        <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
-                        </svg>
-                      </div>
-                      <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white">Senior Sales Roles</h3>
                     </div>
-                    <div className="mb-2">
-                      <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white">Just 10%</span>
-                      <span className="text-white/80 ml-2 text-sm sm:text-base">flat fee</span>
-                    </div>
-                    <p className="text-xs sm:text-sm text-white/80 mb-2">
-                      Find proven sales professionals who consistently exceed targets and drive revenue growth.
-                    </p>
-                    <Link 
-                      href="/employer-pulse" 
-                      className="inline-flex items-center px-2 sm:px-3 py-1 sm:py-1.5 bg-white text-deep-navy rounded-lg text-xs sm:text-sm font-medium hover:bg-white/90 transition-colors duration-200"
-                    >
-                      Find Top Talent
-                      <svg className="w-3 h-3 sm:w-4 sm:h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </Link>
                   </div>
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white text-center mb-2">Junior Sales Roles</h3>
+                  <div className="text-center mb-3">
+                    <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">£999</span>
+                    <span className="text-white/80 ml-2 text-sm sm:text-base">fixed price</span>
+                  </div>
+                  <p className="text-sm sm:text-base text-white/80 mb-4 text-center">
+                    One predictable fee for all junior sales positions. No surprises, no percentage calculations.
+                  </p>
                 </div>
                 
-                <div className="inline-flex items-center px-2 sm:px-3 py-1 sm:py-1.5 bg-white/10 rounded-full text-white text-xs sm:text-sm">
-                  <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-1.5 text-pulse-orange" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-5 md:p-6 border border-white/20 transform transition-all duration-300 hover:scale-105 hover:bg-white/15">
+                  <div className="flex items-center justify-center mb-3">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-pulse-orange flex items-center justify-center">
+                      <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white text-center mb-2">Senior Sales Roles</h3>
+                  <div className="text-center mb-3">
+                    <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">Just 10%</span>
+                    <span className="text-white/80 ml-2 text-sm sm:text-base">flat fee</span>
+                  </div>
+                  <p className="text-sm sm:text-base text-white/80 mb-4 text-center">
+                    Find proven sales professionals who consistently exceed targets and drive revenue growth.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+                <Link 
+                  href="/employer-pulse" 
+                  className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-pulse-orange hover:bg-accent-600 text-white text-center text-base sm:text-lg font-medium rounded-lg transition-colors duration-200"
+                >
+                  Start Hiring Now
+                </Link>
+                <div className="inline-flex items-center px-3 sm:px-4 py-2 sm:py-3 bg-white/10 rounded-lg text-white text-sm sm:text-base">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-pulse-orange" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <span>Sales talent guaranteed or your money back</span>
                 </div>
-                
-                <div className="mt-3 sm:mt-4 flex items-center">
-                  <div className="flex -space-x-2 mr-2 sm:mr-3">
-                    <img className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/women/1.jpg" alt="Client" />
-                    <img className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/men/2.jpg" alt="Client" />
-                    <img className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/women/3.jpg" alt="Client" />
-                  </div>
-                  <p className="text-white/80 text-xs sm:text-sm">Trusted by 200+ companies to find their sales talent</p>
-                </div>
               </div>
               
-              <div className="hidden lg:block w-full lg:w-1/2 lg:pl-8 xl:pl-12 flex justify-center lg:justify-end">
-                <div className="relative w-full max-w-[280px] xs:max-w-sm sm:max-w-md lg:mr-4 xl:mr-8">
-                  {/* Decorative elements */}
-                  <div className="absolute -top-4 -left-4 w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 bg-pulse-orange rounded-full opacity-70 blur-xl"></div>
-                  <div className="absolute -bottom-4 -right-4 w-16 h-16 sm:w-24 sm:h-24 md:w-40 md:h-40 bg-deep-navy rounded-full opacity-70 blur-xl"></div>
-                  
-                  <div className="relative bg-white rounded-xl shadow-xl overflow-hidden">
-                    <div className="bg-primary-50 p-2 sm:p-3 md:p-4 border-b border-gray-100">
-                      <div className="flex justify-between items-center">
-                        <h3 className="font-bold text-xs sm:text-sm md:text-base text-deep-navy">Cost Comparison</h3>
-                        <span className="bg-pulse-orange/10 text-pulse-orange text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full">Save up to 70%</span>
-                      </div>
-                    </div>
-                    
-                    <div className="p-3 sm:p-4 md:p-5">
-                      <div className="mb-3 sm:mb-4">
-                        <h4 className="font-bold text-xs sm:text-sm md:text-base text-deep-navy mb-2">For a £50,000 senior sales role:</h4>
-                        
-                        <div className="space-y-2 sm:space-y-3">
-                          <div className="flex items-start">
-                            <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 rounded-full bg-red-500 mt-1 sm:mt-1.5 mr-2 sm:mr-3 flex-shrink-0"></div>
-                            <div>
-                              <div className="font-medium text-xs sm:text-sm md:text-base text-charcoal-grey">Traditional Agency</div>
-                              <div className="flex justify-between">
-                                <span className="text-light-grey text-xs">20-30% fee</span>
-                                <span className="font-bold text-xs sm:text-sm text-red-500">£10,000 - £15,000</span>
-                              </div>
-                            </div>
-                          </div>
-                          
-                          <div className="flex items-start">
-                            <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 rounded-full bg-pulse-orange mt-1 sm:mt-1.5 mr-2 sm:mr-3 flex-shrink-0"></div>
-                            <div>
-                              <div className="font-medium text-xs sm:text-sm md:text-base text-charcoal-grey">Career Pulse</div>
-                              <div className="flex justify-between">
-                                <span className="text-light-grey text-xs">10% flat fee</span>
-                                <span className="font-bold text-xs sm:text-sm text-pulse-orange">£5,000</span>
-                              </div>
-                              <div className="bg-green-50 text-green-700 text-xs font-medium px-1.5 sm:px-2 py-0.5 rounded mt-1 inline-block">
-                                Save £5,000 - £10,000
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div className="border-t border-gray-100 pt-2 sm:pt-3 md:pt-4 mb-3 sm:mb-4">
-                        <p className="text-xs sm:text-sm text-charcoal-grey mb-2">
-                          Skip the inflated recruitment fees while getting the same high-quality sales candidates. Our specialized process delivers results without the markup.
-                        </p>
-                      </div>
-                      
-                      <Link 
-                        href="/pricing"
-                        className="block w-full py-1.5 sm:py-2 md:py-2.5 px-2 sm:px-3 md:px-4 bg-pulse-orange hover:bg-accent-600 text-white text-center text-xs sm:text-sm md:text-base font-medium rounded-lg transition-colors duration-200"
-                      >
-                        View Full Pricing
-                      </Link>
-                    </div>
-                  </div>
+              <div className="flex items-center justify-center">
+                <div className="flex -space-x-2 mr-3">
+                  <img className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/women/1.jpg" alt="Client" />
+                  <img className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/men/2.jpg" alt="Client" />
+                  <img className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/women/3.jpg" alt="Client" />
                 </div>
+                <p className="text-white/80 text-sm sm:text-base">Trusted by 200+ companies to find their sales talent</p>
               </div>
             </div>
           </div>
           
-          {/* Candidate View - with similar responsive updates */}
+          {/* Candidate View */}
           <div 
             className={`absolute w-full transition-all duration-1000 ease-in-out ${
               activeView === 'candidate'
@@ -258,168 +183,72 @@ export default function HeroSection() {
                 : 'translate-x-full opacity-0'
             }`}
           >
-            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4 sm:gap-6 lg:gap-10">
-              <div className="w-full lg:w-1/2 mb-4 sm:mb-6 lg:mb-0">
-                <div className="inline-flex items-center px-2 sm:px-3 py-1 sm:py-1.5 bg-pulse-orange/20 rounded-full text-white text-xs sm:text-sm mb-2 sm:mb-3">
-                  <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-1.5 text-pulse-orange" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  <span>Exclusive Sales Opportunities Available Now</span>
-                </div>
-                <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-white leading-tight mb-2 sm:mb-3">
-                  Your Sales Career <span className="text-pulse-orange animate-pulse-heartbeat inline-block overflow-visible px-1">Accelerated</span>
-                </h1>
-                <p className="text-base xs:text-lg sm:text-xl text-white/90 mb-3 sm:mb-4 max-w-2xl font-body">
-                  Connect with companies actively hiring top sales talent. Get matched with opportunities that align with your skills and commission goals.
-                </p>
-                
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-3 sm:mb-4">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 md:p-5 border border-white/20 transform transition-all duration-300 hover:scale-105 hover:bg-white/15">
-                    <div className="flex items-center mb-2">
-                      <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-pulse-orange flex items-center justify-center mr-2 sm:mr-3">
-                        <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-                        </svg>
-                      </div>
-                      <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white">Sales Opportunities</h3>
-                    </div>
-                    <p className="text-xs sm:text-sm text-white/80 mb-2">
-                      Our expert recruiters understand your sales skills and career aspirations to match you with the perfect role.
-                    </p>
-                    <Link 
-                      href="/talent-pulse" 
-                      className="inline-flex items-center px-2 sm:px-3 py-1 sm:py-1.5 bg-white text-deep-navy rounded-lg text-xs sm:text-sm font-medium hover:bg-white/90 transition-colors duration-200"
-                    >
-                      Find Your Next Role
-                      <svg className="w-3 h-3 sm:w-4 sm:h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+              <div className="inline-flex items-center px-2 sm:px-3 py-1 sm:py-1.5 bg-pulse-orange/20 rounded-full text-white text-xs sm:text-sm mb-2 sm:mb-3">
+                <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-1.5 text-pulse-orange" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <span>Exclusive Sales Opportunities Available Now</span>
+              </div>
+              <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-white leading-tight mb-2 sm:mb-3">
+                Your Sales Career <span className="text-pulse-orange animate-pulse-heartbeat inline-block overflow-visible px-1">Accelerated</span>
+              </h1>
+              <p className="text-base xs:text-lg sm:text-xl text-white/90 mb-6 sm:mb-8 max-w-2xl font-body">
+                Connect with companies actively hiring top sales talent. Get matched with opportunities that align with your skills and commission goals.
+              </p>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-5 md:p-6 border border-white/20 transform transition-all duration-300 hover:scale-105 hover:bg-white/15">
+                  <div className="flex items-center justify-center mb-3">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-pulse-orange flex items-center justify-center">
+                      <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
                       </svg>
-                    </Link>
-                  </div>
-                  
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 md:p-5 border border-white/20 transform transition-all duration-300 hover:scale-105 hover:bg-white/15">
-                    <div className="flex items-center mb-2">
-                      <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-pulse-orange flex items-center justify-center mr-2 sm:mr-3">
-                        <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                      </div>
-                      <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white">Sales Coaching</h3>
                     </div>
-                    <p className="text-xs sm:text-sm text-white/80 mb-2">
-                      Get valuable insights and feedback to improve your sales pitch, prepare for interviews, and negotiate better commission structures.
-                    </p>
-                    <Link 
-                      href="/candidate-pulse" 
-                      className="inline-flex items-center px-2 sm:px-3 py-1 sm:py-1.5 bg-white text-deep-navy rounded-lg text-xs sm:text-sm font-medium hover:bg-white/90 transition-colors duration-200"
-                    >
-                      Get Expert Advice
-                      <svg className="w-3 h-3 sm:w-4 sm:h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </Link>
                   </div>
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white text-center mb-2">Sales Opportunities</h3>
+                  <p className="text-sm sm:text-base text-white/80 mb-4 text-center">
+                    Our expert recruiters understand your sales skills and career aspirations to match you with the perfect role.
+                  </p>
                 </div>
                 
-                <div className="inline-flex items-center px-2 sm:px-3 py-1 sm:py-1.5 bg-white/10 rounded-full text-white text-xs sm:text-sm mb-3 sm:mb-4">
-                  <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-1.5 text-pulse-orange" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-5 md:p-6 border border-white/20 transform transition-all duration-300 hover:scale-105 hover:bg-white/15">
+                  <div className="flex items-center justify-center mb-3">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-pulse-orange flex items-center justify-center">
+                      <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white text-center mb-2">Sales Coaching</h3>
+                  <p className="text-sm sm:text-base text-white/80 mb-4 text-center">
+                    Get valuable insights and feedback to improve your sales pitch, prepare for interviews, and negotiate better commission structures.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+                <Link 
+                  href="/candidate-pulse" 
+                  className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-pulse-orange hover:bg-accent-600 text-white text-center text-base sm:text-lg font-medium rounded-lg transition-colors duration-200"
+                >
+                  Find Your Next Role
+                </Link>
+                <div className="inline-flex items-center px-3 sm:px-4 py-2 sm:py-3 bg-white/10 rounded-lg text-white text-sm sm:text-base">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-pulse-orange" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <span>100% free for sales professionals</span>
                 </div>
-                
-                <div className="mt-3 sm:mt-4">
-                  <div className="flex items-center mb-2">
-                    <div className="flex -space-x-2 mr-2 sm:mr-3">
-                      <img className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/men/4.jpg" alt="Client" />
-                      <img className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/women/5.jpg" alt="Client" />
-                      <img className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/men/6.jpg" alt="Client" />
-                    </div>
-                    <p className="text-white/80 text-xs sm:text-sm">Join 1,000+ sales professionals who found their dream roles</p>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="flex text-yellow-400 mr-2">
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    </div>
-                    <p className="text-white/80 text-xs sm:text-sm">4.9/5 average rating from our candidates</p>
-                  </div>
-                </div>
               </div>
               
-              <div className="hidden lg:block w-full lg:w-1/2 lg:pl-8 xl:pl-12 flex justify-center lg:justify-end">
-                <div className="relative w-full max-w-sm md:max-w-md lg:mr-4 xl:mr-8">
-                  {/* Decorative elements */}
-                  <div className="absolute -top-4 sm:-top-6 -left-4 sm:-left-6 w-16 sm:w-24 h-16 sm:h-24 bg-pulse-orange rounded-full opacity-70 blur-xl"></div>
-                  <div className="absolute -bottom-6 sm:-bottom-8 -right-6 sm:-right-8 w-28 sm:w-40 h-28 sm:h-40 bg-deep-navy rounded-full opacity-70 blur-xl"></div>
-                  
-                  <div className="relative bg-white rounded-xl shadow-xl sm:shadow-2xl overflow-hidden">
-                    <div className="bg-primary-50 p-3 sm:p-4 border-b border-gray-100">
-                      <div className="flex justify-between items-center">
-                        <h3 className="font-bold text-sm sm:text-base text-deep-navy">Sales Career Growth</h3>
-                        <span className="bg-pulse-orange/10 text-pulse-orange text-xs px-2 py-1 rounded-full">Personalized</span>
-                      </div>
-                    </div>
-                    
-                    <div className="p-4 sm:p-5">
-                      <div className="mb-4">
-                        <h4 className="font-bold text-sm sm:text-base text-deep-navy mb-3">How We Help You Succeed:</h4>
-                        
-                        <div className="space-y-3">
-                          <div className="flex items-start">
-                            <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary-50 flex items-center justify-center mr-2 sm:mr-3 flex-shrink-0">
-                              <span className="font-bold text-xs sm:text-sm text-pulse-orange">1</span>
-                            </div>
-                            <div>
-                              <div className="font-medium text-sm sm:text-base text-charcoal-grey">Sales Resume Optimization</div>
-                              <p className="text-xs sm:text-sm text-light-grey">Get your sales achievements noticed by highlighting your revenue impact and closing rates.</p>
-                            </div>
-                          </div>
-                          
-                          <div className="flex items-start">
-                            <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary-50 flex items-center justify-center mr-2 sm:mr-3 flex-shrink-0">
-                              <span className="font-bold text-xs sm:text-sm text-pulse-orange">2</span>
-                            </div>
-                            <div>
-                              <div className="font-medium text-sm sm:text-base text-charcoal-grey">Sales Interview Preparation</div>
-                              <p className="text-xs sm:text-sm text-light-grey">Personalized coaching to help you showcase your sales skills and close the deal.</p>
-                            </div>
-                          </div>
-                          
-                          <div className="flex items-start">
-                            <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary-50 flex items-center justify-center mr-2 sm:mr-3 flex-shrink-0">
-                              <span className="font-bold text-xs sm:text-sm text-pulse-orange">3</span>
-                            </div>
-                            <div>
-                              <div className="font-medium text-sm sm:text-base text-charcoal-grey">Commission Negotiation</div>
-                              <p className="text-xs sm:text-sm text-light-grey">Get the compensation structure you deserve with our negotiation strategies.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <Link 
-                        href="/candidate-pulse"
-                        className="block w-full py-2 sm:py-2.5 px-3 sm:px-4 bg-pulse-orange hover:bg-accent-600 text-white text-center text-sm sm:text-base font-medium rounded-lg transition-colors duration-200"
-                      >
-                        Start Your Journey
-                      </Link>
-                    </div>
-                  </div>
+              <div className="flex items-center justify-center">
+                <div className="flex -space-x-2 mr-3">
+                  <img className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/men/4.jpg" alt="Client" />
+                  <img className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/women/5.jpg" alt="Client" />
+                  <img className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/men/6.jpg" alt="Client" />
                 </div>
+                <p className="text-white/80 text-sm sm:text-base">Join 1,000+ sales professionals who found their dream roles</p>
               </div>
             </div>
           </div>
