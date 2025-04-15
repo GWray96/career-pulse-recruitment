@@ -186,8 +186,8 @@ export default function EmployerPulse() {
                   API Access
                 </li>
               </ul>
-              <Link href="/contact" className="btn-secondary w-full text-center">
-                Contact Sales
+              <Link href="/contact" className="btn-secondary w-full text-center bg-pulse-orange text-white hover:bg-accent-600 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200">
+                Start Hiring Now
               </Link>
             </div>
           </div>
@@ -202,9 +202,9 @@ export default function EmployerPulse() {
           </h2>
           <Link 
             href="/book-call"
-            className="btn-white"
+            className="btn-white bg-white text-pulse-orange hover:bg-pulse-orange/5 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
           >
-            Schedule a Demo
+            Book a Demo Call
           </Link>
         </div>
       </section>

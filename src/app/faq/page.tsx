@@ -204,15 +204,15 @@ const FAQPage = () => {
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Link
                   href="/contact"
-                  className="px-6 py-3 bg-primary text-white font-medium rounded-md hover:bg-primary-dark transition-colors duration-200"
+                  className="px-6 py-3 bg-pulse-orange text-white font-medium rounded-md hover:bg-accent-600 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
                 >
-                  Contact Support
+                  Start Your Journey
                 </Link>
                 <Link
                   href="/book-call"
-                  className="px-6 py-3 bg-white text-primary border border-primary font-medium rounded-md hover:bg-gray-50 transition-colors duration-200"
+                  className="px-6 py-3 bg-white text-pulse-orange border-2 border-pulse-orange font-medium rounded-md hover:bg-pulse-orange/5 transition-all duration-200"
                 >
-                  Schedule a Call
+                  Book a Strategy Call
                 </Link>
               </div>
             </div>

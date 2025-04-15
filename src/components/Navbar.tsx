@@ -147,13 +147,13 @@ const Navbar = () => {
         <div className="flex items-center space-x-4">
           <Link 
             href="/contact"
-            className={`hidden sm:inline-flex items-center px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+            className={`hidden sm:inline-flex items-center px-6 py-2.5 text-sm font-medium rounded-lg transition-all duration-200 ${
               isScrolled
-                ? 'bg-pulse-orange text-white hover:bg-accent-600'
-                : 'bg-white text-deep-navy hover:bg-white/90'
+                ? 'bg-pulse-orange text-white hover:bg-accent-600 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5'
+                : 'bg-white text-deep-navy hover:bg-white/90 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5'
             }`}
           >
-            Contact Us
+            Get Started Free
           </Link>
           <button
             onClick={toggleMenu}
@@ -400,10 +400,10 @@ const Navbar = () => {
           <div className="px-4 py-4 border-t border-gray-200">
             <Link 
               href="/contact" 
-              className="block w-full px-3 py-2 text-base font-medium text-white bg-pulse-orange hover:bg-accent-600 transition-colors duration-200 rounded-md text-center"
+              className="block w-full px-3 py-2.5 text-base font-medium text-white bg-pulse-orange hover:bg-accent-600 transition-all duration-200 rounded-md text-center shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
               onClick={toggleMenu}
             >
-              Contact Us
+              Get Started Free
             </Link>
           </div>
         </div>
