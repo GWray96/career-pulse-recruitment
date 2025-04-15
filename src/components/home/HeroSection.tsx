@@ -99,14 +99,14 @@ export default function HeroSection() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                       </div>
-                      <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white">Sales Executives</h3>
+                      <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white">Junior Sales Roles</h3>
                     </div>
                     <div className="mb-2 sm:mb-3">
-                      <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white">Just 10%</span>
-                      <span className="text-white/80 ml-2 text-sm sm:text-base">flat fee</span>
+                      <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white">£999</span>
+                      <span className="text-white/80 ml-2 text-sm sm:text-base">fixed price</span>
                     </div>
                     <p className="text-xs sm:text-sm text-white/80 mb-2 sm:mb-3">
-                      Find proven sales professionals who consistently exceed targets and drive revenue growth.
+                      One predictable fee for all junior sales positions. No surprises, no percentage calculations.
                     </p>
                     <Link 
                       href="/employer-pulse" 
@@ -127,14 +127,14 @@ export default function HeroSection() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
                       </div>
-                      <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white">Sales Managers</h3>
+                      <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white">Senior Sales Roles</h3>
                     </div>
                     <div className="mb-2 sm:mb-3">
-                      <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white">£999</span>
-                      <span className="text-white/80 ml-2 text-sm sm:text-base">fixed price</span>
+                      <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white">Just 10%</span>
+                      <span className="text-white/80 ml-2 text-sm sm:text-base">flat fee</span>
                     </div>
                     <p className="text-xs sm:text-sm text-white/80 mb-2 sm:mb-3">
-                      Connect with experienced sales leaders who can build and motivate high-performing teams.
+                      Find proven sales professionals who consistently exceed targets and drive revenue growth.
                     </p>
                     <Link 
                       href="/employer-pulse" 
@@ -172,7 +172,7 @@ export default function HeroSection() {
                     
                     <div className="p-3 sm:p-4 md:p-6">
                       <div className="mb-3 sm:mb-4 md:mb-6">
-                        <h4 className="font-bold text-xs sm:text-sm md:text-base text-deep-navy mb-2 sm:mb-3">For a £50,000 sales role:</h4>
+                        <h4 className="font-bold text-xs sm:text-sm md:text-base text-deep-navy mb-2 sm:mb-3">For a £50,000 senior sales role:</h4>
                         
                         <div className="space-y-2 sm:space-y-3 md:space-y-4">
                           <div className="flex items-start">
