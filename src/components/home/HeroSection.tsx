@@ -127,8 +127,8 @@ export default function HeroSection() {
                 <p className="text-white/80 text-sm sm:text-base mt-3">No commitment required. Get started in minutes.</p>
               </div>
 
-              {/* Mobile-optimized pricing cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+              {/* Mobile-optimized pricing cards - hidden on mobile, visible on sm and above */}
+              <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-white/20">
                   <div className="flex items-center justify-center mb-3">
                     <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-pulse-orange flex items-center justify-center">
@@ -216,8 +216,8 @@ export default function HeroSection() {
                 <p className="text-white/80 text-sm sm:text-base mt-3">100% free for sales professionals</p>
               </div>
 
-              {/* Mobile-optimized feature cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+              {/* Mobile-optimized feature cards - hidden on mobile, visible on sm and above */}
+              <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-white/20">
                   <div className="flex items-center justify-center mb-3">
                     <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-pulse-orange flex items-center justify-center">
