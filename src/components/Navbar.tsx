@@ -182,10 +182,10 @@ const Navbar = () => {
           isMenuOpen ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'
         } lg:hidden fixed inset-0 z-40 transition-all duration-300 ease-in-out`}
       >
-        <div className="fixed inset-0 bg-black bg-opacity-25" onClick={toggleMenu} />
+        <div className="fixed inset-0 bg-deep-navy bg-opacity-75" onClick={toggleMenu} />
         <div className="relative flex flex-col w-full max-w-xs h-full bg-white shadow-xl">
           {/* Mobile menu header */}
-          <div className="px-4 py-4 border-b border-gray-200 flex items-center justify-between">
+          <div className="px-4 py-4 border-b border-gray-200 flex items-center justify-between bg-white">
             <CareerPulseLogo variant="default" size="small" />
             <button
               onClick={toggleMenu}
@@ -210,13 +210,13 @@ const Navbar = () => {
           </div>
           
           {/* Mobile menu content */}
-          <div className="flex-1 overflow-y-auto">
+          <div className="flex-1 overflow-y-auto bg-white">
             <div className="px-4 pt-4 pb-6 space-y-1">
               {/* Quick actions */}
               <div className="grid grid-cols-2 gap-3 mb-4">
                 <Link 
                   href="/job-search" 
-                  className="flex flex-col items-center justify-center p-3 bg-primary-50 rounded-lg text-center hover:bg-primary-100 transition-colors duration-200"
+                  className="flex flex-col items-center justify-center p-3 bg-pulse-orange/10 rounded-lg text-center hover:bg-pulse-orange/20 transition-colors duration-200"
                   onClick={toggleMenu}
                 >
                   <svg className="w-6 h-6 text-pulse-orange mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -226,7 +226,7 @@ const Navbar = () => {
                 </Link>
                 <Link 
                   href="/employer-form" 
-                  className="flex flex-col items-center justify-center p-3 bg-primary-50 rounded-lg text-center hover:bg-primary-100 transition-colors duration-200"
+                  className="flex flex-col items-center justify-center p-3 bg-pulse-orange/10 rounded-lg text-center hover:bg-pulse-orange/20 transition-colors duration-200"
                   onClick={toggleMenu}
                 >
                   <svg className="w-6 h-6 text-pulse-orange mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -239,7 +239,7 @@ const Navbar = () => {
               {/* Main navigation */}
               <Link 
                 href="/" 
-                className="block px-3 py-2 text-base font-medium text-deep-navy hover:text-pulse-orange hover:bg-gray-50 rounded-md"
+                className="block px-3 py-2 text-base font-medium text-deep-navy hover:text-pulse-orange hover:bg-pulse-orange/10 rounded-md"
                 onClick={() => {
                   setActiveItem('home');
                   toggleMenu();
@@ -251,13 +251,13 @@ const Navbar = () => {
               {/* For Candidates section */}
               <div className="border-t border-gray-200 pt-2 mt-2">
                 <button
-                  className="w-full flex items-center justify-between px-3 py-2 text-base font-medium text-deep-navy hover:text-pulse-orange hover:bg-gray-50 rounded-md"
+                  className="w-full flex items-center justify-between px-3 py-2 text-base font-medium text-deep-navy hover:text-pulse-orange hover:bg-pulse-orange/10 rounded-md"
                   onClick={() => toggleSection('candidates')}
                   aria-expanded={expandedSection === 'candidates'}
                 >
                   <span>For Candidates</span>
                   <svg 
-                    className={`h-5 w-5 text-light-grey transform transition-transform duration-200 ${expandedSection === 'candidates' ? 'rotate-180' : ''}`}
+                    className={`h-5 w-5 text-deep-navy transform transition-transform duration-200 ${expandedSection === 'candidates' ? 'rotate-180' : ''}`}
                     xmlns="http://www.w3.org/2000/svg" 
                     viewBox="0 0 20 20" 
                     fill="currentColor"
@@ -269,28 +269,28 @@ const Navbar = () => {
                   <div className="pl-4 space-y-1 mt-1">
                     <Link 
                       href="/talent-pulse" 
-                      className="block px-3 py-2 text-base font-medium text-deep-navy hover:text-pulse-orange hover:bg-gray-50 rounded-md"
+                      className="block px-3 py-2 text-base font-medium text-deep-navy hover:text-pulse-orange hover:bg-pulse-orange/10 rounded-md"
                       onClick={toggleMenu}
                     >
                       Talent Pulse
                     </Link>
                     <Link 
                       href="/job-search" 
-                      className="block px-3 py-2 text-base font-medium text-deep-navy hover:text-pulse-orange hover:bg-gray-50 rounded-md"
+                      className="block px-3 py-2 text-base font-medium text-deep-navy hover:text-pulse-orange hover:bg-pulse-orange/10 rounded-md"
                       onClick={toggleMenu}
                     >
                       Browse All Jobs
                     </Link>
                     <Link 
                       href="/featured-jobs" 
-                      className="block px-3 py-2 text-base font-medium text-deep-navy hover:text-pulse-orange hover:bg-gray-50 rounded-md"
+                      className="block px-3 py-2 text-base font-medium text-deep-navy hover:text-pulse-orange hover:bg-pulse-orange/10 rounded-md"
                       onClick={toggleMenu}
                     >
                       Featured Jobs
                     </Link>
                     <Link 
                       href="/remote-jobs" 
-                      className="block px-3 py-2 text-base font-medium text-deep-navy hover:text-pulse-orange hover:bg-gray-50 rounded-md"
+                      className="block px-3 py-2 text-base font-medium text-deep-navy hover:text-pulse-orange hover:bg-pulse-orange/10 rounded-md"
                       onClick={toggleMenu}
                     >
                       Remote Jobs
@@ -302,13 +302,13 @@ const Navbar = () => {
               {/* For Employers section */}
               <div className="border-t border-gray-200 pt-2 mt-2">
                 <button
-                  className="w-full flex items-center justify-between px-3 py-2 text-base font-medium text-deep-navy hover:text-pulse-orange hover:bg-gray-50 rounded-md"
+                  className="w-full flex items-center justify-between px-3 py-2 text-base font-medium text-deep-navy hover:text-pulse-orange hover:bg-pulse-orange/10 rounded-md"
                   onClick={() => toggleSection('employers')}
                   aria-expanded={expandedSection === 'employers'}
                 >
                   <span>For Employers</span>
                   <svg 
-                    className={`h-5 w-5 text-light-grey transform transition-transform duration-200 ${expandedSection === 'employers' ? 'rotate-180' : ''}`}
+                    className={`h-5 w-5 text-deep-navy transform transition-transform duration-200 ${expandedSection === 'employers' ? 'rotate-180' : ''}`}
                     xmlns="http://www.w3.org/2000/svg" 
                     viewBox="0 0 20 20" 
                     fill="currentColor"
@@ -320,28 +320,28 @@ const Navbar = () => {
                   <div className="pl-4 space-y-1 mt-1">
                     <Link 
                       href="/employer-pulse" 
-                      className="block px-3 py-2 text-base font-medium text-deep-navy hover:text-pulse-orange hover:bg-gray-50 rounded-md"
+                      className="block px-3 py-2 text-base font-medium text-deep-navy hover:text-pulse-orange hover:bg-pulse-orange/10 rounded-md"
                       onClick={toggleMenu}
                     >
                       Employer Pulse
                     </Link>
                     <Link 
                       href="/employer-form" 
-                      className="block px-3 py-2 text-base font-medium text-deep-navy hover:text-pulse-orange hover:bg-gray-50 rounded-md"
+                      className="block px-3 py-2 text-base font-medium text-deep-navy hover:text-pulse-orange hover:bg-pulse-orange/10 rounded-md"
                       onClick={toggleMenu}
                     >
                       Post a Job
                     </Link>
                     <Link 
                       href="/employer-dashboard" 
-                      className="block px-3 py-2 text-base font-medium text-deep-navy hover:text-pulse-orange hover:bg-gray-50 rounded-md"
+                      className="block px-3 py-2 text-base font-medium text-deep-navy hover:text-pulse-orange hover:bg-pulse-orange/10 rounded-md"
                       onClick={toggleMenu}
                     >
                       Employer Dashboard
                     </Link>
                     <Link 
                       href="/pricing" 
-                      className="block px-3 py-2 text-base font-medium text-deep-navy hover:text-pulse-orange hover:bg-gray-50 rounded-md"
+                      className="block px-3 py-2 text-base font-medium text-deep-navy hover:text-pulse-orange hover:bg-pulse-orange/10 rounded-md"
                       onClick={toggleMenu}
                     >
                       Pricing Plans
@@ -353,13 +353,13 @@ const Navbar = () => {
               {/* Resources section */}
               <div className="border-t border-gray-200 pt-2 mt-2">
                 <button
-                  className="w-full flex items-center justify-between px-3 py-2 text-base font-medium text-deep-navy hover:text-pulse-orange hover:bg-gray-50 rounded-md"
+                  className="w-full flex items-center justify-between px-3 py-2 text-base font-medium text-deep-navy hover:text-pulse-orange hover:bg-pulse-orange/10 rounded-md"
                   onClick={() => toggleSection('resources')}
                   aria-expanded={expandedSection === 'resources'}
                 >
                   <span>Resources</span>
                   <svg 
-                    className={`h-5 w-5 text-light-grey transform transition-transform duration-200 ${expandedSection === 'resources' ? 'rotate-180' : ''}`}
+                    className={`h-5 w-5 text-deep-navy transform transition-transform duration-200 ${expandedSection === 'resources' ? 'rotate-180' : ''}`}
                     xmlns="http://www.w3.org/2000/svg" 
                     viewBox="0 0 20 20" 
                     fill="currentColor"
@@ -371,21 +371,21 @@ const Navbar = () => {
                   <div className="pl-4 space-y-1 mt-1">
                     <Link 
                       href="/blog" 
-                      className="block px-3 py-2 text-base font-medium text-deep-navy hover:text-pulse-orange hover:bg-gray-50 rounded-md"
+                      className="block px-3 py-2 text-base font-medium text-deep-navy hover:text-pulse-orange hover:bg-pulse-orange/10 rounded-md"
                       onClick={toggleMenu}
                     >
                       Blog
                     </Link>
                     <Link 
                       href="/resources" 
-                      className="block px-3 py-2 text-base font-medium text-deep-navy hover:text-pulse-orange hover:bg-gray-50 rounded-md"
+                      className="block px-3 py-2 text-base font-medium text-deep-navy hover:text-pulse-orange hover:bg-pulse-orange/10 rounded-md"
                       onClick={toggleMenu}
                     >
                       Resources
                     </Link>
                     <Link 
                       href="/faq" 
-                      className="block px-3 py-2 text-base font-medium text-deep-navy hover:text-pulse-orange hover:bg-gray-50 rounded-md"
+                      className="block px-3 py-2 text-base font-medium text-deep-navy hover:text-pulse-orange hover:bg-pulse-orange/10 rounded-md"
                       onClick={toggleMenu}
                     >
                       FAQ
@@ -397,7 +397,7 @@ const Navbar = () => {
           </div>
           
           {/* Mobile menu footer */}
-          <div className="px-4 py-4 border-t border-gray-200">
+          <div className="px-4 py-4 border-t border-gray-200 bg-white">
             <Link 
               href="/contact" 
               className="block w-full px-3 py-2.5 text-base font-medium text-white bg-pulse-orange hover:bg-accent-600 transition-all duration-200 rounded-md text-center shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
