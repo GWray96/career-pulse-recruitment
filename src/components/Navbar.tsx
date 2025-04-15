@@ -153,7 +153,7 @@ const Navbar = () => {
                 : 'bg-white text-deep-navy hover:bg-white/90 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5'
             }`}
           >
-            Get Started Free
+            Get In Touch Today
           </Link>
           <button
             onClick={toggleMenu}
@@ -403,7 +403,7 @@ const Navbar = () => {
               className="block w-full px-3 py-2.5 text-base font-medium text-white bg-pulse-orange hover:bg-accent-600 transition-all duration-200 rounded-md text-center shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
               onClick={toggleMenu}
             >
-              Get Started Free
+              Get In Touch Today
             </Link>
           </div>
         </div>
