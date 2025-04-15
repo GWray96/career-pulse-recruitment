@@ -21,7 +21,7 @@ const HeroSection = () => {
       
       {/* Main Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="pt-20 pb-16 sm:pt-24 sm:pb-20 lg:pt-32 lg:pb-28">
+        <div className="pt-32 pb-16 sm:pt-36 sm:pb-20 lg:pt-40 lg:pb-28">
           {/* Trust Badge */}
           <div className="flex justify-center mb-8">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm hover:bg-white/20 transition-colors duration-300">
