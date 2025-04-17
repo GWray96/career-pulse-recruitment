@@ -9,6 +9,7 @@ import InsightsSection from '@/components/home/InsightsSection';
 import CalendarWidget from '@/components/home/CalendarWidget';
 import StatsSection from '@/components/home/StatsSection';
 import FeaturedJobsSection from '@/components/home/FeaturedJobsSection';
+import PainPointsSection from '@/components/home/PainPointsSection';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('All FAQs');
@@ -33,6 +34,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-primary-50">
       <HeroSection />
+      <PainPointsSection />
 
       {/* Section Divider */}
       <div className="w-full flex justify-center">
