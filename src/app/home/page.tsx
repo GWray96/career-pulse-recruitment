@@ -41,37 +41,6 @@ export default function Home() {
         <div className="section-divider"></div>
       </div>
 
-      {/* Pain Points Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-primary/10 opacity-50"></div>
-          <div className="absolute bottom-1/4 left-1/4 w-96 h-96 rounded-full bg-accent/10 opacity-50"></div>
-        </div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-4 text-deep-charcoal relative inline-block">
-                Common Challenges in Today's Job Market
-                <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-accent rounded-full"></div>
-              </h2>
-              <p className="text-xl text-deep-charcoal/70 text-center mt-6 max-w-3xl mx-auto">Discover how we address the key pain points faced by both employers and candidates in the modern recruitment landscape</p>
-            </div>
-
-            {/* Pain Points Cards */}
-            <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-              {/* ... existing pain points content ... */}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section Divider */}
-      <div className="w-full flex justify-center">
-        <div className="section-divider"></div>
-      </div>
-
       {/* Process Section */}
       <section id="process" className="py-16 sm:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
