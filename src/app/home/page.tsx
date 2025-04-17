@@ -10,7 +10,7 @@ export default function HomePage() {
     <main className="min-h-screen">
       <HeroSection />
       
-      {/* Specialized Sales Recruitment Section */}
+      {/* Specialized Sales Recruitment Section - Card-based layout */}
       <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -125,13 +125,89 @@ export default function HomePage() {
         </div>
       </section>
 
-      <PainPointsSection />
-      
-      {/* Why Choose Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50">
+      {/* Pain Points Section - Timeline-style layout */}
+      <section className="py-20 bg-gradient-to-br from-gray-900 to-blue-900 text-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              Common Sales Recruitment Challenges
+            </h2>
+            <p className="text-xl text-gray-300">
+              We understand the unique challenges in sales recruitment and have solutions for every pain point.
+            </p>
+          </div>
+
+          <div className="max-w-5xl mx-auto">
+            <div className="relative">
+              {/* Timeline line */}
+              <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-blue-400"></div>
+              
+              {/* Pain Point 1 */}
+              <div className="relative mb-12">
+                <div className="flex flex-col md:flex-row items-center">
+                  <div className="w-full md:w-1/2 md:pr-8 md:text-right mb-4 md:mb-0">
+                    <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-blue-400/30">
+                      <h3 className="text-2xl font-semibold mb-2 text-blue-300">Finding Quality Candidates</h3>
+                      <p className="text-gray-300">The challenge of identifying truly qualified sales professionals who can drive results.</p>
+                    </div>
+                  </div>
+                  <div className="w-8 h-8 bg-blue-500 rounded-full z-10"></div>
+                  <div className="w-full md:w-1/2 md:pl-8 mt-4 md:mt-0">
+                    <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-blue-400/30">
+                      <h3 className="text-2xl font-semibold mb-2 text-blue-300">Our Solution</h3>
+                      <p className="text-gray-300">We maintain a curated database of pre-screened sales professionals with proven track records.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Pain Point 2 */}
+              <div className="relative mb-12">
+                <div className="flex flex-col md:flex-row items-center">
+                  <div className="w-full md:w-1/2 md:pr-8 md:text-right mb-4 md:mb-0">
+                    <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-blue-400/30">
+                      <h3 className="text-2xl font-semibold mb-2 text-blue-300">Our Solution</h3>
+                      <p className="text-gray-300">We provide detailed market insights and salary benchmarks to help you make competitive offers.</p>
+                    </div>
+                  </div>
+                  <div className="w-8 h-8 bg-blue-500 rounded-full z-10"></div>
+                  <div className="w-full md:w-1/2 md:pl-8 mt-4 md:mt-0">
+                    <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-blue-400/30">
+                      <h3 className="text-2xl font-semibold mb-2 text-blue-300">Competitive Compensation</h3>
+                      <p className="text-gray-300">Struggling to determine the right compensation package to attract top talent.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Pain Point 3 */}
+              <div className="relative">
+                <div className="flex flex-col md:flex-row items-center">
+                  <div className="w-full md:w-1/2 md:pr-8 md:text-right mb-4 md:mb-0">
+                    <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-blue-400/30">
+                      <h3 className="text-2xl font-semibold mb-2 text-blue-300">Time to Hire</h3>
+                      <p className="text-gray-300">Extended recruitment cycles that delay filling critical sales positions.</p>
+                    </div>
+                  </div>
+                  <div className="w-8 h-8 bg-blue-500 rounded-full z-10"></div>
+                  <div className="w-full md:w-1/2 md:pl-8 mt-4 md:mt-0">
+                    <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-blue-400/30">
+                      <h3 className="text-2xl font-semibold mb-2 text-blue-300">Our Solution</h3>
+                      <p className="text-gray-300">Our streamlined process reduces time-to-hire by up to 40% through efficient candidate matching.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Why Choose Section - Feature grid with alternating layout */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
               Why Choose Career Pulse?
             </h2>
             <p className="text-xl text-gray-600">
@@ -139,53 +215,125 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
+          <div className="max-w-6xl mx-auto">
+            {/* Feature 1 */}
+            <div className="flex flex-col md:flex-row items-center mb-20">
+              <div className="w-full md:w-1/2 mb-8 md:mb-0 md:pr-12">
+                <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl">
+                  <div className="w-16 h-16 bg-blue-500 rounded-xl flex items-center justify-center mb-6">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-semibold mb-4 text-gray-900">Specialized Focus</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Our exclusive focus on sales recruitment means we understand the unique challenges and requirements of the industry.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900">Specialized Focus</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Our exclusive focus on sales recruitment means we understand the unique challenges and requirements of the industry.
-              </p>
+              <div className="w-full md:w-1/2 md:pl-12">
+                <div className="relative">
+                  <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-200 rounded-full opacity-50"></div>
+                  <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-blue-300 rounded-full opacity-50"></div>
+                  <div className="relative bg-white p-8 rounded-2xl shadow-lg border border-blue-100">
+                    <h4 className="text-xl font-semibold mb-4 text-gray-900">Sales-Specific Expertise</h4>
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <span className="text-blue-500 mr-2 mt-1">✓</span>
+                        <span>Deep understanding of sales roles and requirements</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-blue-500 mr-2 mt-1">✓</span>
+                        <span>Industry-specific assessment techniques</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-blue-500 mr-2 mt-1">✓</span>
+                        <span>Specialized networks in sales communities</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+            {/* Feature 2 - Reversed layout */}
+            <div className="flex flex-col md:flex-row items-center mb-20">
+              <div className="w-full md:w-1/2 mb-8 md:mb-0 md:order-2 md:pl-12">
+                <div className="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl">
+                  <div className="w-16 h-16 bg-green-500 rounded-xl flex items-center justify-center mb-6">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-semibold mb-4 text-gray-900">Quality Matches</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    We create lasting partnerships through thorough understanding of sales roles and perfect matches between candidates and companies.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900">Quality Matches</h3>
-              <p className="text-gray-600 leading-relaxed">
-                We create lasting partnerships through thorough understanding of sales roles and perfect matches between candidates and companies.
-              </p>
+              <div className="w-full md:w-1/2 md:order-1 md:pr-12">
+                <div className="relative">
+                  <div className="absolute -top-4 -left-4 w-24 h-24 bg-green-200 rounded-full opacity-50"></div>
+                  <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-green-300 rounded-full opacity-50"></div>
+                  <div className="relative bg-white p-8 rounded-2xl shadow-lg border border-green-100">
+                    <h4 className="text-xl font-semibold mb-4 text-gray-900">Our Matching Process</h4>
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <span className="text-green-500 mr-2 mt-1">✓</span>
+                        <span>Comprehensive candidate profiling</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-green-500 mr-2 mt-1">✓</span>
+                        <span>Detailed company culture assessment</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-green-500 mr-2 mt-1">✓</span>
+                        <span>Skill and experience alignment</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-7 h-7 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
+            {/* Feature 3 */}
+            <div className="flex flex-col md:flex-row items-center">
+              <div className="w-full md:w-1/2 mb-8 md:mb-0 md:pr-12">
+                <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl">
+                  <div className="w-16 h-16 bg-purple-500 rounded-xl flex items-center justify-center mb-6">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-semibold mb-4 text-gray-900">Industry Insights</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Stay ahead with comprehensive market intelligence, including sales trends, salary benchmarks, and industry developments.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900">Industry Insights</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Stay ahead with comprehensive market intelligence, including sales trends, salary benchmarks, and industry developments.
-              </p>
-            </div>
-
-            <div className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
-                </svg>
+              <div className="w-full md:w-1/2 md:pl-12">
+                <div className="relative">
+                  <div className="absolute -top-4 -left-4 w-24 h-24 bg-purple-200 rounded-full opacity-50"></div>
+                  <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-purple-300 rounded-full opacity-50"></div>
+                  <div className="relative bg-white p-8 rounded-2xl shadow-lg border border-purple-100">
+                    <h4 className="text-xl font-semibold mb-4 text-gray-900">Market Intelligence</h4>
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <span className="text-purple-500 mr-2 mt-1">✓</span>
+                        <span>Regular salary and compensation reports</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-500 mr-2 mt-1">✓</span>
+                        <span>Industry trend analysis and forecasting</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-500 mr-2 mt-1">✓</span>
+                        <span>Competitive landscape insights</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900">Personalized Service</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Experience a truly tailored recruitment journey with personalized guidance and support every step of the way.
-              </p>
             </div>
           </div>
         </div>
