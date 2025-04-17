@@ -59,6 +59,9 @@ const PainPointsSection = () => {
     }
   ];
 
+  // Combine all pain points for easier rendering
+  const allPainPoints = [...salesProfessionalPainPoints, ...employerPainPoints];
+
   return (
     <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
       {/* Background Elements */}
