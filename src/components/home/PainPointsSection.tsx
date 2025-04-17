@@ -1,8 +1,10 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 
 const PainPointsSection = () => {
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+
   const salesProfessionalPainPoints = [
     {
       id: 1,
@@ -84,7 +86,9 @@ const PainPointsSection = () => {
               {salesProfessionalPainPoints.map((point) => (
                 <div 
                   key={point.id}
-                  className="group bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-gray-100 transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl"
+                  className="bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-gray-100 transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl"
+                  onMouseEnter={() => setHoveredCard(point.id)}
+                  onMouseLeave={() => setHoveredCard(null)}
                 >
                   <div className="flex items-start mb-4">
                     <div className="flex-shrink-0 bg-blue-50 p-3 rounded-full">
@@ -98,7 +102,7 @@ const PainPointsSection = () => {
                   <div className="text-blue-500 font-medium mb-2">How we help: {point.solution}</div>
                   
                   {/* Hover-revealed content */}
-                  <div className="overflow-hidden transition-all duration-300 max-h-0 group-hover:max-h-40 opacity-0 group-hover:opacity-100">
+                  <div className={`overflow-hidden transition-all duration-300 ${hoveredCard === point.id ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}>
                     <div className="pt-4 border-t border-gray-100">
                       <p className="text-gray-600">{point.details}</p>
                     </div>
@@ -115,7 +119,9 @@ const PainPointsSection = () => {
               {employerPainPoints.map((point) => (
                 <div 
                   key={point.id}
-                  className="group bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-gray-100 transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl"
+                  className="bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-gray-100 transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl"
+                  onMouseEnter={() => setHoveredCard(point.id)}
+                  onMouseLeave={() => setHoveredCard(null)}
                 >
                   <div className="flex items-start mb-4">
                     <div className="flex-shrink-0 bg-blue-50 p-3 rounded-full">
@@ -129,7 +135,7 @@ const PainPointsSection = () => {
                   <div className="text-blue-500 font-medium mb-2">How we help: {point.solution}</div>
                   
                   {/* Hover-revealed content */}
-                  <div className="overflow-hidden transition-all duration-300 max-h-0 group-hover:max-h-40 opacity-0 group-hover:opacity-100">
+                  <div className={`overflow-hidden transition-all duration-300 ${hoveredCard === point.id ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}>
                     <div className="pt-4 border-t border-gray-100">
                       <p className="text-gray-600">{point.details}</p>
                     </div>
