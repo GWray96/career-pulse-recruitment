@@ -236,19 +236,19 @@ export default function HomePage() {
                   <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-200 rounded-full opacity-50"></div>
                   <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-blue-300 rounded-full opacity-50"></div>
                   <div className="relative bg-white p-8 rounded-2xl shadow-lg border border-blue-100">
-                    <h4 className="text-xl font-semibold mb-4 text-gray-900">Sales-Specific Expertise</h4>
+                    <h4 className="text-xl font-semibold mb-4 text-gray-800">Sales-Specific Expertise</h4>
                     <ul className="space-y-3">
                       <li className="flex items-start">
                         <span className="text-blue-500 mr-2 mt-1">✓</span>
-                        <span>Deep understanding of sales roles and requirements</span>
+                        <span className="text-gray-700">Deep understanding of sales roles and requirements</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-blue-500 mr-2 mt-1">✓</span>
-                        <span>Industry-specific assessment techniques</span>
+                        <span className="text-gray-700">Industry-specific assessment techniques</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-blue-500 mr-2 mt-1">✓</span>
-                        <span>Specialized networks in sales communities</span>
+                        <span className="text-gray-700">Specialized networks in sales communities</span>
                       </li>
                     </ul>
                   </div>
@@ -276,19 +276,19 @@ export default function HomePage() {
                   <div className="absolute -top-4 -left-4 w-24 h-24 bg-green-200 rounded-full opacity-50"></div>
                   <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-green-300 rounded-full opacity-50"></div>
                   <div className="relative bg-white p-8 rounded-2xl shadow-lg border border-green-100">
-                    <h4 className="text-xl font-semibold mb-4 text-gray-900">Our Matching Process</h4>
+                    <h4 className="text-xl font-semibold mb-4 text-gray-800">Our Matching Process</h4>
                     <ul className="space-y-3">
                       <li className="flex items-start">
                         <span className="text-green-500 mr-2 mt-1">✓</span>
-                        <span>Comprehensive candidate profiling</span>
+                        <span className="text-gray-700">Comprehensive candidate profiling</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-green-500 mr-2 mt-1">✓</span>
-                        <span>Detailed company culture assessment</span>
+                        <span className="text-gray-700">Detailed company culture assessment</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-green-500 mr-2 mt-1">✓</span>
-                        <span>Skill and experience alignment</span>
+                        <span className="text-gray-700">Skill and experience alignment</span>
                       </li>
                     </ul>
                   </div>
@@ -316,19 +316,19 @@ export default function HomePage() {
                   <div className="absolute -top-4 -left-4 w-24 h-24 bg-purple-200 rounded-full opacity-50"></div>
                   <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-purple-300 rounded-full opacity-50"></div>
                   <div className="relative bg-white p-8 rounded-2xl shadow-lg border border-purple-100">
-                    <h4 className="text-xl font-semibold mb-4 text-gray-900">Market Intelligence</h4>
+                    <h4 className="text-xl font-semibold mb-4 text-gray-800">Market Intelligence</h4>
                     <ul className="space-y-3">
                       <li className="flex items-start">
                         <span className="text-purple-500 mr-2 mt-1">✓</span>
-                        <span>Regular salary and compensation reports</span>
+                        <span className="text-gray-700">Regular salary and compensation reports</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-purple-500 mr-2 mt-1">✓</span>
-                        <span>Industry trend analysis and forecasting</span>
+                        <span className="text-gray-700">Industry trend analysis and forecasting</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-purple-500 mr-2 mt-1">✓</span>
-                        <span>Competitive landscape insights</span>
+                        <span className="text-gray-700">Competitive landscape insights</span>
                       </li>
                     </ul>
                   </div>
