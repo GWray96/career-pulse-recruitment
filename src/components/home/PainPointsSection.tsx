@@ -1,10 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 
 const PainPointsSection = () => {
-  const [activeCard, setActiveCard] = useState<number | null>(null);
-
   const salesProfessionalPainPoints = [
     {
       id: 1,
@@ -59,10 +57,6 @@ const PainPointsSection = () => {
     }
   ];
 
-  const handleCardClick = (id: number) => {
-    setActiveCard(activeCard === id ? null : id);
-  };
-
   return (
     <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
       {/* Background Elements */}
@@ -90,10 +84,7 @@ const PainPointsSection = () => {
               {salesProfessionalPainPoints.map((point) => (
                 <div 
                   key={point.id}
-                  className={`bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-gray-100 transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl cursor-pointer ${
-                    activeCard === point.id ? 'ring-2 ring-blue-500' : ''
-                  }`}
-                  onClick={() => handleCardClick(point.id)}
+                  className="group bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-gray-100 transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl"
                 >
                   <div className="flex items-start mb-4">
                     <div className="flex-shrink-0 bg-blue-50 p-3 rounded-full">
@@ -106,12 +97,8 @@ const PainPointsSection = () => {
                   </div>
                   <div className="text-blue-500 font-medium mb-2">How we help: {point.solution}</div>
                   
-                  {/* Expandable content */}
-                  <div 
-                    className={`overflow-hidden transition-all duration-300 ${
-                      activeCard === point.id ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'
-                    }`}
-                  >
+                  {/* Hover-revealed content */}
+                  <div className="overflow-hidden transition-all duration-300 max-h-0 group-hover:max-h-40 opacity-0 group-hover:opacity-100">
                     <div className="pt-4 border-t border-gray-100">
                       <p className="text-gray-600">{point.details}</p>
                     </div>
@@ -128,10 +115,7 @@ const PainPointsSection = () => {
               {employerPainPoints.map((point) => (
                 <div 
                   key={point.id}
-                  className={`bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-gray-100 transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl cursor-pointer ${
-                    activeCard === point.id ? 'ring-2 ring-blue-500' : ''
-                  }`}
-                  onClick={() => handleCardClick(point.id)}
+                  className="group bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-gray-100 transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl"
                 >
                   <div className="flex items-start mb-4">
                     <div className="flex-shrink-0 bg-blue-50 p-3 rounded-full">
@@ -144,12 +128,8 @@ const PainPointsSection = () => {
                   </div>
                   <div className="text-blue-500 font-medium mb-2">How we help: {point.solution}</div>
                   
-                  {/* Expandable content */}
-                  <div 
-                    className={`overflow-hidden transition-all duration-300 ${
-                      activeCard === point.id ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'
-                    }`}
-                  >
+                  {/* Hover-revealed content */}
+                  <div className="overflow-hidden transition-all duration-300 max-h-0 group-hover:max-h-40 opacity-0 group-hover:opacity-100">
                     <div className="pt-4 border-t border-gray-100">
                       <p className="text-gray-600">{point.details}</p>
                     </div>
